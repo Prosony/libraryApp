@@ -12,7 +12,7 @@ public class Main extends Application{
 
     public static SceneManager sceneManager;
     private static Stage primaryStage;
-    private static StdOut stdOut = new StdOut();
+    public static StdOut stdOut = new StdOut();
 
 
         @Override
@@ -43,7 +43,6 @@ public class Main extends Application{
         }
     /**
      * Returns the main stage.
-     *
      * @return
      */
     public static Stage getPrimaryStage() {

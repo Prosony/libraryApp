@@ -1,7 +1,7 @@
 package com.devprosony.core;
 
 import com.devprosony.Main;
-import com.devprosony.core.controllers.GetLibrary;
+import com.devprosony.core.controllers.ScreenLibraryManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -20,11 +20,8 @@ abstract public class SceneManager {
 
     private static Scene sceneSingIn;
     private static Scene sceneMain;
-
-
     private static double dragOffsetX;
     private static double dragOffsetY;
-
     private static Stage primaryStage;
     private static Stage dialogStage;
 
@@ -32,7 +29,7 @@ abstract public class SceneManager {
         primaryStage = Main.getPrimaryStage();
     }
 
-    public void switchScene(Scene sceneInitial) {
+    public void switchScene() {
         //stdOut.println("sceneOne equals: " + primaryStage.getScene().equals(sceneSingIn));
         try {
             sceneMain = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/main.fxml")));
@@ -80,7 +77,7 @@ abstract public class SceneManager {
             dialogStage.setScene(scene);
 
             // Set the person into the controller.
-            GetLibrary controllerLibrary = loader.getController();
+            ScreenLibraryManager controllerLibrary = loader.getController();
             controllerLibrary.setDialogStage(dialogStage);
 
             // Show the dialog and wait until the user closes it

@@ -7,7 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?scenebuilder-stylesheet BlackTheme.css?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorMain" maxHeight="150.0" maxWidth="250.0" minHeight="150.0" minWidth="250.0" prefHeight="150.0" prefWidth="250.0" styleClass="background" stylesheets="@css/BlackTheme(LogIn).css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.singInPanelController">
+<AnchorPane id="AnchorPane" fx:id="anchorMain" maxHeight="150.0" maxWidth="250.0" minHeight="150.0" minWidth="250.0" prefHeight="150.0"
+            prefWidth="250.0" styleClass="background" stylesheets="@css/BlackTheme(LogIn).css" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.ScreenSingIn">
    <children>
       <TextField fx:id="textFieldLogin" layoutX="14.0" layoutY="45.0" promptText="Login" />
       <PasswordField fx:id="textFieldPassword" layoutX="13.0" layoutY="78.0" promptText="Password" />

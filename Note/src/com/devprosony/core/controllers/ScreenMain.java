@@ -2,6 +2,7 @@ package com.devprosony.core.controllers;
 
 import com.devprosony.core.ConnectionToBD;
 import com.devprosony.core.controllers.model.TableDataView;
+import com.devprosony.core.controllers.model.ViewListLibrary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,12 +18,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static com.devprosony.Main.sceneManager;
+import static com.devprosony.Main.stdOut;
 
 /**
  * Created by ${Prosony} on ${24.01.2016}.
  */
 public class ScreenMain extends ConnectionToBD  {
-
 
     @FXML
     MenuBar menuBar;
@@ -34,11 +35,9 @@ public class ScreenMain extends ConnectionToBD  {
     public TableView<TableDataView> tableData;
     @FXML
     public TableColumn<TableDataView, String> nameBook;
-    private Stage primaryStage;
-
 
     private ObservableList<TableDataView> tableDataList = FXCollections.observableArrayList();
-    static StdOut stdOut = new StdOut();
+    private Stage primaryStage;
     private ResultSet rs;
     private int count = 0;
 
@@ -85,5 +84,6 @@ public class ScreenMain extends ConnectionToBD  {
     public void buttonSystemExit(){
         System.exit(0);
     }
+
 }
 

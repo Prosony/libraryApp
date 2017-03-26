@@ -10,42 +10,40 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lib.StdOut;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static com.devprosony.Main.sceneManager;
-
+import static com.devprosony.Main.stdOut;
 
 /**
  * Created by ${Prosony} on ${24.01.2016}.
  */
-public class singInPanelController extends ConnectionToBD {
+public class ScreenSingIn extends ConnectionToBD {
 
-    @FXML
-    PasswordField textFieldPassword;
-    @FXML
-    TextField textFieldLogin;
-    @FXML
-    Label progressLabel;
-    @FXML
-    Button buttonSign;
-    @FXML
-    Button buttonExit;
-    @FXML
-    AnchorPane anchorMain;
+        @FXML
+        PasswordField textFieldPassword;
+        @FXML
+        TextField textFieldLogin;
+        @FXML
+        Label progressLabel;
+        @FXML
+        Button buttonSign;
+        @FXML
+        Button buttonExit;
+        @FXML
+        AnchorPane anchorMain;
 
-    private static StdOut stdOut = new StdOut();
-    private Stage primaryStage;
+        private Stage primaryStage;
 
-    public singInPanelController() throws SQLException {
-        this.primaryStage = Main.getPrimaryStage();
-    }
+        public ScreenSingIn() throws SQLException {
+            this.primaryStage = Main.getPrimaryStage();
+        }
 
-    public void connectToAccount(ActionEvent actionEvent){
+        public void connectToAccount(ActionEvent actionEvent){
 
-        connectionBD();
+            connectionBD();
             String query = "select * from Account;";
             String passwordFromPasswordField = textFieldPassword.getText();
             String loginFromTextField = textFieldLogin.getText();
@@ -58,17 +56,17 @@ public class singInPanelController extends ConnectionToBD {
                     String loginFromBD = rs.getString(2);
 
                     stdOut.println("Login,Password: " + loginFromBD +" "+ passwordFromBD
-                                            + "|" + loginFromTextField +" "+ passwordFromPasswordField);
+                            + "|" + loginFromTextField +" "+ passwordFromPasswordField);
 
                     if ((loginFromTextField.equals(loginFromBD))&&(passwordFromPasswordField.equals(passwordFromBD))){
 
-                                        stdOut.println("log in is success!");
-                                        stdOut.println("decorated style...");
-                                        sceneManager.switchScene(primaryStage.getScene());
+                        stdOut.println("log in is success!");
+                        stdOut.println("decorated style...");
+                        sceneManager.switchScene();
 
                     }else {
-                                        progressLabel.setText("Invalid\n login\nor\n password");
-                                        stdOut.println("Invalid login or password");
+                        progressLabel.setText("Invalid\n login\nor\n password");
+                        stdOut.println("Invalid login or password");
                     }
                 }
                 connectionClose();
@@ -77,9 +75,8 @@ public class singInPanelController extends ConnectionToBD {
             }
         }
 
-    public void exit(){
-        System.exit(0);
-    }
-
+        public void exit(){
+            System.exit(0);
+        }
 
 }
