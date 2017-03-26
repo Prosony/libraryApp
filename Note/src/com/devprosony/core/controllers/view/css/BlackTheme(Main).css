@@ -1,0 +1,261 @@
+
+
+.background {
+    -fx-background-color: rgba(29, 29, 29, 0.16);
+    -fx-background-color: #1d1d1d;
+    -fx-opacity: 1;
+}
+.pane {
+    -fx-background-color: #8fbc8f;
+}
+/*******************************************************************************
+ *                                                                             *
+ * Label                                                               *
+ *                                                                             *
+ ******************************************************************************/
+.label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.label-bright {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: lightgrey;
+    -fx-opacity: 0.8;
+}
+
+.label-header {
+    -fx-font-size: 32pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Button                                                               *
+ *                                                                             *
+ ******************************************************************************/
+.button {
+    -fx-border-color: #404040;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #363636;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11px;
+    -fx-text-fill: lightgrey;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: #a86f00;
+    -fx-text-fill: black;
+}
+
+.button:focused {
+    -fx-border-color: #a86f00, #a86f00;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+/*******************************************************************************
+ *                                                                             *
+ * TextField                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.text-field{
+    -fx-background-color: e1e1e1;
+    -fx-prompt-text-fill: #3a3a3a;
+}
+.text-input > .right-button{
+    -fx-cursor: default;
+
+    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+}
+
+.text-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
+
+    -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:hover {
+    -fx-background-color: #dedede;
+}
+
+.text-input > .right-button:pressed {
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:pressed > .right-button-graphic {
+    -fx-background-color: white;
+}
+
+.text-input:disabled
+{
+    -fx-opacity: 1;
+    -fx-background-insets: 0, 2;
+    -fx-background-color: #777777, #1d1d1d;
+    -fx-text-fill: #616161;
+}
+
+.item-title.disabled{
+    -fx-text-fill: #939393;
+}
+/*******************************************************************************
+ *                                                                             *
+ * TableView                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: darkgrey;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+.table-field{
+    -fx-text-fill: whitesmoke;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * MenuBar                                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+.menu-bar {
+-fx-background-color: derive(#1d1d1d,0%);
+}
+.menu {
+    -fx-background-color: derive(#1d1d1d,0%);
+}
+
+.menu:hover {
+    -fx-background-color: orangered;
+}
+
+.menu:pressed, .menu:default:hover:pressed {
+    -fx-background-color: darkred;
+    -fx-text-fill: black;
+}
+
+.menu:focused {
+    -fx-border-color: #a86f00, #a86f00;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.menu:disabled, .menu:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.menu:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.menu:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+
+            .context-menu {
+                -fx-background-color: derive(#1d1d1d,10%);
+            }
+            .context-menu:hover {
+                -fx-background-color: orangered;
+            }
+            .menu-item {
+                -fx-background-color: derive(#1d1d1d,10%);
+            }
+
+            .menu-item:hover {
+                -fx-background-color: orangered;
+            }
+
+/*.menu-item{*/
+                /*-fx-font-size: 5px;*/
+             /*}*/
+
+            /*.menu-bar .label {*/
+                /*-fx-font-size: 11pt;*/
+                /*-fx-font-family: "Segoe UI Light";*/
+                /*-fx-text-fill: white;*/
+                /*-fx-opacity: 0.8;*/
+            /*}*/
+
+            /*.menu .left-container {*/
+                /*-fx-background-color: black;*/
+            /*}*/
+
+            /*.text-field {*/
+                /*-fx-font-size: 11pt;*/
+                /*-fx-font-family: "Segoe UI Semibold";*/
+            /*}*/
