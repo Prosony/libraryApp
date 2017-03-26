@@ -8,19 +8,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorTwo" maxHeight="1080" maxWidth="1920" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="background"  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/BlackTheme(Main).css" fx:controller="com.devprosony.core.controllers.screenMain.ScreenMain">
+<AnchorPane id="AnchorPane" fx:id="anchorTwo" maxHeight="1080" maxWidth="1920" minHeight="600.0" minWidth="800.0" prefHeight="600.0"
+            prefWidth="800.0" styleClass="background" stylesheets="@css/BlackTheme(Main).css" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.ScreenMain">
    <children>
-      <MenuBar fx:id="menuBar" layoutY="4.0" prefHeight="29.0" prefWidth="162.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="638.0" AnchorPane.topAnchor="4.0">
+      <MenuBar fx:id="menuBar" layoutY="4.0" prefHeight="29.0" prefWidth="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="620.0" AnchorPane.topAnchor="4.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Main">
             <items>
-                <MenuItem fx:id="MenuItemGetLibrary" mnemonicParsing="false" onAction="#clickMenuItemGetLibrary" text="Library" />
                 <MenuItem fx:id="MenuItemExit" mnemonicParsing="false" onAction="#clickMenuItemExit" text="Exit" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Library">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                <MenuItem fx:id="MenuItemGetLibrary" mnemonicParsing="false" onAction="#clickMenuItemGetLibrary" text="Open library" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -40,6 +41,6 @@
       </TableView>
       <Button fx:id="buttonSystemExit" layoutX="725.0" mnemonicParsing="false" onAction="#setTableDataList" prefHeight="25.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="0.0" />
       <Button fx:id="b" layoutX="750.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="buttonFullScreen" layoutX="772.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="buttonFullScreen" layoutX="772.0" mnemonicParsing="false" onAction="#buttonSystemExit" prefHeight="25.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

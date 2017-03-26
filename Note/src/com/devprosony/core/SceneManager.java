@@ -1,9 +1,12 @@
 package com.devprosony.core;
 
 import com.devprosony.Main;
+import com.devprosony.core.controllers.GetLibrary;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -17,9 +20,13 @@ abstract public class SceneManager {
 
     private static Scene sceneSingIn;
     private static Scene sceneMain;
+
+
     private static double dragOffsetX;
     private static double dragOffsetY;
+
     private static Stage primaryStage;
+    private static Stage dialogStage;
 
     protected SceneManager(){
         primaryStage = Main.getPrimaryStage();
@@ -39,7 +46,6 @@ abstract public class SceneManager {
         movingScene(sceneMain);
 
     }
-
     public void loadScene(){
         try {
             sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/singInPanel.fxml")));
@@ -54,10 +60,41 @@ abstract public class SceneManager {
         primaryStage.show();
         movingScene(sceneSingIn);
     }
+
+
+    public void showTableListLibrary() {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("core/controllers/view/GetLibrary.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            dialogStage = new Stage();
+            //dialogStage.setTitle("Open Library");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            dialogStage.initStyle(StageStyle.TRANSPARENT);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            GetLibrary controllerLibrary = loader.getController();
+            controllerLibrary.setDialogStage(dialogStage);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.show();
+            // return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
-     * _______________________Method_for_move_window____________________________
+     * _______________________Method_for_move_primaryStage____________________________
      */
-    private static void movingScene(Scene scene) {
+    private void movingScene(Scene scene) {
 
         scene.setOnMousePressed(SceneManager::handleMousePressed);
         scene.setOnMouseDragged(SceneManager::handleMouseDragged);

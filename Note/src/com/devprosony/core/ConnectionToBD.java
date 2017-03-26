@@ -10,15 +10,15 @@ import java.sql.*;
  */
 abstract public class ConnectionToBD {
 
-    protected Statement stmt;
+    public Statement stmt;
     private Connection connection;
     private Driver driver = new FabricMySQLDriver();
 
 
-    protected ConnectionToBD() throws SQLException {
+    public ConnectionToBD() throws SQLException {
     }
 
-    protected void connectionBD() {
+    public void connectionBD() {
         final String URL = "jdbc:mysql://localhost:3306/library?autoReconnect=true&useSSL=false";
         final String USERNAME = "root";
         final String PASSWORD = "root";
@@ -35,7 +35,7 @@ abstract public class ConnectionToBD {
         }
     }
 
-    protected void connectionClose(){
+    public void connectionClose(){
         try {
             connection.close();
             if (connection.isClosed()) {

@@ -1,7 +1,7 @@
-package com.devprosony.core.controllers.screenMain;
+package com.devprosony.core.controllers;
 
 import com.devprosony.core.ConnectionToBD;
-import com.devprosony.core.controllers.pojo.TableDataView;
+import com.devprosony.core.controllers.model.TableDataView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +15,8 @@ import lib.StdOut;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static com.devprosony.Main.sceneManager;
 
 /**
  * Created by ${Prosony} on ${24.01.2016}.
@@ -34,7 +36,7 @@ public class ScreenMain extends ConnectionToBD  {
     public TableColumn<TableDataView, String> nameBook;
     private Stage primaryStage;
 
-    private ObservableList<String> libraryList = FXCollections.observableArrayList();
+
     private ObservableList<TableDataView> tableDataList = FXCollections.observableArrayList();
     static StdOut stdOut = new StdOut();
     private ResultSet rs;
@@ -73,12 +75,15 @@ public class ScreenMain extends ConnectionToBD  {
     }
     public void clickMenuItemGetLibrary(){
         //TODO
+        sceneManager.showTableListLibrary();
     }
 
     public void clickMenuItemExit() {
         //connectionClose();
         System.exit(0);
     }
-
+    public void buttonSystemExit(){
+        System.exit(0);
+    }
 }
 

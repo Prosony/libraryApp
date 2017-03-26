@@ -1,4 +1,4 @@
-package com.devprosony.core.controllers.pojo;
+package com.devprosony.core.controllers.model;
 
 /**
  * Created by Prosony on 22/03/17.
