@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/GetLibrary$ThreadSetTableListLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/GetLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/singInPanelController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/GetLibrary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/singInPanelController.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/SceneManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/SceneManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/GetLibrary.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/GetLibrary.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/singInPanel.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/singInPanel.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/Main.java" afterPath="$PROJECT_DIR$/src/com/devprosony/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -150,13 +133,13 @@
       <file leaf-file-name="ScreenLibraryManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+            <state relative-caret-position="269">
+              <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1421#1422#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <marker date="1490555219785" expanded="true" signature="2093:2134" ph="select name_... personal_library" />
+                <element signature="e#1438#1439#0" expanded="true" />
+                <element signature="e#1481#1482#0" expanded="true" />
+                <marker date="1490564153226" expanded="true" signature="2110:2303" ph="select name_... personal_library" />
               </folding>
             </state>
           </provider>
@@ -967,12 +950,12 @@
       <workItem from="1490478580406" duration="1047000" />
       <workItem from="1490520446274" duration="69000" />
       <workItem from="1490526271668" duration="16737000" />
-      <workItem from="1490548182259" duration="5584000" />
+      <workItem from="1490548182259" duration="8927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151639000" />
+    <option name="totallyTimeSpent" value="154982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -987,7 +970,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07639939" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14674735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1262,13 +1245,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state relative-caret-position="269">
+          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <marker date="1490555219785" expanded="true" signature="2093:2134" ph="select name_... personal_library" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <marker date="1490564153226" expanded="true" signature="2110:2303" ph="select name_... personal_library" />
           </folding>
         </state>
       </provider>

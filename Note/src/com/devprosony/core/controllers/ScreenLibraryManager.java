@@ -38,9 +38,10 @@ public class ScreenLibraryManager extends ConnectionToBD {
         @FXML
         private void openLibrary(){
             String nameLibrary = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-                stdOut.println("text: " + nameLibrary);
                 connectionBD();
-                
+                connectionClose();
+            stdOut.println("\ntext: " + nameLibrary);
+
         }
         @FXML
         private void handleCancel() {
@@ -64,10 +65,12 @@ public class ScreenLibraryManager extends ConnectionToBD {
                 try {
                     connectionBD();
                     ResultSet rs;
-                    rs = stmt.executeQuery("select name_library from personal_library;");
+                    rs = stmt.executeQuery("select personal_library.library_title " +
+                            "from personal_library " +
+                            "join account i2 on personal_library.id_account = i2.id_this_account;");
                     while(rs.next()) {
 
-                        String nameLibrary = rs.getString("name_library");
+                        String nameLibrary = rs.getString("library_title");
                         stdOut.println("Name: " + nameLibrary);
                         libraryList.add(new ViewListLibrary(nameLibrary));
                         stdOut.println("tableList: " + libraryList);
