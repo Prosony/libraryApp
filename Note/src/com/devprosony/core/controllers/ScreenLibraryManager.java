@@ -1,6 +1,7 @@
 package com.devprosony.core.controllers;
 
 import com.devprosony.core.ConnectionToBD;
+import com.devprosony.core.SceneManager;
 import com.devprosony.core.controllers.model.ViewListLibrary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,16 +37,17 @@ public class ScreenLibraryManager extends ConnectionToBD {
 
         }
         @FXML
-        private void openLibrary(){
+        public String openLibrary(){
             String nameLibrary = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-                connectionBD();
-                connectionClose();
             stdOut.println("\ntext: " + nameLibrary);
-
+            dialogStage.close();
+            return  nameLibrary;
         }
         @FXML
-        private void handleCancel() {
+        private String handleCancel() {
+
             dialogStage.close();
+            return null;
         }
 
         @FXML

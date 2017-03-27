@@ -2,6 +2,7 @@ package com.devprosony.core;
 
 import com.devprosony.Main;
 import com.devprosony.core.controllers.ScreenLibraryManager;
+import com.devprosony.core.controllers.ScreenMain;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import static com.devprosony.Main.setHeightAndWidth;
+import static com.devprosony.Main.stdOut;
 
 /**
  * Created by ${Prosony} on ${24.01.2016}.
@@ -59,7 +61,7 @@ abstract public class SceneManager {
     }
 
 
-    public void showTableListLibrary() {
+    public String showTableListLibrary() {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
 
@@ -81,11 +83,14 @@ abstract public class SceneManager {
             controllerLibrary.setDialogStage(dialogStage);
 
             // Show the dialog and wait until the user closes it
-            dialogStage.show();
-            // return controller.isOkClicked();
+            dialogStage.showAndWait();
+            String libraryTitle = controllerLibrary.openLibrary();
+            stdOut.println("libraryTitle: " + libraryTitle);
+            return libraryTitle;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
@@ -109,5 +114,4 @@ abstract public class SceneManager {
         dragOffsetX = e.getScreenX() - primaryStage.getX();
         dragOffsetY = e.getScreenY() - primaryStage.getY();
     }
-
 }
