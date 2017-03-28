@@ -1,28 +1,28 @@
 package com.devprosony.core.controllers.model;
-
 /**
  * Created by Prosony on 22/03/17.
  */
 public class TableDataView {
 
-    private String nameBook;
+    private String bookTitle;
 
-    public TableDataView(String nameBook) {
-        this.nameBook = nameBook;
-    }
+        public TableDataView(String bookTitle) {
+            this.bookTitle = bookTitle;
+        }
 
-    public TableDataView() {}
+        public TableDataView() {
+        }
 
-    public void setNameBook(String nameBook) {
-        this.nameBook = nameBook;
-    }
+        public String getbookTitle() {
+            return bookTitle;
+        }
 
-    public String getNameBook() {
-        return nameBook;
-    }
+        public void setbookTitle(String bookTitle) {
+            this.bookTitle = bookTitle;
+        }
 
     @Override
     public String toString() {
-        return  nameBook;
+        return  bookTitle;
     }
 }

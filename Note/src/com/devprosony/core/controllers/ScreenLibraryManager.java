@@ -21,13 +21,12 @@ import static com.devprosony.Main.stdOut;
  */
 public class ScreenLibraryManager extends ConnectionToBD {
 
-        @FXML
-        public TableView<ViewListLibrary> tableListLibrary;
-        @FXML
-        public TableColumn<ViewListLibrary, String> nameLibrary;
+            @FXML public TableView<ViewListLibrary> tableListLibrary;
+            @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
+
+            private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
 
         private Stage dialogStage;
-        private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
 
         public ScreenLibraryManager() throws SQLException {
         }
