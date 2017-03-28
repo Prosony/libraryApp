@@ -37,6 +37,7 @@ public class ScreenMain extends ConnectionToBD  {
     public TableColumn<TableDataView, String> bookTitle;
 
     private ObservableList<TableDataView> bookList = FXCollections.observableArrayList();
+
     private Stage primaryStage;
     private ResultSet rs;
     private int count = 0;

@@ -19,9 +19,9 @@ abstract public class ConnectionToBD {
     }
 
     public void connectionBD() {
-        final String URL = "jdbc:mysql://localhost:3306/library?autoReconnect=true&useSSL=false";
+        final String URL = "jdbc:mysql://localhost:3306/llibrary?autoReconnect=true&useSSL=false";
         final String USERNAME = "root";
-        final String PASSWORD = "root";
+        final String PASSWORD = "Pl0Ok9Ij8";
         try {
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);

@@ -53,6 +53,7 @@ public class ScreenLibraryManager extends ConnectionToBD {
         @FXML
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
+            stdOut.println("thread open ");
             Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
             threadSetTableListLibrary.start();
         }
@@ -70,8 +71,8 @@ public class ScreenLibraryManager extends ConnectionToBD {
                     rs = stmt.executeQuery("select personal_library.library_title " +
                             "from personal_library " +
                             "join account i2 on personal_library.id_account = i2.id_this_account;");
-                    while(rs.next()) {
 
+                    while(rs.next()) {
                         String nameLibrary = rs.getString("library_title");
                         stdOut.println("Name: " + nameLibrary);
                         libraryList.add(new ViewListLibrary(nameLibrary));
