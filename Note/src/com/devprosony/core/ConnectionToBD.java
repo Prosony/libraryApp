@@ -46,5 +46,29 @@ abstract public class ConnectionToBD {
         }
 
     }
+    public ResultSet getLibraryTitleFromDB(){
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("select personal_library.library_title " +
+                    "from personal_library " +
+                    "join account i2 on personal_library.id_account = i2.id_this_account;");
+            return rs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    public ResultSet getBooksFromDB(String libraryTitle){
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery("select books.book_title from books join personal_library i1 " +
+                    "on books.id_personal_library = i1.id_this_personal_library " +
+                    "where library_title = '"+libraryTitle+"';");
+            return rs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

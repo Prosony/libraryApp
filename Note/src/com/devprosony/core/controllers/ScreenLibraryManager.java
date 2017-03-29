@@ -21,20 +21,12 @@ import static com.devprosony.Main.stdOut;
  */
 public class ScreenLibraryManager extends ConnectionToBD {
 
-            @FXML public TableView<ViewListLibrary> tableListLibrary;
-            @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
+        private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
 
-            private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
-
+        @FXML public TableView<ViewListLibrary> tableListLibrary;
+        @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
         private Stage dialogStage;
-
-        public ScreenLibraryManager() throws SQLException {
-        }
-
-        public void setDialogStage(Stage dialogStage) {
-            this.dialogStage = dialogStage;
-
-        }
+        public ScreenLibraryManager() throws SQLException {}
         @FXML
         public String openLibrary(){
             String nameLibrary = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
@@ -48,7 +40,6 @@ public class ScreenLibraryManager extends ConnectionToBD {
             dialogStage.close();
             return null;
         }
-
         @FXML
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
@@ -57,7 +48,9 @@ public class ScreenLibraryManager extends ConnectionToBD {
             threadSetTableListLibrary.start();
         }
 
-
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
     /**
      * The thread takes name library from the DB and fills the Table
      */
@@ -66,18 +59,14 @@ public class ScreenLibraryManager extends ConnectionToBD {
             public void run(){
                 try {
                     connectionBD();
-                    ResultSet rs;
-                    rs = stmt.executeQuery("select personal_library.library_title " +
-                            "from personal_library " +
-                            "join account i2 on personal_library.id_account = i2.id_this_account;");
-
+                    ResultSet rs = getLibraryTitleFromDB();
                     while(rs.next()) {
                         String nameLibrary = rs.getString("library_title");
                         stdOut.println("Name: " + nameLibrary);
                         libraryList.add(new ViewListLibrary(nameLibrary));
                         stdOut.println("tableList: " + libraryList);
-
                     }
+                    stdOut.println("\n");
                     libraryList.forEach(System.out::println);
                     tableListLibrary.setItems(libraryList);
                     connectionClose();
@@ -86,5 +75,4 @@ public class ScreenLibraryManager extends ConnectionToBD {
                 }
             }
         }
-
 }

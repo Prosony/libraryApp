@@ -4,25 +4,21 @@ package com.devprosony.core.controllers.model;
  */
 public class TableDataView {
 
-    private String bookTitle;
+    private String booksTitle;
 
-        public TableDataView(String bookTitle) {
-            this.bookTitle = bookTitle;
-        }
-
-        public TableDataView() {
-        }
-
-        public String getbookTitle() {
-            return bookTitle;
-        }
-
-        public void setbookTitle(String bookTitle) {
-            this.bookTitle = bookTitle;
-        }
-
-    @Override
-    public String toString() {
-        return  bookTitle;
+    public TableDataView(String titleBooks) {
+        this.booksTitle= titleBooks;
     }
+
+    public TableDataView() {
+    }
+
+    public String getBookTitle() {
+        return booksTitle;
+    }
+
+    public void setBookTitle(String titleBooks) {
+        this.booksTitle = booksTitle;
+    }
+
 }
