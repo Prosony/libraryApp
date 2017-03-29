@@ -30,6 +30,10 @@ abstract public class SceneManager {
     private double xOffset;
     private double yOffset;
 
+/********************************************************************************
+*                       Create SingIn and Main Stage                            *
+* ******************************************************************************/
+
     protected SceneManager(){
         primaryStage = Main.getPrimaryStage();
     }
@@ -59,30 +63,9 @@ abstract public class SceneManager {
         primaryStage.show();
         movingMainStage(sceneSingIn);
     }
-    /********************************************************************************
-     *                       Show panel for selection library                       *
-     * *****************************************************************************/
-    public void showPanelRenameLibrary(String oldlibraryTitle) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("core/controllers/view/PanelRenameLibrary.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();
-        dialogRenameLibraryStage = new Stage();
-        dialogRenameLibraryStage.initModality(Modality.WINDOW_MODAL);
-        dialogRenameLibraryStage.initOwner(dialogPaneLibraryStage);
-        dialogRenameLibraryStage.initStyle(StageStyle.TRANSPARENT);
-        Scene scene = new Scene(page);
-        dialogRenameLibraryStage.setScene(scene);
-
-        ScreenRenameLibrary screenRenameLibrary = loader.getController();
-        screenRenameLibrary.setDialogStage(dialogRenameLibraryStage);
-        screenRenameLibrary.setOldLibraryTitle(oldlibraryTitle);
-        movingRenameLibraryStageModal(scene);
-        dialogRenameLibraryStage.showAndWait();
-
-    }
-    /********************************************************************************
-     *                       Show panel for selection library                       *
-     * *****************************************************************************/
+/********************************************************************************
+*                       Show Panel SelectionLibrary                             *
+* ******************************************************************************/
     public String showPanelLibrary() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -97,7 +80,7 @@ abstract public class SceneManager {
             // Set the person into the controller.
             ScreenLibraryManager controllerLibrary = loader.getController();
             controllerLibrary.setDialogStage(dialogPaneLibraryStage);
-            /**     Show the dialog and wait until the user closes it     */
+            /**     Show the dialog and wait until the user close0s it     */
             movingLibraryStageModal(scenePaneLibtaty);
             dialogPaneLibraryStage.showAndWait();
             /**       start when dialogStage will be close                */
@@ -110,6 +93,39 @@ abstract public class SceneManager {
         }
         return null;
     }
+
+/********************************************************************************
+*                       Create a pane for the context menu                      *
+* *********************************************************************************************
+                 *                       Show panel for Rename library                          *
+                 * *****************************************************************************/
+                public boolean showPanelRenameLibrary(String oldlibraryTitle) throws IOException {
+                    String newLibraryTitle = null;
+
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(Main.class.getResource("core/controllers/view/PanelRenameLibrary.fxml"));
+                    AnchorPane page = (AnchorPane) loader.load();
+                    dialogRenameLibraryStage = new Stage();
+                    dialogRenameLibraryStage.initModality(Modality.WINDOW_MODAL);
+                    dialogRenameLibraryStage.initOwner(dialogPaneLibraryStage);
+                    dialogRenameLibraryStage.initStyle(StageStyle.TRANSPARENT);
+                    Scene scene = new Scene(page);
+                    dialogRenameLibraryStage.setScene(scene);
+
+                    ScreenRenameLibrary screenRenameLibrary = loader.getController();
+                    screenRenameLibrary.setDialogStage(dialogRenameLibraryStage);
+                    screenRenameLibrary.setOldLibraryTitle(oldlibraryTitle);
+
+                    movingRenameLibraryStageModal(scene);
+                    dialogRenameLibraryStage.showAndWait();
+
+                    return screenRenameLibrary.getNewLibraryTitle();
+                }
+
+                public void showPanelDeleteLibrary(String libraryTitle){
+                    //TODO
+                }
+
     /********************************************************************************
      *                              Moving scene                                    *
      * *****************************************************************************/

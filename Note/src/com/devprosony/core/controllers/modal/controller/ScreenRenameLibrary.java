@@ -14,12 +14,12 @@ import static com.devprosony.Main.stdOut;
  * Created by proso on 3/29/2017.
  */
 public class ScreenRenameLibrary extends ConnectionToBD{
-    @FXML
-    TextField textFieldForNewLibraryTitle;
+
+    @FXML TextField textFieldForNewLibraryTitle;
 
     private Stage dialogRenameLibraryStage;
     private String oldLibraryTitle;
-
+    private String newLibraryTitle;
     public ScreenRenameLibrary() throws SQLException {}
 
     public void setDialogStage(Stage dialogRenameLibraryStage) { this.dialogRenameLibraryStage = dialogRenameLibraryStage; }
@@ -33,7 +33,7 @@ public class ScreenRenameLibrary extends ConnectionToBD{
      *                              Button ActionEvents                             *
      * *****************************************************************************/
     public void clickRenameLibrary(ActionEvent actionEvent) {
-        String newLibraryTitle = textFieldForNewLibraryTitle.getText();
+        newLibraryTitle = textFieldForNewLibraryTitle.getText();
 
         if (newLibraryTitle.equals(oldLibraryTitle)){
             stdOut.println("newLibraryTitle = oldLibraryTitle");
@@ -47,6 +47,7 @@ public class ScreenRenameLibrary extends ConnectionToBD{
         stdOut.println("Press Cancel");
         dialogRenameLibraryStage.close();
     }
+
     /********************************************************************************
     *                              Other Methods                                    *
     * ******************************************************************************/
@@ -55,5 +56,16 @@ public class ScreenRenameLibrary extends ConnectionToBD{
         stdOut.println("oldLibraryTitle: " + oldLibraryTitle);
         textFieldForNewLibraryTitle.setPromptText(oldLibraryTitle);
     }
-
+    public boolean getNewLibraryTitle(){
+        if (newLibraryTitle == "null"){
+            /*** libraryTitle was do not change and method will return false*/
+            stdOut.println("false. oldLibraryTitle: " + oldLibraryTitle
+                    +"\n"+"newLibraryTitle: " + newLibraryTitle);
+            return false;
+        }
+        /*** libraryTitle was change and method will return true*/
+        stdOut.println("true. oldLibraryTitle: " + oldLibraryTitle
+                            +"\n"+"newLibraryTitle: " + newLibraryTitle);
+            return true;
+    }
 }

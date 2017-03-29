@@ -25,9 +25,9 @@
          <contextMenu>
             <ContextMenu>
               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#contextMenuCreatLibrary" text="Create Library" />
-                <MenuItem mnemonicParsing="false" onAction="#contextMenuRenameLibrary" text="Rename Library" />
-                  <MenuItem mnemonicParsing="false" onAction="#contextMenuDeleteLibrary" text="Delete Library" />
+                  <MenuItem text="Create Library" onAction="#contextMenuCreatLibrary" mnemonicParsing="false"  />
+                <MenuItem text="Rename Library" onAction="#contextMenuRenameLibrary" mnemonicParsing="false" />
+                  <MenuItem text="Delete Library" onAction="#contextMenuDeleteLibrary"  mnemonicParsing="false" />
               </items>
             </ContextMenu>
          </contextMenu>

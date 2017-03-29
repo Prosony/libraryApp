@@ -70,17 +70,28 @@ public class ScreenLibraryManager extends ConnectionToBD {
     }
 
     public void contextMenuRenameLibrary(ActionEvent actionEvent) {
-        String localLibraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-        stdOut.println("libraryTitle: " + localLibraryTitle);
+        String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
+
+        stdOut.println("libraryTitle: " + libraryTitleFromTableListSelected);
         try {
-            sceneManager.showPanelRenameLibrary(localLibraryTitle);
+
+            boolean libraryWasChange = sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
+            /**
+             * If library title was change, that libraryWasChange = true,
+             * and new thread will be created and he update TableListTitle in panel
+             */
+            if(libraryWasChange){
+                stdOut.println("Update dataset in table with new Thread");
+                Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+                threadSetTableListLibrary.start();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void contextMenuDeleteLibrary(ActionEvent actionEvent) {
-        //todo
+
     }
 
     /********************************************************************************
@@ -90,6 +101,7 @@ public class ScreenLibraryManager extends ConnectionToBD {
             @Override
             public void run(){
                 try {
+                    libraryList.clear();
                     connectionBD();
                     ResultSet rs = getLibraryTitleFromDB();
                     while(rs.next()) {
