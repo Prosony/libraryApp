@@ -1,7 +1,6 @@
 package com.devprosony.core.controllers.modal.controller;
 
 import com.devprosony.core.ConnectionToBD;
-import com.devprosony.core.SceneManager;
 import com.devprosony.core.controllers.model.ViewListLibrary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

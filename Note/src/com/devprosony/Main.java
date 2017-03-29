@@ -1,6 +1,6 @@
 package com.devprosony;
 
-import com.devprosony.core.SceneManager;
+import com.devprosony.core.controllers.manager.stage.SceneManager;
 import javafx.application.Application;
 
 import javafx.stage.Stage;

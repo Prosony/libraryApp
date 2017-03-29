@@ -1,4 +1,4 @@
-package com.devprosony.core;
+package com.devprosony.core.controllers.manager.stage;
 
 import com.devprosony.Main;
 import com.devprosony.core.controllers.modal.controller.ScreenLibraryManager;
@@ -43,7 +43,7 @@ abstract public class SceneManager {
         System.out.printf("switchScene");
         primaryStage.setScene(sceneMain);
         setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
-        movingScene(sceneMain);
+        movingMainStage(sceneMain);
     }
     public void loadScene(){
         try {
@@ -57,7 +57,7 @@ abstract public class SceneManager {
         primaryStage.centerOnScreen();
         primaryStage.setScene(sceneSingIn);
         primaryStage.show();
-        movingScene(sceneSingIn);
+        movingMainStage(sceneSingIn);
     }
     /********************************************************************************
      *                       Show panel for selection library                       *
@@ -69,12 +69,14 @@ abstract public class SceneManager {
         dialogRenameLibraryStage = new Stage();
         dialogRenameLibraryStage.initModality(Modality.WINDOW_MODAL);
         dialogRenameLibraryStage.initOwner(dialogPaneLibraryStage);
+        dialogRenameLibraryStage.initStyle(StageStyle.TRANSPARENT);
         Scene scene = new Scene(page);
         dialogRenameLibraryStage.setScene(scene);
 
         ScreenRenameLibrary screenRenameLibrary = loader.getController();
         screenRenameLibrary.setDialogStage(dialogRenameLibraryStage);
         screenRenameLibrary.setOldLibraryTitle(oldlibraryTitle);
+        movingRenameLibraryStageModal(scene);
         dialogRenameLibraryStage.showAndWait();
 
     }
@@ -96,7 +98,7 @@ abstract public class SceneManager {
             ScreenLibraryManager controllerLibrary = loader.getController();
             controllerLibrary.setDialogStage(dialogPaneLibraryStage);
             /**     Show the dialog and wait until the user closes it     */
-            movingSceneModal(scenePaneLibtaty);
+            movingLibraryStageModal(scenePaneLibtaty);
             dialogPaneLibraryStage.showAndWait();
             /**       start when dialogStage will be close                */
             stdOut.println("dialogStage closed");
@@ -111,33 +113,40 @@ abstract public class SceneManager {
     /********************************************************************************
      *                              Moving scene                                    *
      * *****************************************************************************/
-    private void movingScene(Scene scene) {
-
-        scene.setOnMousePressed(SceneManager::handleMousePressed);
-        scene.setOnMouseDragged(SceneManager::handleMouseDragged);
-    }
-    private static void handleMouseDragged(MouseEvent e) {
-        // Move the stage by the drag amount
-        primaryStage.setX(e.getScreenX() - dragOffsetX);
-        primaryStage.setY(e.getScreenY() - dragOffsetY);
-    }
-    private static void handleMousePressed(MouseEvent e) {
-        // Store the mouse x and y coordinates with respect to the
-        // stage in the reference variables to use them in the drag event
-        dragOffsetX = e.getScreenX() - primaryStage.getX();
-        dragOffsetY = e.getScreenY() - primaryStage.getY();
-    }
-    private void movingSceneModal(Scene scenePaneLibtaty){
+    private void movingMainStage(Scene scene) {
+        scene.setOnMousePressed(event -> {
+            dragOffsetX = primaryStage.getX() - event.getScreenX();
+            dragOffsetY = primaryStage.getY() - event.getScreenY();
+        });
+        //Lambda mouse event handler
+        scene.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() + dragOffsetX);
+            primaryStage.setY(event.getScreenY() + dragOffsetY);
+        });
+       }
+//____________________moving_Library_Stage_Modal______________________________________
+    private void movingLibraryStageModal(Scene scenePaneLibtaty){
         scenePaneLibtaty.setOnMousePressed(event -> {
-            xOffset = dialogPaneLibraryStage.getX() - event.getScreenX();
-            yOffset = dialogPaneLibraryStage.getY() - event.getScreenY();
+            dragOffsetX = dialogPaneLibraryStage.getX() - event.getScreenX();
+            dragOffsetY = dialogPaneLibraryStage.getY() - event.getScreenY();
         });
         //Lambda mouse event handler
         scenePaneLibtaty.setOnMouseDragged(event -> {
-            dialogPaneLibraryStage.setX(event.getScreenX() + xOffset);
-            dialogPaneLibraryStage.setY(event.getScreenY() + yOffset);
+            dialogPaneLibraryStage.setX(event.getScreenX() + dragOffsetX);
+            dialogPaneLibraryStage.setY(event.getScreenY() + dragOffsetY);
         });
     }
-
+//____________________moving_Rename_Library_Stage_Modal_______________________________
+    private void movingRenameLibraryStageModal(Scene scenePaneLibtaty){
+        scenePaneLibtaty.setOnMousePressed(event -> {
+            dragOffsetX = dialogRenameLibraryStage.getX() - event.getScreenX();
+            dragOffsetY = dialogRenameLibraryStage.getY() - event.getScreenY();
+        });
+        //Lambda mouse event handler
+        scenePaneLibtaty.setOnMouseDragged(event -> {
+            dialogRenameLibraryStage.setX(event.getScreenX() + dragOffsetX);
+            dialogRenameLibraryStage.setY(event.getScreenY() + dragOffsetY);
+        });
+    }
 
 }
