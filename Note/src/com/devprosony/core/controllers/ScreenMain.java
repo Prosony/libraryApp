@@ -46,7 +46,7 @@ public class ScreenMain extends ConnectionToBD {
         chestBooks.add(new TableDataView(" Library"));
     }
     public void clickMenuItemGetLibrary(){
-        String libraryTitle = sceneManager.showTableListLibrary();
+        String libraryTitle = sceneManager.showPanelLibrary();
         stdOut.println("libraryTitle: " + libraryTitle);
         setTableDataFromLibrary(libraryTitle);
     }

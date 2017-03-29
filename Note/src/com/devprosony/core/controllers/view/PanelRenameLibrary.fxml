@@ -9,11 +9,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="250.0"
             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.devprosony.core.controllers.modal.controller.ScreenRenameLibrary">
+            styleClass="background" fx:controller="com.devprosony.core.controllers.modal.controller.ScreenRenameLibrary"
+            stylesheets="@css/generalCSS/BlackTheme(General).css" >
    <children>
-      <Button fx:id="buttonRenameLibrary" text="Rename" layoutX="140.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" />
-      <Button fx:id="buttonCanselRenameLibrary" text="Cansel" onAction="#clickCancelRenameLibrary" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" />
-      <TextField layoutX="10.0" layoutY="44.0" prefHeight="40.0" prefWidth="230.0" />
+
+      <Button fx:id="buttonRenameLibrary" text="Rename" onAction="#clickRenameLibrary" layoutX="140.0"
+              layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" />
+      <Button fx:id="buttonCanselRenameLibrary" text="Cansel" onAction="#clickCancelRenameLibrary"
+              layoutX="10.0" layoutY="90.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" />
+
+      <TextField fx:id="textFieldForNewLibraryTitle" layoutX="10.0" layoutY="44.0" prefHeight="40.0" prefWidth="230.0" />
       <Label layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="157.0" text="Rename Library">
          <font>
             <Font size="15.0" />

@@ -2,27 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenLibraryManager$ThreadSetTableListLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenLibraryManager.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/ConnectionToBD.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/ConnectionToBD.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/SceneManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/SceneManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/GetLibrary.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/GetLibrary.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,15 +91,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnectionToBD.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java">
+      <file leaf-file-name="SceneManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <marker date="1490794247225" expanded="true" signature="1871:2048" ph="select perso... personal_library" />
-                <marker date="1490794247225" expanded="true" signature="2312:2521" ph="select books... books" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="70" column="65" lean-forward="false" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,8 +104,8 @@
       <file leaf-file-name="ScreenMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+            <state relative-caret-position="68">
+              <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,43 +116,8 @@
       <file leaf-file-name="ScreenLibraryManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="76" column="50" lean-forward="true" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PanelRenameLibrary.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="97" lean-forward="false" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScreenRenameLibrary.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SceneManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="99" column="76" lean-forward="false" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
+            <state relative-caret-position="-416">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -243,15 +196,15 @@
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" />
       </list>
     </option>
   </component>
@@ -399,6 +352,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devprosony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1052,12 +1035,12 @@
       <workItem from="1490548182259" duration="9291000" />
       <workItem from="1490594804586" duration="8175000" />
       <workItem from="1490616071344" duration="1111000" />
-      <workItem from="1490776509301" duration="12859000" />
+      <workItem from="1490776509301" duration="18403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194749000" />
+    <option name="totallyTimeSpent" value="200293000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1070,23 +1053,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2195122" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21865444" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16944024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19591528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4557927" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1170,7 +1154,6 @@
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/view/Screen3.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/view/Screen2.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/view/Screen1.fxml" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/view/css/BlackTheme.css" />
     <entry file="file://$PROJECT_DIR$/src/sample/controllers/view/css/BlackTheme[LogIn].css" />
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/JMetroDarkTheme.css">
@@ -1316,17 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="87" lean-forward="false" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1338,47 +1310,42 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/event/EventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="99" column="76" lean-forward="false" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
+        <state relative-caret-position="357">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="76" column="50" lean-forward="true" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/ConnectionToBD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
           <folding>
-            <marker date="1490794247225" expanded="true" signature="1871:2048" ph="select perso... personal_library" />
-            <marker date="1490794247225" expanded="true" signature="2312:2521" ph="select books... books" />
+            <marker date="1490808938246" expanded="true" signature="1873:2050" ph="select perso... personal_library" />
+            <marker date="1490808938246" expanded="true" signature="2314:2523" ph="select books... books" />
+            <marker date="1490808938246" expanded="true" signature="3080:3150" ph="update perso... " />
+            <marker date="1490808938246" expanded="true" signature="3080:3237" ph="update perso... " />
+            <marker date="1490808938246" expanded="true" signature="3080:3239" ph="update perso... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="42" column="8" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="97" lean-forward="false" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
+        <state relative-caret-position="170">
+          <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
           <folding />
         </state>
       </provider>
@@ -1386,13 +1353,40 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenRenameLibrary.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetLibrary.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="51">
+          <caret line="3" column="43" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/ScreenLibraryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="70" column="65" lean-forward="false" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

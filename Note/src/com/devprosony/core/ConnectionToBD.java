@@ -29,7 +29,7 @@ abstract public class ConnectionToBD {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             stmt = connection.createStatement();
             if (!(connection.isClosed())) {
-                System.out.printf("Connection to BD is installed");
+                System.out.println("Connection to BD is installed");
             }
 
         } catch (SQLException e) {
@@ -41,7 +41,7 @@ abstract public class ConnectionToBD {
         try {
             connection.close();
             if (connection.isClosed()) {
-                System.out.printf("Connection is closed");
+                System.out.println("Connection is closed");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,7 +49,7 @@ abstract public class ConnectionToBD {
 
     }
  /********************************************************************************
- *                   Methods for execute query and return result                 *
+ *                      Methods for execute query SELECT                         *
  * ******************************************************************************/
 
     public ResultSet getLibraryTitleFromDB(){
@@ -77,4 +77,20 @@ abstract public class ConnectionToBD {
         }
         return null;
     }
+/********************************************************************************
+ *                      Methods for execute query UPDATE                         *
+ * ******************************************************************************/
+    public void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
+        ResultSet rs;
+        connectionBD();
+        try {
+            stmt.executeUpdate("update personal_library " +
+                    "set library_title = '"+newLibraryTitle+"' " +
+                    "where library_title = '"+oldLibraryTitle+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connectionClose();
+    }
+
 }

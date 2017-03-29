@@ -74,7 +74,7 @@ public class ScreenLibraryManager extends ConnectionToBD {
         String localLibraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
         stdOut.println("libraryTitle: " + localLibraryTitle);
         try {
-            sceneManager.showPanelRenameLibrary();
+            sceneManager.showPanelRenameLibrary(localLibraryTitle);
         } catch (IOException e) {
             e.printStackTrace();
         }

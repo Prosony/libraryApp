@@ -25,8 +25,10 @@ abstract public class SceneManager {
     private static double dragOffsetX;
     private static double dragOffsetY;
     private static Stage primaryStage;
-    private static Stage dialogStage;
+    private static Stage dialogPaneLibraryStage;
     private static Stage dialogRenameLibraryStage;
+    private double xOffset;
+    private double yOffset;
 
     protected SceneManager(){
         primaryStage = Main.getPrimaryStage();
@@ -60,41 +62,42 @@ abstract public class SceneManager {
     /********************************************************************************
      *                       Show panel for selection library                       *
      * *****************************************************************************/
-    public void showPanelRenameLibrary() throws IOException {
+    public void showPanelRenameLibrary(String oldlibraryTitle) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("core/controllers/view/PanelRenameLibrary.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
         dialogRenameLibraryStage = new Stage();
         dialogRenameLibraryStage.initModality(Modality.WINDOW_MODAL);
-        dialogRenameLibraryStage.initOwner(dialogStage);
+        dialogRenameLibraryStage.initOwner(dialogPaneLibraryStage);
         Scene scene = new Scene(page);
         dialogRenameLibraryStage.setScene(scene);
 
         ScreenRenameLibrary screenRenameLibrary = loader.getController();
         screenRenameLibrary.setDialogStage(dialogRenameLibraryStage);
-
+        screenRenameLibrary.setOldLibraryTitle(oldlibraryTitle);
         dialogRenameLibraryStage.showAndWait();
 
     }
     /********************************************************************************
      *                       Show panel for selection library                       *
      * *****************************************************************************/
-    public String showTableListLibrary() {
+    public String showPanelLibrary() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("core/controllers/view/GetLibrary.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
-            dialogStage = new Stage();
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(primaryStage);
-            dialogStage.initStyle(StageStyle.TRANSPARENT);
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
+            dialogPaneLibraryStage = new Stage();
+            dialogPaneLibraryStage.initModality(Modality.WINDOW_MODAL);
+            dialogPaneLibraryStage.initOwner(primaryStage);
+            dialogPaneLibraryStage.initStyle(StageStyle.TRANSPARENT);
+            Scene scenePaneLibtaty = new Scene(page);
+            dialogPaneLibraryStage.setScene(scenePaneLibtaty);
             // Set the person into the controller.
             ScreenLibraryManager controllerLibrary = loader.getController();
-            controllerLibrary.setDialogStage(dialogStage);
+            controllerLibrary.setDialogStage(dialogPaneLibraryStage);
             /**     Show the dialog and wait until the user closes it     */
-            dialogStage.showAndWait();
+            movingSceneModal(scenePaneLibtaty);
+            dialogPaneLibraryStage.showAndWait();
             /**       start when dialogStage will be close                */
             stdOut.println("dialogStage closed");
             String libraryTitle = controllerLibrary.getLibraryTitle();      /////fix
@@ -124,4 +127,17 @@ abstract public class SceneManager {
         dragOffsetX = e.getScreenX() - primaryStage.getX();
         dragOffsetY = e.getScreenY() - primaryStage.getY();
     }
+    private void movingSceneModal(Scene scenePaneLibtaty){
+        scenePaneLibtaty.setOnMousePressed(event -> {
+            xOffset = dialogPaneLibraryStage.getX() - event.getScreenX();
+            yOffset = dialogPaneLibraryStage.getY() - event.getScreenY();
+        });
+        //Lambda mouse event handler
+        scenePaneLibtaty.setOnMouseDragged(event -> {
+            dialogPaneLibraryStage.setX(event.getScreenX() + xOffset);
+            dialogPaneLibraryStage.setY(event.getScreenY() + yOffset);
+        });
+    }
+
+
 }
