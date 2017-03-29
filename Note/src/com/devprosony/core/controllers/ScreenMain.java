@@ -31,7 +31,6 @@ public class ScreenMain extends ConnectionToBD {
     @FXML private TableColumn<TableDataView, String> booksTitle;
     @FXML private TableView<TableDataView> tableBooks;
 
-
     @FXML
     private void initialize() {
         initData();
@@ -42,21 +41,15 @@ public class ScreenMain extends ConnectionToBD {
         stdOut.println("Hey from Screen2Controller controller");
     }
 
-
-
-
     private void initData() {
         chestBooks.add(new TableDataView("Select"));
         chestBooks.add(new TableDataView(" Library"));
     }
     public void clickMenuItemGetLibrary(){
-        //TODO
         String libraryTitle = sceneManager.showTableListLibrary();
         stdOut.println("libraryTitle: " + libraryTitle);
         setTableDataFromLibrary(libraryTitle);
     }
-
-
 
     private void setTableDataFromLibrary(String libraryTitle) {
         ResultSet resultSet;
@@ -79,10 +72,9 @@ public class ScreenMain extends ConnectionToBD {
             stdOut.println("null");
         }
     }
-
-    /******************************************************
-     *                  |Other Methods|                   *
-     *****************************************************/
+/********************************************************************************
+*                              Other Metods                                     *
+* ******************************************************************************/
     public void clickMenuItemExit() {System.exit(0);}
     public void buttonSystemExit(){
         System.exit(0);

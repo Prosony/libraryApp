@@ -14,9 +14,11 @@ abstract public class ConnectionToBD {
     private Connection connection;
     private Driver driver = new FabricMySQLDriver();
 
-
     public ConnectionToBD() throws SQLException {
     }
+/********************************************************************************
+*                   Methods for connect/disconnect DataBase                     *
+* ******************************************************************************/
 
     public void connectionBD() {
         final String URL = "jdbc:mysql://localhost:3306/llibrary?autoReconnect=true&useSSL=false";
@@ -46,6 +48,10 @@ abstract public class ConnectionToBD {
         }
 
     }
+ /********************************************************************************
+ *                   Methods for execute query and return result                 *
+ * ******************************************************************************/
+
     public ResultSet getLibraryTitleFromDB(){
         ResultSet rs;
         try {

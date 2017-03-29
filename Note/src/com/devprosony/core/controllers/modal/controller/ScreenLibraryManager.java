@@ -1,19 +1,22 @@
-package com.devprosony.core.controllers;
+package com.devprosony.core.controllers.modal.controller;
 
 import com.devprosony.core.ConnectionToBD;
 import com.devprosony.core.SceneManager;
 import com.devprosony.core.controllers.model.ViewListLibrary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static com.devprosony.Main.sceneManager;
 import static com.devprosony.Main.stdOut;
 
 /**
@@ -26,20 +29,10 @@ public class ScreenLibraryManager extends ConnectionToBD {
         @FXML public TableView<ViewListLibrary> tableListLibrary;
         @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
         private Stage dialogStage;
+        private String libraryTitle;
         public ScreenLibraryManager() throws SQLException {}
-        @FXML
-        public String openLibrary(){
-            String nameLibrary = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-            stdOut.println("\ntext: " + nameLibrary);
-            dialogStage.close();
-            return  nameLibrary;
-        }
-        @FXML
-        private String handleCancel() {
 
-            dialogStage.close();
-            return null;
-        }
+
         @FXML
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
@@ -51,9 +44,49 @@ public class ScreenLibraryManager extends ConnectionToBD {
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-    /**
-     * The thread takes name library from the DB and fills the Table
-     */
+
+    /********************************************************************************
+     *                              Button ActionEvents                             *
+     * *****************************************************************************/
+    public void openLibrary(){
+        stdOut.println("Open");
+        libraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
+        stdOut.println("\ntext: " + nameLibrary);
+        dialogStage.close();
+    }
+
+    public void pressCancel() {
+            stdOut.println("Press Cancel");
+            dialogStage.close();
+        }
+
+    public String getLibraryTitle(){
+            return libraryTitle;
+    }
+    /********************************************************************************
+     *                              ContextMenu ActionEvents                        *                                                *
+     * *****************************************************************************/
+    public void contextMenuCreatLibrary(ActionEvent actionEvent) {
+        //todo
+    }
+
+    public void contextMenuRenameLibrary(ActionEvent actionEvent) {
+        String localLibraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
+        stdOut.println("libraryTitle: " + localLibraryTitle);
+        try {
+            sceneManager.showPanelRenameLibrary();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void contextMenuDeleteLibrary(ActionEvent actionEvent) {
+        //todo
+    }
+
+    /********************************************************************************
+     *      The thread takes libraryTitle from the DB and fills the Table           *
+     *******************************************************************************/
     class ThreadSetTableListLibrary extends Thread{
             @Override
             public void run(){
