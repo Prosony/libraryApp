@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CssDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" dialect="CLASSIC" />
+    <file url="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/black/BlackTheme(Main).css" dialect="CLASSIC" />
   </component>
 </project>

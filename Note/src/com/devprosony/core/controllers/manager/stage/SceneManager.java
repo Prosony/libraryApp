@@ -40,7 +40,7 @@ abstract public class SceneManager {
 
     public void switchScene() {
      try {
-            sceneMain = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/main.fxml")));
+            sceneMain = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/ScreenMain.fxml")));
      } catch (IOException e) {
             e.printStackTrace();
      }
@@ -57,7 +57,7 @@ abstract public class SceneManager {
         }
 
         primaryStage.initStyle(StageStyle.TRANSPARENT);
-        primaryStage.setOpacity(0.9);
+        //primaryStage.setOpacity(0.9);
         primaryStage.centerOnScreen();
         primaryStage.setScene(sceneSingIn);
         primaryStage.show();
