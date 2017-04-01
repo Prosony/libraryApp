@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="600.0" maxWidth="290.0" minHeight="400.0" minWidth="290.0" prefHeight="400.0" prefWidth="290.0"
             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            styleClass="background" stylesheets="@css/generalCSS/LightTheme(General).css"
+            styleClass="background" stylesheets="@css/light/generalCSS/LightTheme(General).css"
             fx:controller="com.devprosony.core.controllers.modal.controller.ScreenLibraryManager">
    <children>
       <Button layoutX="178.0" layoutY="346.0" mnemonicParsing="false" onAction="#openLibrary" prefHeight="40.0" prefWidth="98.0"

@@ -86,6 +86,7 @@ abstract public class SceneManager {
             /**       start when dialogStage will be close                */
             stdOut.println("dialogStage closed");
             String libraryTitle = controllerLibrary.getLibraryTitle();      /////fix
+            String oldLibraryTitle;
             stdOut.println("libraryTitle: " + libraryTitle);
             return libraryTitle;
         } catch (IOException e) {

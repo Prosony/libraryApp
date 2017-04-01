@@ -58,7 +58,9 @@ public class ScreenLibraryManager extends ConnectionToBD {
             stdOut.println("Press Cancel");
             dialogStage.close();
         }
-
+    /********************************************************************************
+     *                              Other Methods                                   *
+     * *****************************************************************************/
     public String getLibraryTitle(){
             return libraryTitle;
     }
@@ -104,6 +106,7 @@ public class ScreenLibraryManager extends ConnectionToBD {
                     libraryList.clear();
                     connectionBD();
                     ResultSet rs = getLibraryTitleFromDB();
+                    stdOut.println("rs: " + rs);
                     while(rs.next()) {
                         String nameLibrary = rs.getString("library_title");
                         stdOut.println("Name: " + nameLibrary);

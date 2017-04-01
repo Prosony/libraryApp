@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:library</introspection-schemas>
+      <introspection-schemas>*:llibrary</introspection-schemas>
       <resolve-scope>Library:</resolve-scope>
       <unqualified-resolve-schemas>Library:</unqualified-resolve-schemas>
     </data-source>

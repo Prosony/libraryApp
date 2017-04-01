@@ -81,7 +81,6 @@ abstract public class ConnectionToBD {
  *                      Methods for execute query UPDATE                         *
  * ******************************************************************************/
     public void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
-        ResultSet rs;
         connectionBD();
         try {
             stmt.executeUpdate("update personal_library " +

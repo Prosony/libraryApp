@@ -45,33 +45,35 @@ public class ScreenMain extends ConnectionToBD {
         chestBooks.add(new TableDataView("Select"));
         chestBooks.add(new TableDataView(" Library"));
     }
+/********************************************************************************
+*                      MenuBar -> MenuItem Methods                              *
+* ******************************************************************************/
     public void clickMenuItemGetLibrary(){
         String libraryTitle = sceneManager.showPanelLibrary();
         stdOut.println("libraryTitle: " + libraryTitle);
-        setTableDataFromLibrary(libraryTitle);
+        setBooksTitleToTableFromLibrary(libraryTitle);
     }
-
-    private void setTableDataFromLibrary(String libraryTitle) {
-        ResultSet resultSet;
-        chestBooks.clear();
-        if (libraryTitle != "null") {
-                    connectionBD();
-                    resultSet = getBooksFromDB(libraryTitle);
-                    try {
-                        while (resultSet.next()) {
-                            String nameBook = resultSet.getString("book_title");
-                            stdOut.println("Name: " + nameBook);
-                            chestBooks.add(new TableDataView(nameBook));
-                            tableBooks.setItems(chestBooks);
+                    private void setBooksTitleToTableFromLibrary(String libraryTitle) {
+                        ResultSet resultSet;
+                        if (libraryTitle != null) {
+                            chestBooks.clear();
+                            connectionBD();
+                                    resultSet = getBooksFromDB(libraryTitle);
+                                    try {
+                                        while (resultSet.next()) {
+                                            String nameBook = resultSet.getString("book_title");
+                                            stdOut.println("Name: " + nameBook);
+                                            chestBooks.add(new TableDataView(nameBook));
+                                            tableBooks.setItems(chestBooks);
+                                        }
+                                        connectionClose();
+                            } catch (SQLException e) {
+                                    e.printStackTrace();
+                            }
+                        } else {
+                            stdOut.println("null");
                         }
-                        connectionClose();
-            } catch (SQLException e) {
-                    e.printStackTrace();
-            }
-        } else {
-            stdOut.println("null");
-        }
-    }
+                    }
 /********************************************************************************
 *                              Other Metods                                     *
 * ******************************************************************************/
