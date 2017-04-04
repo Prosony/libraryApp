@@ -1,10 +1,11 @@
 package com.devprosony.core.controllers;
 
 import com.devprosony.Main;
-import com.devprosony.core.ConnectionToBD;
+import com.devprosony.core.DataBaseManager;
 import com.devprosony.core.controllers.model.TableDataView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
@@ -12,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -21,7 +23,7 @@ import static com.devprosony.Main.stdOut;
 /**
  * Created by ${Prosony} on ${24.01.2016}.
  */
-public class ScreenMain extends ConnectionToBD {
+public class ScreenMain extends DataBaseManager {
 
     private ObservableList<TableDataView> chestBooks = FXCollections.observableArrayList();
     private Main mainApp;
@@ -74,6 +76,29 @@ public class ScreenMain extends ConnectionToBD {
                             stdOut.println("null");
                         }
                     }
+
+/********************************************************************************
+ *                              ContextMenu ActionEvents                        *                                                *
+ * *****************************************************************************/
+    public void contextMenuAddBook(ActionEvent actionEvent) {
+        try {
+            sceneManager.showPanelAddBook();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void contextMenuOpenBook(ActionEvent actionEvent) {
+        //TODO
+    }
+
+    public void contextMenuEditBook(ActionEvent actionEvent) {
+        //TODO
+    }
+
+    public void contextMenuDeleteBook(ActionEvent actionEvent) {
+        //TODO
+    }
+
 /********************************************************************************
 *                              Other Metods                                     *
 * ******************************************************************************/
@@ -81,7 +106,6 @@ public class ScreenMain extends ConnectionToBD {
     public void buttonSystemExit(){
         System.exit(0);
     }
-
 
 }
 

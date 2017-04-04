@@ -4,18 +4,23 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.*;
 
+import static com.devprosony.Main.stdOut;
+
 
 /**
  * Created by Prosony on 23/03/17.
  */
-abstract public class ConnectionToBD {
+abstract public class DataBaseManager {
+
+    private static int idAccount;
+    private static String libraryTitle;
+    private static int idThisPersonalLibrary;
 
     public Statement stmt;
     private Connection connection;
     private Driver driver = new FabricMySQLDriver();
 
-    public ConnectionToBD() throws SQLException {
-    }
+    public DataBaseManager() throws SQLException {}
 /********************************************************************************
 *                   Methods for connect/disconnect DataBase                     *
 * ******************************************************************************/
@@ -92,4 +97,55 @@ abstract public class ConnectionToBD {
         connectionClose();
     }
 
+    public void createLibrary(String newLibraryTitle){
+        connectionBD();
+        try {
+            stdOut.println("id: "+idAccount+" title: "+newLibraryTitle);
+            stmt.execute("insert into personal_library(id_account,library_title) values("+idAccount+",'"+newLibraryTitle+"');");
+            stdOut.println("Create new library: " + newLibraryTitle);
+            connectionClose();
+        } catch (SQLException e) {
+            connectionClose();
+            e.printStackTrace();
+            }
+    }
+    public void deleteLibrary(String libraryTitleFromTableListSelected){
+        connectionBD();
+        try {
+            stmt.execute("delete from personal_library where library_title = '"
+                                +libraryTitleFromTableListSelected+"';");
+            stdOut.println("Library was deleted");
+            connectionClose();
+        } catch (SQLException e) {
+            connectionClose();
+            e.printStackTrace();
+        }
+    }
+    /********************************************************************************
+     *                              Other Methods                                    *
+     * ******************************************************************************/
+    public void setIdAccount(int idAccount){
+        this.idAccount = idAccount;
+    }
+
+
+    public void setIdLibraryAndLibraryTitle(String libraryTitleFromTableListLibrary){
+        libraryTitle = libraryTitleFromTableListLibrary;
+        stdOut.println("libraryTitle from DataBaseManager: "+libraryTitle);
+        ResultSet rsQueryIdThisPersonalLibrary;
+        connectionBD();
+        try {
+            rsQueryIdThisPersonalLibrary = stmt.executeQuery("select id_this_personal_library from personal_library WHERE library_title = '"+
+                    libraryTitle+"'");
+            while(rsQueryIdThisPersonalLibrary.next()){
+                idThisPersonalLibrary = rsQueryIdThisPersonalLibrary.getInt("id_this_personal_library");
+                stdOut.println("libraryTitle from DataBaseManager: "+libraryTitle
+                                +" idThisPersonalLibrary: "+idThisPersonalLibrary);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connectionClose();
+
+    }
 }

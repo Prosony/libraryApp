@@ -6,12 +6,10 @@ public class TableDataView {
 
     private String booksTitle;
 
-    public TableDataView(String titleBooks) {
-        this.booksTitle= titleBooks;
+    public TableDataView(String booksTitle) {
+        this.booksTitle = booksTitle;
     }
-
-    public TableDataView() {
-    }
+    public TableDataView() {}
 
     public String getBookTitle() {
         return booksTitle;

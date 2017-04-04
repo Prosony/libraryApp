@@ -9,8 +9,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="250.0"
             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            styleClass="background" fx:controller="com.devprosony.core.controllers.modal.controller.ScreenRenameLibrary"
-            stylesheets="@css/light/generalCSS/LightTheme(General).css" >
+            styleClass="background" fx:controller="com.devprosony.core.controllers.modal.controller.library.ScreenRenameLibrary"
+            stylesheets="@../css/light/generalCSS/LightTheme(General).css" >
    <children>
 
       <Button fx:id="buttonRenameLibrary" text="Rename" onAction="#clickRenameLibrary" layoutX="140.0"

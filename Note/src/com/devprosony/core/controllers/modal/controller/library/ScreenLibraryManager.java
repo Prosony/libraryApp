@@ -1,6 +1,6 @@
-package com.devprosony.core.controllers.modal.controller;
+package com.devprosony.core.controllers.modal.controller.library;
 
-import com.devprosony.core.ConnectionToBD;
+import com.devprosony.core.DataBaseManager;
 import com.devprosony.core.controllers.model.ViewListLibrary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,12 +21,12 @@ import static com.devprosony.Main.stdOut;
 /**
  * Created by ${Prosony} on ${24.01.2016}.
  */
-public class ScreenLibraryManager extends ConnectionToBD {
+public class ScreenLibraryManager extends DataBaseManager {
 
-        private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
+    @FXML public TableView<ViewListLibrary> tableListLibrary;
+    @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
+    private ObservableList<ViewListLibrary> libraryList = FXCollections.observableArrayList();
 
-        @FXML public TableView<ViewListLibrary> tableListLibrary;
-        @FXML public TableColumn<ViewListLibrary, String> nameLibrary;
         private Stage dialogStage;
         private String libraryTitle;
         public ScreenLibraryManager() throws SQLException {}
@@ -49,8 +49,11 @@ public class ScreenLibraryManager extends ConnectionToBD {
      * *****************************************************************************/
     public void openLibrary(){
         stdOut.println("Open");
+        /** selection title into libraryTitle*/
         libraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-        stdOut.println("\ntext: " + nameLibrary);
+        /**This method input libraryTitle into DataBaseManager.libraryTitle and get id_this_library from DB*/
+        setIdLibraryAndLibraryTitle(libraryTitle);
+        stdOut.println("\ntext: " + libraryTitle);
         dialogStage.close();
     }
 
@@ -58,17 +61,22 @@ public class ScreenLibraryManager extends ConnectionToBD {
             stdOut.println("Press Cancel");
             dialogStage.close();
         }
-    /********************************************************************************
-     *                              Other Methods                                   *
-     * *****************************************************************************/
-    public String getLibraryTitle(){
-            return libraryTitle;
-    }
+
     /********************************************************************************
      *                              ContextMenu ActionEvents                        *                                                *
      * *****************************************************************************/
-    public void contextMenuCreatLibrary(ActionEvent actionEvent) {
-        //todo
+    public void contextMenuCreateLibrary(ActionEvent actionEvent) {
+        try {
+            sceneManager.showPanelCreateLibraryStage();
+            /**
+             * Create Thread for Update table Library
+             * */
+            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+            threadSetTableListLibrary.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void contextMenuRenameLibrary(ActionEvent actionEvent) {
@@ -83,7 +91,9 @@ public class ScreenLibraryManager extends ConnectionToBD {
              * and new thread will be created and he update TableListTitle in panel
              */
             if(libraryWasChange){
-                stdOut.println("Update dataset in table with new Thread");
+                /******************************************
+                 * Update dataset in table with new Thread*
+                 *****************************************/
                 Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
                 threadSetTableListLibrary.start();
             }
@@ -93,7 +103,11 @@ public class ScreenLibraryManager extends ConnectionToBD {
     }
 
     public void contextMenuDeleteLibrary(ActionEvent actionEvent) {
-
+        String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
+        stdOut.println("Delete library: " + libraryTitleFromTableListSelected);
+        deleteLibrary(libraryTitleFromTableListSelected);
+        Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+        threadSetTableListLibrary.start();
     }
 
     /********************************************************************************
@@ -105,6 +119,11 @@ public class ScreenLibraryManager extends ConnectionToBD {
                 try {
                     libraryList.clear();
                     connectionBD();
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     ResultSet rs = getLibraryTitleFromDB();
                     stdOut.println("rs: " + rs);
                     while(rs.next()) {
@@ -122,4 +141,10 @@ public class ScreenLibraryManager extends ConnectionToBD {
                 }
             }
         }
+    /********************************************************************************
+     *                              Other Methods                                   *
+     * *****************************************************************************/
+    public String getLibraryTitle(){
+        return libraryTitle;
+    }
 }

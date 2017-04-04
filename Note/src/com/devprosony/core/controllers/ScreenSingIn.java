@@ -1,7 +1,7 @@
 package com.devprosony.core.controllers;
 
 import com.devprosony.Main;
-import com.devprosony.core.ConnectionToBD;
+import com.devprosony.core.DataBaseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +20,7 @@ import static com.devprosony.Main.stdOut;
 /**
  * Created by ${Prosony} on ${24.01.2016}.
  */
-public class ScreenSingIn extends ConnectionToBD {
+public class ScreenSingIn extends DataBaseManager {
 
         @FXML
         PasswordField textFieldPassword;
@@ -52,27 +52,30 @@ public class ScreenSingIn extends ConnectionToBD {
             try {
                 ResultSet rs = stmt.executeQuery(query);
                 while(rs.next()){
+                    int idAccount = rs.getInt(1);
                     String passwordFromBD = rs.getString(3);
                     String loginFromBD = rs.getString(2);
-
                     stdOut.println("Login,Password: " + loginFromBD +" "+ passwordFromBD
                             + "|" + loginFromTextField +" "+ passwordFromPasswordField);
 
                     if ((loginFromTextField.equals(loginFromBD))&&(passwordFromPasswordField.equals(passwordFromBD))){
-
+                        setIdAccount(idAccount);
                         stdOut.println("log in is success!");
                         stdOut.println("decorated style...");
                         sceneManager.switchScene();
-
+                        break;
                     }else {
                         progressLabel.setText("Invalid\n login\nor\n password");
                         stdOut.println("Invalid login or password");
                     }
                 }
-                connectionClose();
+
             } catch (SQLException e) {
+                connectionClose();
                 e.printStackTrace();
             }
+
+            connectionClose();
         }
 
         public void exit(){

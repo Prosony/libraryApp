@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -31,10 +32,20 @@
         </menus>
       </MenuBar>
 
-       <TableView fx:id="tableBooks" layoutX="2.0" layoutY="37.0" prefHeight="563.0" prefWidth="208.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="36.0">
+       <TableView fx:id="tableBooks" layoutX="3.0" layoutY="38.0" prefHeight="510.0" prefWidth="220.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="37.0">
            <columns>
-               <TableColumn fx:id="booksTitle" prefWidth="185.0" text="Books" />
+               <TableColumn fx:id="booksTitle" prefWidth="206.0" text="Books" />
            </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#contextMenuOpenBook" text="open" />
+                <MenuItem mnemonicParsing="false" onAction="#contextMenuAddBook" text="add new book" />
+                <MenuItem mnemonicParsing="false" onAction="#contextMenuEditBook" text="change book" />
+                <MenuItem mnemonicParsing="false" onAction="#contextMenuDeleteBook" text="delete book" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </TableView>
 
       <Button fx:id="buttonSystemExit" layoutX="722.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="1.0" />

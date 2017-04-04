@@ -1,6 +1,6 @@
-package com.devprosony.core.controllers.modal.controller;
+package com.devprosony.core.controllers.modal.controller.library;
 
-import com.devprosony.core.ConnectionToBD;
+import com.devprosony.core.DataBaseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -13,9 +13,9 @@ import static com.devprosony.Main.stdOut;
 /**
  * Created by proso on 3/29/2017.
  */
-public class ScreenRenameLibrary extends ConnectionToBD{
+public class ScreenRenameLibrary extends DataBaseManager {
 
-    @FXML TextField textFieldForNewLibraryTitle;
+    @FXML private TextField textFieldForNewLibraryTitle;
 
     private Stage dialogRenameLibraryStage;
     private String oldLibraryTitle;
