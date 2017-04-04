@@ -82,7 +82,11 @@ public class ScreenMain extends DataBaseManager {
  * *****************************************************************************/
     public void contextMenuAddBook(ActionEvent actionEvent) {
         try {
-            sceneManager.showPanelAddBook();
+            if (getIdThisPersonalLibrary() != 0) {
+                sceneManager.showPanelAddBook();
+            }else{
+                stdOut.println("Before select library, then add books (:");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -106,7 +110,6 @@ public class ScreenMain extends DataBaseManager {
     public void buttonSystemExit(){
         System.exit(0);
     }
-
 }
 
 
