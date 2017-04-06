@@ -70,7 +70,7 @@ abstract public class DataBaseManager {
         return null;
     }
 
-    public ResultSet getBooksFromDB(String libraryTitle){
+    synchronized public ResultSet getBooksFromDB(String libraryTitle){
         ResultSet rs;
         try {
             rs = stmt.executeQuery("select books.book_title from books join personal_library i1 " +
@@ -85,16 +85,15 @@ abstract public class DataBaseManager {
                         /********************************************************************************
                          *                      Modal Methods                                           *
                          * ******************************************************************************/
-                            public int getIdAuthor(String authorBook){
+                            public int getIdAuthor(String fullNameAuthorBook){
                                 ResultSet resultSetIdAuthorBook;
                                 int idAuthor;
                                 connectionBD();
                                 try {
                                     resultSetIdAuthorBook = stmt.executeQuery(
-                                            "select id_this_author from author where Full_Name = '"+authorBook+"';");
+                                            "select id_this_author from author where Full_Name = '"+fullNameAuthorBook+"';");
                                     while(resultSetIdAuthorBook.next()){
                                         idAuthor = resultSetIdAuthorBook.getInt("id_this_author");
-                                        //stdOut.println("idAuthor: " + idAuthor);
                                         return idAuthor;
                                     }
 
@@ -103,6 +102,18 @@ abstract public class DataBaseManager {
                                 }
                                 connectionClose();
                                 return 0;
+                            }
+                            public ResultSet getFullNameAuthorAndGenreBook(String bookTitle){
+                                ResultSet rs = null;
+                                try {
+                                    rs = stmt.executeQuery("SELECT * FROM books where book_title = '"
+                                                                +bookTitle+"'");
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+
+
+                                return rs;
                             }
     /********************************************************************************
  *                      Methods for execute query UPDATE                         *
@@ -156,25 +167,40 @@ abstract public class DataBaseManager {
     }
 /********************************************************************************
 *                      Methods for execute query DELETE                         *
-* ******************************************************************************/
+* *******************************************************************************************************
+                         *                             GetLibrary Methods                               *
+                         * *****************************************************************************/
 
-    public void deleteLibrary(String libraryTitleFromTableListSelected){
-        connectionBD();
-        try {
-            stmt.execute("delete from personal_library where library_title = '"
-                                +libraryTitleFromTableListSelected+"';");
-            stdOut.println("Library was deleted");
-            connectionClose();
-        } catch (SQLException e) {
-            connectionClose();
-            e.printStackTrace();
-        }
-    }
+                            public void deleteLibrary(String libraryTitleFromTableListSelected){
+                                connectionBD();
+                                try {
+                                    stmt.execute("delete from personal_library where library_title = '"
+                                                        +libraryTitleFromTableListSelected+"';");
+                                    stdOut.println("Library was deleted");
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                                connectionClose();
+                            }
+                         /********************************************************************************
+                         *                      SceneMain Methods (ContextMenu)                          *
+                         * ******************************************************************************/
+                            public void deleteBookFromPersonalLibrary(String bookTitle){
+                                connectionBD();
+                                try {
+                                    stmt.execute("delete from books where book_title = '"
+                                            +bookTitle+"';");
+                                    stdOut.println("Book was deleted from Personal Library");
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                                connectionClose();
+                            }
     /********************************************************************************
-     *                              Other Methods                                    *
+     *                              Other Methods                                   *
      * *************************************************************************************************
                          *                              Set Methods                                    *
-                         * ******************************************************************************/
+                         * ****************************************************************************/
                         public void setIdAccount(int idAccount){
                             this.idAccount = idAccount;
                         }

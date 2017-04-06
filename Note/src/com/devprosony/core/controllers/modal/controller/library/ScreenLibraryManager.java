@@ -35,7 +35,7 @@ public class ScreenLibraryManager extends DataBaseManager {
         @FXML
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
-            stdOut.println("thread open ");
+            stdOut.println("Thread library open ");
             Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
             threadSetTableListLibrary.start();
         }
@@ -56,7 +56,6 @@ public class ScreenLibraryManager extends DataBaseManager {
         stdOut.println("\ntext: " + libraryTitle);
         dialogStage.close();
     }
-
     public void pressCancel() {
             stdOut.println("Press Cancel");
             dialogStage.close();
@@ -86,10 +85,10 @@ public class ScreenLibraryManager extends DataBaseManager {
         try {
 
             boolean libraryWasChange = sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
-            /**
+            /**********************************************************************
              * If library title was change, that libraryWasChange = true,
              * and new thread will be created and he update TableListTitle in panel
-             */
+             *********************************************************************/
             if(libraryWasChange){
                 /******************************************
                  * Update dataset in table with new Thread*

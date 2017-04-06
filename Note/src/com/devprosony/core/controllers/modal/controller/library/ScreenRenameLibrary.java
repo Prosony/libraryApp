@@ -22,12 +22,8 @@ public class ScreenRenameLibrary extends DataBaseManager {
     private String newLibraryTitle;
     public ScreenRenameLibrary() throws SQLException {}
 
-    public void setDialogStage(Stage dialogRenameLibraryStage) { this.dialogRenameLibraryStage = dialogRenameLibraryStage; }
-
     @FXML
-    private void initialize() {
-
-    }
+    private void initialize() {}
 
     /********************************************************************************
      *                              Button ActionEvents                             *
@@ -51,7 +47,8 @@ public class ScreenRenameLibrary extends DataBaseManager {
     /********************************************************************************
     *                              Other Methods                                    *
     * ******************************************************************************/
-    public void setOldLibraryTitle(String libraryTitle){
+    public void setDialogeStageAndOldLibraryTitle(Stage dialogRenameLibraryStage,String libraryTitle){
+        this.dialogRenameLibraryStage = dialogRenameLibraryStage;
         oldLibraryTitle = libraryTitle;
         stdOut.println("oldLibraryTitle: " + oldLibraryTitle);
         textFieldForNewLibraryTitle.setPromptText(oldLibraryTitle);

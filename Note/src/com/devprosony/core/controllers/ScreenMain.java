@@ -27,56 +27,28 @@ public class ScreenMain extends DataBaseManager {
 
     private ObservableList<TableDataView> chestBooks = FXCollections.observableArrayList();
     private Main mainApp;
-
-    @FXML MenuBar menuBar;
-    @FXML Button buttonSystemExit;
-    @FXML private TableColumn<TableDataView, String> booksTitle;
+    private String libraryTitle;
     @FXML private TableView<TableDataView> tableBooks;
+    @FXML private TableColumn<TableDataView, String> booksTitle;
 
     @FXML
     private void initialize() {
-        initData();
+        chestBooks.add(new TableDataView("Select"));
+        chestBooks.add(new TableDataView(" Library"));
         booksTitle.setCellValueFactory(new PropertyValueFactory<TableDataView, String>("BookTitle"));
         tableBooks.setItems(chestBooks);
     }
-    public ScreenMain() throws SQLException {
-        stdOut.println("Hey from Screen2Controller controller");
-    }
+    public ScreenMain() throws SQLException {}
 
-    private void initData() {
-        chestBooks.add(new TableDataView("Select"));
-        chestBooks.add(new TableDataView(" Library"));
-    }
 /********************************************************************************
 *                      MenuBar -> MenuItem Methods                              *
 * ******************************************************************************/
     public void clickMenuItemGetLibrary(){
-        String libraryTitle = sceneManager.showPanelLibrary();
+        libraryTitle = sceneManager.showPanelLibrary();
         stdOut.println("libraryTitle: " + libraryTitle);
-        setBooksTitleToTableFromLibrary(libraryTitle);
+        ThreadSetTableListBooks threadSetTableListBooks = new ThreadSetTableListBooks();
+        threadSetTableListBooks.start();
     }
-                    private void setBooksTitleToTableFromLibrary(String libraryTitle) {
-                        ResultSet resultSet;
-                        if (libraryTitle != null) {
-                            chestBooks.clear();
-                            connectionBD();
-                                    resultSet = getBooksFromDB(libraryTitle);
-                                    try {
-                                        while (resultSet.next()) {
-                                            String nameBook = resultSet.getString("book_title");
-                                            stdOut.println("Name: " + nameBook);
-                                            chestBooks.add(new TableDataView(nameBook));
-                                            tableBooks.setItems(chestBooks);
-                                        }
-                                        connectionClose();
-                            } catch (SQLException e) {
-                                    e.printStackTrace();
-                            }
-                        } else {
-                            stdOut.println("null");
-                        }
-                    }
-
 /********************************************************************************
  *                              ContextMenu ActionEvents                        *                                                *
  * *****************************************************************************/
@@ -84,6 +56,10 @@ public class ScreenMain extends DataBaseManager {
         try {
             if (getIdThisPersonalLibrary() != 0) {
                 sceneManager.showPanelAddBook();
+                //**     New Thread for input books in table from library, when PanelAddBook will be close*/
+                stdOut.println("Thread book open");
+                ThreadSetTableListBooks threadSetTableListBooks = new ThreadSetTableListBooks();
+                threadSetTableListBooks.start();
             }else{
                 stdOut.println("Before select library, then add books (:");
             }
@@ -96,13 +72,60 @@ public class ScreenMain extends DataBaseManager {
     }
 
     public void contextMenuEditBook(ActionEvent actionEvent) {
-        //TODO
+        String oldBookTitle = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
+        try {
+            sceneManager.showPanelEditBook(oldBookTitle);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void contextMenuDeleteBook(ActionEvent actionEvent) {
-        //TODO
+        if (getIdThisPersonalLibrary() != 0) {
+                String bookTitle = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
+                stdOut.println("bookTitle: " + bookTitle);
+                deleteBookFromPersonalLibrary(bookTitle);
+                stdOut.println("Thread book open");
+                ThreadSetTableListBooks threadSetTableListBooks = new ThreadSetTableListBooks();
+                threadSetTableListBooks.start();
+        }else{
+                stdOut.println("Before select library, then add books (:");
+        }
+
     }
 
+    /********************************************************************************
+     *      The thread takes bookTitle from the DB and fills the Table              *
+     *******************************************************************************/
+    class ThreadSetTableListBooks extends Thread{
+        @Override
+        public void run(){
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                ResultSet resultSet;
+                if (libraryTitle != null) {
+                    chestBooks.clear();
+                    connectionBD();
+                    resultSet = getBooksFromDB(libraryTitle);
+                    try {
+                        while (resultSet.next()) {
+                            String nameBook = resultSet.getString("book_title");
+                            stdOut.println("Name: " + nameBook);
+                            chestBooks.add(new TableDataView(nameBook));
+                            tableBooks.setItems(chestBooks);
+                        }
+                        connectionClose();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    stdOut.println("null");
+                }
+        }
+    }
 /********************************************************************************
 *                              Other Metods                                     *
 * ******************************************************************************/

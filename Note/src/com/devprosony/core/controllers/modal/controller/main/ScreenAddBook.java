@@ -1,10 +1,8 @@
 package com.devprosony.core.controllers.modal.controller.main;
 
 import com.devprosony.core.DataBaseManager;
-import com.sun.xml.internal.bind.v2.TODO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -63,11 +61,5 @@ public class ScreenAddBook extends DataBaseManager{
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-
-    public void setComboBoxAuthorBook() {
-        ///comboBoxAuthorBook.getItems().addAll("5", "10", "25", "50", "100", "200", "300", "500", "1000");
-
-    }
-
 
 }

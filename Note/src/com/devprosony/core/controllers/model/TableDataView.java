@@ -19,4 +19,8 @@ public class TableDataView {
         this.booksTitle = booksTitle;
     }
 
+    @Override
+    public String toString() {
+        return  booksTitle;
+    }
 }
