@@ -14,7 +14,6 @@ public class Main extends Application{
     private static Stage primaryStage;
     public static StdOut stdOut = new StdOut();
 
-
         @Override
         public void start(Stage primaryStage) throws IOException {
             Main.primaryStage = primaryStage;
@@ -27,29 +26,18 @@ public class Main extends Application{
         sceneManager.loadScene();
         }
 
-
-        //    Screen2Controller.setDialogStage(primaryStage);
-
-    public static void setHeightAndWidth(Double height, Double width, Double maxHeight, Double maxWidth) {
-            if (maxWidth > 800) {
-                primaryStage.setOpacity(1);
-            }
-            primaryStage.setHeight(height);
-            primaryStage.setMinHeight(height);
-            primaryStage.setMaxHeight(maxHeight);
-            primaryStage.setWidth(width);
-            primaryStage.setMinWidth(width);
-            primaryStage.setMaxWidth(maxWidth);
-        }
     /**
      * Returns the main stage.
      * @return
      */
-    public static Stage getPrimaryStage() {
-        return primaryStage;
-    }
-
     public static void main(String[] args) {
      launch(args);
     }
+/********************************************************************************
+ *                              Moving scene                                    *
+ * *****************************************************************************/
+    public static Stage getPrimaryStage() {
+    return primaryStage;
+}
+
 }

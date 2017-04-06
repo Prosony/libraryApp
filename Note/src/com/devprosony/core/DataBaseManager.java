@@ -36,7 +36,6 @@ abstract public class DataBaseManager {
             if (!(connection.isClosed())) {
                 System.out.println("Connection to BD is installed");
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -56,65 +55,104 @@ abstract public class DataBaseManager {
  /********************************************************************************
  *                      Methods for execute query SELECT                         *
  * ******************************************************************************/
+         /********************************************************************************
+         *                                  Library                                      *
+         * ******************************************************************************/
 
-    public ResultSet getLibraryTitleFromDB(){
-        ResultSet rs;
-        try {
-            rs = stmt.executeQuery("select personal_library.library_title " +
-                    "from personal_library " +
-                    "join account i2 on personal_library.id_account = i2.id_this_account;");
-            return rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+            public ResultSet getDataLibraryFromDB(){
+                ResultSet rs;
+                try {
+                    rs = stmt.executeQuery("select * " +
+                            "from personal_library " +
+                            "join account i2 on personal_library.id_account = i2.id_this_account;");
+                    return rs;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+            public void getDataLibraryFromDB(String libraryTitleFromTableListLibrary){
+                libraryTitle = libraryTitleFromTableListLibrary;
+                ResultSet rsQueryIdThisPersonalLibrary;
+                connectionBD();
+                try {
+                    rsQueryIdThisPersonalLibrary = stmt.executeQuery("select * " +
+                            "from personal_library WHERE library_title = '"+
+                            libraryTitle+"'");
+                    while(rsQueryIdThisPersonalLibrary.next()){
+                        idThisPersonalLibrary = rsQueryIdThisPersonalLibrary.getInt("id_this_personal_library");
+                        stdOut.println("libraryTitle from DataBaseManager: "+libraryTitle
+                                +" idThisPersonalLibrary: "+idThisPersonalLibrary);
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+            }
 
-    synchronized public ResultSet getBooksFromDB(String libraryTitle){
-        ResultSet rs;
-        try {
-            rs = stmt.executeQuery("select books.book_title from books join personal_library i1 " +
-                    "on books.id_personal_library = i1.id_this_personal_library " +
-                    "where library_title = '"+libraryTitle+"';");
-            return rs;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-                        /********************************************************************************
-                         *                      Modal Methods                                           *
-                         * ******************************************************************************/
-                            public int getIdAuthor(String fullNameAuthorBook){
-                                ResultSet resultSetIdAuthorBook;
-                                int idAuthor;
-                                connectionBD();
-                                try {
-                                    resultSetIdAuthorBook = stmt.executeQuery(
-                                            "select id_this_author from author where Full_Name = '"+fullNameAuthorBook+"';");
-                                    while(resultSetIdAuthorBook.next()){
-                                        idAuthor = resultSetIdAuthorBook.getInt("id_this_author");
-                                        return idAuthor;
-                                    }
+        /********************************************************************************
+         *                                  Books                                       *
+         * *****************************************************************************/
 
-                                } catch (SQLException e) {
-                                    e.printStackTrace();
-                                }
-                                connectionClose();
-                                return 0;
-                            }
-                            public ResultSet getFullNameAuthorAndGenreBook(String bookTitle){
-                                ResultSet rs = null;
-                                try {
-                                    rs = stmt.executeQuery("SELECT * FROM books where book_title = '"
-                                                                +bookTitle+"'");
-                                } catch (SQLException e) {
-                                    e.printStackTrace();
-                                }
+            synchronized public ResultSet getFullDataAboutFromDB(String libraryTitle){
+                ResultSet rs;
+                try {
+                    rs = stmt.executeQuery("select * from book join personal_library i1 " +
+                            "on book.id_personal_library = i1.id_this_personal_library " +
+                            "where library_title = '"+libraryTitle+"';");
+                    return rs;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+            public ResultSet getFullDataAboutBook(String bookTitle){
+                ResultSet rs;
+                try {
+                    rs = stmt.executeQuery("SELECT * FROM book where book_title = '"
+                                                +bookTitle+"';");
+                    return rs;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+         /*********************************************************************************
+          *                                       Author                                   *
+          * ******************************************************************************/
+            public int getDataAuthor(String fullNameAuthorBook){
+                ResultSet resultSetIdAuthorBook;
+                    int idAuthor;
+                    connectionBD();
+                    try {
+                        resultSetIdAuthorBook = stmt.executeQuery(
+                                "select * from author where Full_Name = '"+fullNameAuthorBook+"';");
+                        while(resultSetIdAuthorBook.next()){
+                            idAuthor = resultSetIdAuthorBook.getInt("id_this_author");
+                            return idAuthor;
+                        }
 
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                connectionClose();
+                return 0;
+            }
+            public ResultSet getDataAuthor(int idAuthor){
+                ResultSet resultSetAboutAuthor;
 
-                                return rs;
-                            }
+                connectionBD();
+                try {
+                    resultSetAboutAuthor = stmt.executeQuery(
+                            "select * from author where id_this_author = '"+idAuthor+"';");
+                    return resultSetAboutAuthor;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+                return null;
+            }
+
     /********************************************************************************
  *                      Methods for execute query UPDATE                         *
  * ******************************************************************************/
@@ -150,15 +188,28 @@ abstract public class DataBaseManager {
          * insert into books(id_personal_library, book_title, id_author, genre)
          * values(4,'Effective Java 2nd Edition', 5, 'Computers & Technology');
          */
+
+        ResultSet resultSetForFindIdThisBook;
+        int idThisBook = 0;
         connectionBD();
         try {
             stdOut.println("idThisPersonalLibrary: "+idThisPersonalLibrary);
-            stdOut.println(" bookTitle: "+bookTitle);
-            stdOut.println(" idAuthor: "+idAuthor);
-            stdOut.println(" genreBook: "+genreBook);
+            stdOut.println(" bookTitle: " + bookTitle);
+            stdOut.println(" idAuthor: " + idAuthor);
+            stdOut.println(" genreBook: " + genreBook);
 
-            stmt.execute("insert into books(id_personal_library, book_title, id_author, genre) " +
-                        "values(" + idThisPersonalLibrary + ",'" + bookTitle + "', " + idAuthor + ", '" + genreBook + "');");
+            stmt.execute("insert into book(id_personal_library, book_title, genre) " +
+                        "values(" + idThisPersonalLibrary + ",'" + bookTitle +"', '" + genreBook + "');");
+
+
+            resultSetForFindIdThisBook = getFullDataAboutBook(bookTitle);
+            while(resultSetForFindIdThisBook.next()){
+                idThisBook = resultSetForFindIdThisBook.getInt("id_this_book");
+            }
+            stdOut.println("idThisBook: " + idThisBook);
+            stdOut.println("idAuthor: " + idAuthor);
+            stmt.execute("INSERT INTO book_author(id_book, id_author) VALUES ("
+                    +idThisBook+","+idAuthor+");");
             stdOut.println("Book Added");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -187,8 +238,23 @@ abstract public class DataBaseManager {
                          * ******************************************************************************/
                             public void deleteBookFromPersonalLibrary(String bookTitle){
                                 connectionBD();
+                                int idBook = 0;
+                                ResultSet aboutBook = getFullDataAboutBook(bookTitle);
                                 try {
-                                    stmt.execute("delete from books where book_title = '"
+                                    while(aboutBook.next()){
+                                        idBook = aboutBook.getInt("id_this_book");
+                                    }
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                                stdOut.println("idBook for delete: " + idBook);
+                                try {
+                                    stmt.execute("delete from book_author where id_book = '"+idBook+"'");
+                                    stdOut.println("Relationships was delete");
+                                    /**
+                                     * Create relationships |book <-> author|
+                                     */
+                                    stmt.execute("delete from book where book_title = '"
                                             +bookTitle+"';");
                                     stdOut.println("Book was deleted from Personal Library");
                                 } catch (SQLException e) {
@@ -203,25 +269,6 @@ abstract public class DataBaseManager {
                          * ****************************************************************************/
                         public void setIdAccount(int idAccount){
                             this.idAccount = idAccount;
-                        }
-
-                        public void setIdLibraryAndLibraryTitle(String libraryTitleFromTableListLibrary){
-                            libraryTitle = libraryTitleFromTableListLibrary;
-                            stdOut.println("libraryTitle from DataBaseManager: "+libraryTitle);
-                            ResultSet rsQueryIdThisPersonalLibrary;
-                            connectionBD();
-                            try {
-                                rsQueryIdThisPersonalLibrary = stmt.executeQuery("select id_this_personal_library from personal_library WHERE library_title = '"+
-                                        libraryTitle+"'");
-                                while(rsQueryIdThisPersonalLibrary.next()){
-                                    idThisPersonalLibrary = rsQueryIdThisPersonalLibrary.getInt("id_this_personal_library");
-                                    stdOut.println("libraryTitle from DataBaseManager: "+libraryTitle
-                                                    +" idThisPersonalLibrary: "+idThisPersonalLibrary);
-                                }
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
-                            connectionClose();
                         }
                         /********************************************************************************
                          *                              Get Methods                                     *

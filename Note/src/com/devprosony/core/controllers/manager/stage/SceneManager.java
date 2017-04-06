@@ -14,9 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
-import static com.devprosony.Main.setHeightAndWidth;
 import static com.devprosony.Main.stdOut;
 
 /**
@@ -46,7 +44,8 @@ abstract public class SceneManager {
 
     public void switchScene() {
      try {
-            sceneMain = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/ScreenMain.fxml")));
+            sceneMain = new Scene(FXMLLoader.load(getClass().getResource(
+                        "core/controllers/view/ScreenMain.fxml")));
      } catch (IOException e) {
             e.printStackTrace();
      }
@@ -57,7 +56,8 @@ abstract public class SceneManager {
     }
     public void loadScene(){
         try {
-            sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource("core/controllers/view/singInPanel.fxml")));
+            sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource(
+                         "core/controllers/view/singInPanel.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,6 +69,7 @@ abstract public class SceneManager {
         primaryStage.show();
         movingMainStage(sceneSingIn);
     }
+
 /********************************************************************************
 *                       Show Panel SelectionLibrary                             *
 * ******************************************************************************/
@@ -111,7 +112,8 @@ abstract public class SceneManager {
                     //String newLibraryTitle = null;
 
                     FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(Main.class.getResource("core/controllers/view/library/PanelRenameLibrary.fxml"));
+                    loader.setLocation(Main.class.getResource(
+                            "core/controllers/view/library/PanelRenameLibrary.fxml"));
                     AnchorPane page = (AnchorPane) loader.load();
                     dialogRenameLibraryStage = new Stage();
                     dialogRenameLibraryStage.initModality(Modality.WINDOW_MODAL);
@@ -134,7 +136,8 @@ abstract public class SceneManager {
                 * *****************************************************************************/
                 public void showPanelCreateLibraryStage() throws IOException {
                     FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(Main.class.getResource("core/controllers/view/library/PanelCreateLibrary.fxml"));
+                    loader.setLocation(Main.class.getResource(
+                            "core/controllers/view/library/PanelCreateLibrary.fxml"));
                     AnchorPane page = (AnchorPane) loader.load();
                     dialogCreateLibraryStage = new Stage();
                     dialogCreateLibraryStage.initModality(Modality.WINDOW_MODAL);
@@ -173,7 +176,7 @@ abstract public class SceneManager {
 /********************************************************************************
  *                              Show Panel Edit Book                            *
  * *****************************************************************************/
-    public void showPanelEditBook(String oldBookTitle) throws IOException {
+    public void showPanelEditBook(String oldBookTitle, String oldBookGenre) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("core/controllers/view/main/PanelEditBooks.fxml"));
@@ -186,7 +189,7 @@ abstract public class SceneManager {
         dialogEditBookStage.setScene(sceneEditBook);
 
         ScreenEditBook screenEditBook = loader.getController();
-        screenEditBook.setDialogeStageAndOldBookData(dialogEditBookStage, oldBookTitle);
+        screenEditBook.setDialogeStageAndOldBookData(dialogEditBookStage, oldBookTitle, oldBookGenre);
         movingEditBookStageModal(sceneEditBook);
         dialogEditBookStage.showAndWait();
     }
@@ -265,4 +268,17 @@ abstract public class SceneManager {
                         dialogEditBookStage.setY(event.getScreenY() + dragOffsetY);
                     });
                 }
+/********************************************************************************
+*                              Other Methods                                    *
+* ******************************************************************************/
+
+    public void setHeightAndWidth(Double height, Double width, Double maxHeight, Double maxWidth) {
+
+        primaryStage.setHeight(height);
+        primaryStage.setMinHeight(height);
+        primaryStage.setMaxHeight(maxHeight);
+        primaryStage.setWidth(width);
+        primaryStage.setMinWidth(width);
+        primaryStage.setMaxWidth(maxWidth);
+    }
 }

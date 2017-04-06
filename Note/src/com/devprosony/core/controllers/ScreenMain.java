@@ -72,12 +72,31 @@ public class ScreenMain extends DataBaseManager {
     }
 
     public void contextMenuEditBook(ActionEvent actionEvent) {
-        String oldBookTitle = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
+        String oldTitleBook = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
+        ResultSet dataAboutBook;
+        connectionBD();
+        dataAboutBook = getFullDataAboutBook(oldTitleBook);
+        String oldGenreBook = null;
+        int oldIdAuthor = 0;
         try {
-            sceneManager.showPanelEditBook(oldBookTitle);
+            while (dataAboutBook.next()) {
+                if(dataAboutBook.getInt("id_this_book") != 0){
+                    oldGenreBook = dataAboutBook.getString("genre");
+                    //oldIdAuthor = dataAboutBook.getInt("id_author");
+                }
+            }
+            stdOut.println("title: " + oldTitleBook);
+            stdOut.println("genre: " + oldGenreBook);
+            connectionClose();
+            sceneManager.showPanelEditBook(oldTitleBook, oldGenreBook);
+        } catch (SQLException e) {
+            connectionClose();
+            e.printStackTrace();
         } catch (IOException e) {
+            connectionClose();
             e.printStackTrace();
         }
+        //getDataAuthor(oldIdAuthor);c
     }
 
     public void contextMenuDeleteBook(ActionEvent actionEvent) {
@@ -109,7 +128,7 @@ public class ScreenMain extends DataBaseManager {
                 if (libraryTitle != null) {
                     chestBooks.clear();
                     connectionBD();
-                    resultSet = getBooksFromDB(libraryTitle);
+                    resultSet = getFullDataAboutFromDB(libraryTitle);
                     try {
                         while (resultSet.next()) {
                             String nameBook = resultSet.getString("book_title");

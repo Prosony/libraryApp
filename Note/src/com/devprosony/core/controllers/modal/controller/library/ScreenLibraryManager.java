@@ -52,7 +52,7 @@ public class ScreenLibraryManager extends DataBaseManager {
         /** selection title into libraryTitle*/
         libraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
         /**This method input libraryTitle into DataBaseManager.libraryTitle and get id_this_library from DB*/
-        setIdLibraryAndLibraryTitle(libraryTitle);
+        getDataLibraryFromDB(libraryTitle);
         stdOut.println("\ntext: " + libraryTitle);
         dialogStage.close();
     }
@@ -123,7 +123,7 @@ public class ScreenLibraryManager extends DataBaseManager {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    ResultSet rs = getLibraryTitleFromDB();
+                    ResultSet rs = getDataLibraryFromDB();
                     stdOut.println("rs: " + rs);
                     while(rs.next()) {
                         String nameLibrary = rs.getString("library_title");

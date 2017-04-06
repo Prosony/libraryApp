@@ -36,9 +36,10 @@ public class ScreenAddBook extends DataBaseManager{
         String bookTitle = textFieldBookTitle.getText();
         String bookGenre = textFieldBookGenre.getText();
         String bookAuthor = textFieldAuthorBook.getText();
+
         int idAuthorBook = 0;
         if (bookAuthor != "null"){
-            idAuthorBook = getIdAuthor(bookAuthor);
+            idAuthorBook = getDataAuthor(bookAuthor);
         }
         stdOut.println("idAuthorBook: " + idAuthorBook);
         if ((bookTitle != "null")&&(bookGenre != "null")&&(idAuthorBook != 0)){

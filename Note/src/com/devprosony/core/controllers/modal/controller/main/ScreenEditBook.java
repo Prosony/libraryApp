@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static com.devprosony.Main.stdOut;
@@ -24,28 +25,26 @@ public class ScreenEditBook extends DataBaseManager{
 
     public ScreenEditBook() throws SQLException {}
 
-
-    @FXML private void initialize() {}
-
     private Stage dialogEditBookStage;
     private String oldBookTitle;
     private String oldBookGenre;
-    private String authorFullName;
+    private int oldIdAuthor;
 
-    public void clickEditBook(ActionEvent actionEvent) {
-        //TODO
-    }
+    @FXML private void initialize() {}
 
+    public void clickEditBook(ActionEvent actionEvent) {}
     public void clickCancelEditBook(ActionEvent actionEvent) {
         dialogEditBookStage.close();
     }
 
-    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, String oldBookTotle){
+    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, String oldBookTitle, String oldBookGenre){
 
         this.dialogEditBookStage = dialogEditBookStage;
-        this.oldBookTitle = oldBookTotle;
+        this.oldBookTitle = oldBookTitle;
+        textFieldNewBookTitle.setText(oldBookTitle);
+        textFieldNewBookGenre.setText(oldBookGenre);
+        textFieldNewAuthorBook.setText("");
         stdOut.println("oldLibraryTitle: " + this.oldBookTitle);
-        //textFieldForNewLibraryTitle.setPromptText(oldLibraryTitle);
 
     }
 }
