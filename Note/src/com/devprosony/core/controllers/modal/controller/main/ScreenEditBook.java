@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import static com.devprosony.Main.stdOut;
 
@@ -26,25 +27,70 @@ public class ScreenEditBook extends DataBaseManager{
     public ScreenEditBook() throws SQLException {}
 
     private Stage dialogEditBookStage;
+
+    private int idBook;
+    private int idOldAuthor;
+    private int idNewAuthor;
     private String oldBookTitle;
-    private String oldBookGenre;
-    private int oldIdAuthor;
+    private String oldGenreBook;
+    private String oldFullNameAuthor;
+    private String newBookTitle;
+    private String newBookGenre;
+    private String newFullNameAuthorBook;
+
+    private int idRelationships;
 
     @FXML private void initialize() {}
 
-    public void clickEditBook(ActionEvent actionEvent) {}
+    public void clickEditBook(ActionEvent actionEvent) {
+        newBookTitle = textFieldNewBookTitle.getText();
+        newBookGenre = textFieldNewBookGenre.getText();
+        newFullNameAuthorBook = textFieldNewAuthorBook.getText();
+
+        if (!(newBookTitle.equals(oldBookTitle))){
+            updataDataBook("title",newBookTitle, oldBookTitle);
+        }
+        if(!(newBookGenre.equals(oldGenreBook))){
+            updataDataBook("genre",newBookGenre, oldGenreBook);
+        }
+        if (!(newFullNameAuthorBook.equals(oldFullNameAuthor))){
+            idNewAuthor = getDataAuthor(newFullNameAuthorBook);
+            if(idNewAuthor != 0){
+                updateRelationships(idRelationships, idNewAuthor);
+            }else{
+                /**
+                 * Method add new Author
+                 */
+                stdOut.println("can't find author: " + newFullNameAuthorBook);
+            }
+        }
+        dialogEditBookStage.close();
+    }
+
     public void clickCancelEditBook(ActionEvent actionEvent) {
         dialogEditBookStage.close();
     }
 
-    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, String oldBookTitle, String oldBookGenre){
-
+    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, int  idRelationships, int idBook, int oldIdAuthor,
+                                              String oldBookTitle, String oldGenreBook, String oldFullNameAuthor){
+        this.idRelationships = idRelationships;
+        this.idBook = idBook;
+        this.idOldAuthor = idOldAuthor;
         this.dialogEditBookStage = dialogEditBookStage;
         this.oldBookTitle = oldBookTitle;
-        textFieldNewBookTitle.setText(oldBookTitle);
-        textFieldNewBookGenre.setText(oldBookGenre);
-        textFieldNewAuthorBook.setText("");
-        stdOut.println("oldLibraryTitle: " + this.oldBookTitle);
+        this.oldGenreBook = oldGenreBook;
+        this.oldFullNameAuthor = oldFullNameAuthor;
+        stdOut.println("____________From SceneEditBook____________________");
+        stdOut.println("this.idRelationships: " + this.idRelationships);
+        stdOut.println("oldIdBook: " + this.idBook);
+        stdOut.println("IdAuthor: " + this.idOldAuthor);
+        stdOut.println("title: " + this.oldBookTitle);
+        stdOut.println("genre: " + this.oldGenreBook);
+        stdOut.println("Name author: " + this.oldFullNameAuthor);
+        stdOut.println("________________________________");
 
+        textFieldNewBookTitle.setText(this.oldBookTitle);
+        textFieldNewBookGenre.setText(this.oldGenreBook);
+        textFieldNewAuthorBook.setText(this.oldFullNameAuthor);
     }
 }

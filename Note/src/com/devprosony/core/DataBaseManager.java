@@ -94,7 +94,7 @@ abstract public class DataBaseManager {
          *                                  Books                                       *
          * *****************************************************************************/
 
-            synchronized public ResultSet getFullDataAboutFromDB(String libraryTitle){
+            public ResultSet getFullDataAboutFromDB(String libraryTitle){
                 ResultSet rs;
                 try {
                     rs = stmt.executeQuery("select * from book join personal_library i1 " +
@@ -106,7 +106,7 @@ abstract public class DataBaseManager {
                 }
                 return null;
             }
-            public ResultSet getFullDataAboutBook(String bookTitle){
+            public ResultSet getFullDataAboutBookForAddRelationships(String bookTitle){
                 ResultSet rs;
                 try {
                     rs = stmt.executeQuery("SELECT * FROM book where book_title = '"
@@ -117,8 +117,23 @@ abstract public class DataBaseManager {
                 }
                 return null;
             }
+            public ResultSet getFullDataAboutBookWithRelationships(String bookTitle){
+                ResultSet rs;
+                try {
+                    rs = stmt.executeQuery("SELECT *\n" +
+                            "FROM \n" +
+                            "(\n" +
+                            "  (author INNER JOIN book_author ON author.id_this_author = book_author.id_author) \n" +
+                            "    INNER JOIN book ON book.id_this_book = book_author.id_book\n" +
+                            ")\twhere book.book_title = '"+bookTitle +"';");
+                    return rs;
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
          /*********************************************************************************
-          *                                       Author                                   *
+          *                                       Author                                  *
           * ******************************************************************************/
             public int getDataAuthor(String fullNameAuthorBook){
                 ResultSet resultSetIdAuthorBook;
@@ -152,21 +167,95 @@ abstract public class DataBaseManager {
                 connectionClose();
                 return null;
             }
+            /*********************************************************************************
+             *                               Relationships                                   *
+             * ******************************************************************************/
+            public ResultSet getDataAboutRelationships(String triger, int id){
+                ResultSet resultSetDataAboutRelationships;
 
-    /********************************************************************************
+                try {
+                    switch (triger){
+                        case "book":
+                            resultSetDataAboutRelationships = stmt.executeQuery(
+                                    "SELECT * FROM book_author WHERE id_book = "+id+";");
+                            return resultSetDataAboutRelationships;
+
+                        case "author":
+                            resultSetDataAboutRelationships = stmt.executeQuery(
+                                    "SELECT * FROM book_author WHERE id_author = "+id+";");
+                            return resultSetDataAboutRelationships;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+
+/********************************************************************************
  *                      Methods for execute query UPDATE                         *
  * ******************************************************************************/
-    public void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
-        connectionBD();
-        try {
-            stmt.executeUpdate("update personal_library " +
-                    "set library_title = '"+newLibraryTitle+"' " +
-                    "where library_title = '"+oldLibraryTitle+"';");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        connectionClose();
-    }
+            /*********************************************************************************
+             *                                  Library                                      *
+             * ******************************************************************************/
+            public void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
+                connectionBD();
+                try {
+                    stmt.executeUpdate("update personal_library " +
+                            "set library_title = '"+newLibraryTitle+"' " +
+                            "where library_title = '"+oldLibraryTitle+"';");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+            }
+            /********************************************************************************
+             *                                  Books                                       *
+             * *****************************************************************************/
+            public void updataDataBook(String triger, String newTitleOrGenreBook, String oldTitleOrGenreBook){
+                connectionBD();
+                try {
+                    switch (triger){
+                        case "title":
+                            stmt.executeUpdate("update book " +
+                                    "set book.book_title = '"+newTitleOrGenreBook+"' " +
+                                    "where book.book_title = '"+oldTitleOrGenreBook+"';");
+                            break;
+                        case "genre":
+                            stmt.executeUpdate("update book " +
+                                    "set book.genre = '"+newTitleOrGenreBook+"' " +
+                                    "where book.genre = '"+oldTitleOrGenreBook+"';");
+                            break;
+                    }
+                    stmt.executeUpdate("update book " +
+                            "set book.book_title = '"+newTitleOrGenreBook+"' " +
+                            "where book.book_title = '"+oldTitleOrGenreBook+"';");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+            }
+            /*********************************************************************************
+             *                               Relationships                                   *
+             * ******************************************************************************/
+
+            public void updateRelationships(int idRelationships, int idNewAuthor){
+                connectionBD();
+
+                try {
+                    stdOut.println("_________updateRelationships_________");
+                    stdOut.println("idNewAuthor: "+idNewAuthor);
+                    stdOut.println("idRelationships: "+idRelationships);
+                    stmt.executeUpdate("update book_author " +
+                            "set id_author = '"+idNewAuthor+"' " +
+                            "where book_author.id_book_author = '"+idRelationships+"';");
+                    stdOut.println("relationships update");
+                    stdOut.println("_____________________________________");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+            }
 /********************************************************************************
 *                      Methods for execute query INSERT INTO                    *
 * ******************************************************************************/
@@ -202,7 +291,7 @@ abstract public class DataBaseManager {
                         "values(" + idThisPersonalLibrary + ",'" + bookTitle +"', '" + genreBook + "');");
 
 
-            resultSetForFindIdThisBook = getFullDataAboutBook(bookTitle);
+            resultSetForFindIdThisBook = getFullDataAboutBookForAddRelationships(bookTitle);
             while(resultSetForFindIdThisBook.next()){
                 idThisBook = resultSetForFindIdThisBook.getInt("id_this_book");
             }
@@ -239,7 +328,7 @@ abstract public class DataBaseManager {
                             public void deleteBookFromPersonalLibrary(String bookTitle){
                                 connectionBD();
                                 int idBook = 0;
-                                ResultSet aboutBook = getFullDataAboutBook(bookTitle);
+                                ResultSet aboutBook = getFullDataAboutBookForAddRelationships(bookTitle);
                                 try {
                                     while(aboutBook.next()){
                                         idBook = aboutBook.getInt("id_this_book");

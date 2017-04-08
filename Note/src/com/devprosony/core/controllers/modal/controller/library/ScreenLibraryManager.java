@@ -36,8 +36,9 @@ public class ScreenLibraryManager extends DataBaseManager {
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
             stdOut.println("Thread library open ");
-            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-            threadSetTableListLibrary.start();
+//            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+//            threadSetTableListLibrary.start();
+            tableUpdate();
         }
 
     public void setDialogStage(Stage dialogStage) {
@@ -70,8 +71,9 @@ public class ScreenLibraryManager extends DataBaseManager {
             /**
              * Create Thread for Update table Library
              * */
-            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-            threadSetTableListLibrary.start();
+//            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+//            threadSetTableListLibrary.start();
+            tableUpdate();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,8 +95,9 @@ public class ScreenLibraryManager extends DataBaseManager {
                 /******************************************
                  * Update dataset in table with new Thread*
                  *****************************************/
-                Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-                threadSetTableListLibrary.start();
+//                Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+//                threadSetTableListLibrary.start();
+                tableUpdate();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -105,41 +108,63 @@ public class ScreenLibraryManager extends DataBaseManager {
         String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
         stdOut.println("Delete library: " + libraryTitleFromTableListSelected);
         deleteLibrary(libraryTitleFromTableListSelected);
-        Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-        threadSetTableListLibrary.start();
+//        Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
+//        threadSetTableListLibrary.start();
+            tableUpdate();
     }
 
     /********************************************************************************
      *      The thread takes libraryTitle from the DB and fills the Table           *
      *******************************************************************************/
-    class ThreadSetTableListLibrary extends Thread{
-            @Override
-            public void run(){
-                try {
-                    libraryList.clear();
-                    connectionBD();
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    ResultSet rs = getDataLibraryFromDB();
-                    stdOut.println("rs: " + rs);
-                    while(rs.next()) {
-                        String nameLibrary = rs.getString("library_title");
-                        stdOut.println("Name: " + nameLibrary);
-                        libraryList.add(new ViewListLibrary(nameLibrary));
-                        stdOut.println("tableList: " + libraryList);
-                    }
-                    stdOut.println("\n");
-                    libraryList.forEach(System.out::println);
-                    tableListLibrary.setItems(libraryList);
-                    connectionClose();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+    private void tableUpdate(){
+        try {
+            libraryList.clear();
+            connectionBD();
+            ResultSet rs = getDataLibraryFromDB();
+            stdOut.println("rs: " + rs);
+            while(rs.next()) {
+                String nameLibrary = rs.getString("library_title");
+                stdOut.println("Name: " + nameLibrary);
+                libraryList.add(new ViewListLibrary(nameLibrary));
+                stdOut.println("tableList: " + libraryList);
             }
+            stdOut.println("\n");
+            libraryList.forEach(System.out::println);
+            tableListLibrary.setItems(libraryList);
+            connectionClose();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+    }
+//    class ThreadSetTableListLibrary extends Thread{
+//            @Override
+//            public void run(){
+//                try {
+//                    Thread.sleep(100);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//
+//                    libraryList.clear();
+//                    connectionBD();
+//                    ResultSet rs = getDataLibraryFromDB();
+//                    stdOut.println("rs: " + rs);
+//                    while(rs.next()) {
+//                        String nameLibrary = rs.getString("library_title");
+//                        stdOut.println("Name: " + nameLibrary);
+//                        libraryList.add(new ViewListLibrary(nameLibrary));
+//                        stdOut.println("tableList: " + libraryList);
+//                    }
+//                    stdOut.println("\n");
+//                    libraryList.forEach(System.out::println);
+//                    tableListLibrary.setItems(libraryList);
+//                    connectionClose();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
     /********************************************************************************
      *                              Other Methods                                   *
      * *****************************************************************************/

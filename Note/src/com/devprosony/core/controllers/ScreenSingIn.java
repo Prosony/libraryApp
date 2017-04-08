@@ -71,7 +71,7 @@ public class ScreenSingIn extends DataBaseManager {
                 }
 
             } catch (SQLException e) {
-                connectionClose();
+
                 e.printStackTrace();
             }
 

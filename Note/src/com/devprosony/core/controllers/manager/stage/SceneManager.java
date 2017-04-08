@@ -176,7 +176,7 @@ abstract public class SceneManager {
 /********************************************************************************
  *                              Show Panel Edit Book                            *
  * *****************************************************************************/
-    public void showPanelEditBook(String oldBookTitle, String oldBookGenre) throws IOException {
+    public void showPanelEditBook(int idRelationships, int oldIdBook, int oldIdAuthor, String oldTitleBook, String oldGenreBook, String oldFullNameAuthor) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("core/controllers/view/main/PanelEditBooks.fxml"));
@@ -189,7 +189,16 @@ abstract public class SceneManager {
         dialogEditBookStage.setScene(sceneEditBook);
 
         ScreenEditBook screenEditBook = loader.getController();
-        screenEditBook.setDialogeStageAndOldBookData(dialogEditBookStage, oldBookTitle, oldBookGenre);
+//        stdOut.println("____________From SceneManager____________________");
+//        stdOut.println("oldIdBook: " + oldIdBook);
+//        stdOut.println("IdAuthor: " + oldIdAuthor);
+//        stdOut.println("title: " + oldTitleBook);
+//        stdOut.println("genre: " + oldGenreBook);
+//        stdOut.println("Name author: " + oldFullNameAuthor);
+//        stdOut.println("________________________________");
+
+        screenEditBook.setDialogeStageAndOldBookData(dialogEditBookStage, idRelationships, oldIdBook, oldIdAuthor,
+                                                        oldTitleBook, oldGenreBook, oldFullNameAuthor);
         movingEditBookStageModal(sceneEditBook);
         dialogEditBookStage.showAndWait();
     }
