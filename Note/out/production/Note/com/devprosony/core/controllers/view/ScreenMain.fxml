@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +13,7 @@
 <AnchorPane id="AnchorPane" fx:id="anchorTwo" maxHeight="1080" maxWidth="1920" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@css/light/LightTheme(Main).css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.ScreenMain">
    <children>
 
-      <MenuBar fx:id="menuBar" layoutX="2.0" layoutY="6.0" prefHeight="29.0" prefWidth="210.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="589.0" AnchorPane.topAnchor="5.0">
+      <MenuBar fx:id="menuBar" layoutX="2.0" layoutY="6.0" prefHeight="29.0" prefWidth="220.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="579.0" AnchorPane.topAnchor="5.0">
         <menus>
           <Menu mnemonicParsing="false" text="Main">
             <items>
@@ -32,7 +33,7 @@
         </menus>
       </MenuBar>
 
-       <TableView fx:id="tableBooks" layoutX="3.0" layoutY="38.0" prefHeight="510.0" prefWidth="220.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="37.0">
+       <TableView fx:id="tableBooks" layoutX="3.0" layoutY="38.0" prefHeight="510.0" prefWidth="220.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="35.0">
            <columns>
                <TableColumn fx:id="booksTitle" prefWidth="206.0" text="Books" />
            </columns>
@@ -51,6 +52,7 @@
       <Button fx:id="buttonSystemExit" layoutX="722.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="1.0" />
       <Button fx:id="b" layoutX="748.0" layoutY="1.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="1.0" />
       <Button fx:id="buttonFullScreen" layoutX="774.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonSystemExit" prefHeight="20.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+      <TabPane fx:id="tabBookPane" layoutX="222.0" layoutY="34.0" prefHeight="300.0" prefWidth="580.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0" />
 
    </children>
 </AnchorPane>

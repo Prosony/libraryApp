@@ -3,6 +3,7 @@ package com.devprosony.core.controllers.modal.controller.main;
 import com.devprosony.core.DataBaseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,6 +19,7 @@ public class ScreenAddBook extends DataBaseManager{
     @FXML TextField textFieldBookTitle;
     @FXML TextField textFieldBookGenre;
     @FXML TextField textFieldAuthorBook;
+    @FXML TextArea areaFieldAboutBook;
 
     private Stage dialogStage;
 
@@ -36,7 +38,7 @@ public class ScreenAddBook extends DataBaseManager{
         String bookTitle = textFieldBookTitle.getText();
         String bookGenre = textFieldBookGenre.getText();
         String bookAuthor = textFieldAuthorBook.getText();
-
+        String bookAbout = areaFieldAboutBook.getText();
         int idAuthorBook = 0;
         if (bookAuthor != "null"){
             idAuthorBook = getDataAuthor(bookAuthor);
@@ -44,7 +46,7 @@ public class ScreenAddBook extends DataBaseManager{
         stdOut.println("idAuthorBook: " + idAuthorBook);
         if ((bookTitle != "null")&&(bookGenre != "null")&&(idAuthorBook != 0)){
             //stdOut.println("go add book");
-            addBookIntoPersonalLibrary(bookTitle, bookGenre,idAuthorBook);
+            addBookIntoPersonalLibrary(bookTitle, bookGenre,idAuthorBook, bookAbout);
             dialogStage.close();
         }else{
             stdOut.println("do not");

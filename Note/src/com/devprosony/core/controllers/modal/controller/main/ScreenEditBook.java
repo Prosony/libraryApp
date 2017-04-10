@@ -3,6 +3,7 @@ package com.devprosony.core.controllers.modal.controller.main;
 import com.devprosony.core.DataBaseManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,13 +18,10 @@ import static com.devprosony.Main.stdOut;
  */
 public class ScreenEditBook extends DataBaseManager{
 
-    @FXML
-    TextField textFieldNewBookTitle;
-    @FXML
-    TextField textFieldNewBookGenre;
-    @FXML
-    TextField textFieldNewAuthorBook;
-
+    @FXML TextField textFieldNewBookTitle;
+    @FXML TextField textFieldNewBookGenre;
+    @FXML TextField textFieldNewAuthorBook;
+    @FXML TextArea textAreaEditAboutBook;
     public ScreenEditBook() throws SQLException {}
 
     private Stage dialogEditBookStage;
@@ -34,6 +32,8 @@ public class ScreenEditBook extends DataBaseManager{
     private String oldBookTitle;
     private String oldGenreBook;
     private String oldFullNameAuthor;
+    private String oldAboutBook;
+    private String newAboutBook;
     private String newBookTitle;
     private String newBookGenre;
     private String newFullNameAuthorBook;
@@ -72,13 +72,14 @@ public class ScreenEditBook extends DataBaseManager{
     }
 
     public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, int  idRelationships, int idBook, int oldIdAuthor,
-                                              String oldBookTitle, String oldGenreBook, String oldFullNameAuthor){
+                                              String oldBookTitle, String oldGenreBook, String oldFullNameAuthor, String oldAboutBook){
         this.idRelationships = idRelationships;
         this.idBook = idBook;
         this.idOldAuthor = idOldAuthor;
         this.dialogEditBookStage = dialogEditBookStage;
         this.oldBookTitle = oldBookTitle;
         this.oldGenreBook = oldGenreBook;
+        this.oldAboutBook = oldAboutBook;
         this.oldFullNameAuthor = oldFullNameAuthor;
         stdOut.println("____________From SceneEditBook____________________");
         stdOut.println("this.idRelationships: " + this.idRelationships);

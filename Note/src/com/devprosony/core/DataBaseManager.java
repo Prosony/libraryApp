@@ -272,7 +272,7 @@ abstract public class DataBaseManager {
             e.printStackTrace();
             }
     }
-    public void addBookIntoPersonalLibrary(String  bookTitle, String genreBook, int idAuthor){
+    public void addBookIntoPersonalLibrary(String bookTitle, String genreBook, int idAuthor, String bookAbout){
         /*
          * insert into books(id_personal_library, book_title, id_author, genre)
          * values(4,'Effective Java 2nd Edition', 5, 'Computers & Technology');
@@ -286,9 +286,12 @@ abstract public class DataBaseManager {
             stdOut.println(" bookTitle: " + bookTitle);
             stdOut.println(" idAuthor: " + idAuthor);
             stdOut.println(" genreBook: " + genreBook);
+            stdOut.println("_______About_book_______");
+            stdOut.println(bookAbout);
+            stdOut.println("________________________");
 
-            stmt.execute("insert into book(id_personal_library, book_title, genre) " +
-                        "values(" + idThisPersonalLibrary + ",'" + bookTitle +"', '" + genreBook + "');");
+            stmt.execute("insert into book(id_personal_library, book_title, genre, about) " +
+                        "values(" + idThisPersonalLibrary + ",'" + bookTitle +"', '" + genreBook + "', '"+bookAbout+"');");
 
 
             resultSetForFindIdThisBook = getFullDataAboutBookForAddRelationships(bookTitle);
