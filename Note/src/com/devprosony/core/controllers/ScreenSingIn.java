@@ -35,6 +35,7 @@ public class ScreenSingIn extends DataBaseManager {
         @FXML
         AnchorPane anchorMain;
 
+        private static boolean initilaizeMainScene = false;
         private Stage primaryStage;
 
         public ScreenSingIn() throws SQLException {
@@ -52,17 +53,26 @@ public class ScreenSingIn extends DataBaseManager {
             try {
                 ResultSet rs = stmt.executeQuery(query);
                 while(rs.next()){
-                    int idAccount = rs.getInt(1);
                     String passwordFromBD = rs.getString(3);
                     String loginFromBD = rs.getString(2);
                     stdOut.println("Login,Password: " + loginFromBD +" "+ passwordFromBD
                             + "|" + loginFromTextField +" "+ passwordFromPasswordField);
 
                     if ((loginFromTextField.equals(loginFromBD))&&(passwordFromPasswordField.equals(passwordFromBD))){
+                        int idAccount = rs.getInt(1);
                         setIdAccount(idAccount);
+                        stdOut.println("_______________________________");
                         stdOut.println("log in is success!");
+                        stdOut.println("id_this_account: " + idAccount);
                         stdOut.println("decorated style...");
-                        sceneManager.switchScene();
+                        stdOut.println("_______________________________");
+                        if(initilaizeMainScene){
+                            sceneManager.switchScene("SceneMain");
+                        }else{
+                            initilaizeMainScene = true;
+                            sceneManager.switchScene("LoadSceneMain");
+                        }
+                        progressLabel.setText("");
                         break;
                     }else {
                         progressLabel.setText("Invalid\n login\nor\n password");

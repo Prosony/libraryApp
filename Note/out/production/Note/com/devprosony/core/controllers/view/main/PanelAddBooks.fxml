@@ -22,6 +22,6 @@
 
       <TextField fx:id="textFieldBookGenre" layoutX="9.0" layoutY="94.0" prefHeight="40.0" prefWidth="230.0" promptText="Genre" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <TextField fx:id="textFieldAuthorBook" layoutX="18.0" layoutY="144.0" prefHeight="40.0" prefWidth="230.0" promptText="Author" AnchorPane.rightAnchor="10.0" />
-      <TextArea fx:id="areaFieldAboutBook" layoutX="12.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <TextArea fx:id="areaFieldAboutBook" layoutX="12.0" layoutY="194.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
    </children>
 </AnchorPane>

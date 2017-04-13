@@ -42,38 +42,56 @@ abstract public class SceneManager {
         primaryStage = Main.getPrimaryStage();
     }
 
-    public void switchScene() {
-     try {
-            sceneMain = new Scene(FXMLLoader.load(getClass().getResource(
-                        "core/controllers/view/ScreenMain.fxml")));
-     } catch (IOException e) {
-            e.printStackTrace();
-     }
-        System.out.printf("switchScene");
-        primaryStage.setScene(sceneMain);
-        setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
-        movingMainStage(sceneMain);
-    }
-    public void loadScene(){
-        try {
-            sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource(
-                         "core/controllers/view/singInPanel.fxml")));
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void switchScene(String triger) {
+        switch(triger){
+
+            case "SceneLogIn":
+                        primaryStage.setScene(sceneSingIn);
+                        setHeightAndWidth(150.0,250.0, 150.0,250.0);
+                        primaryStage.centerOnScreen();
+                        movingMainStage(sceneSingIn);
+                        break;
+            case "SceneMain":
+
+                            primaryStage.setScene(sceneMain);
+                            setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
+                            primaryStage.centerOnScreen();
+                            movingMainStage(sceneMain);
+                            break;
+            case "LoadSceneLogIn":
+                            try {
+                                sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource(
+                                        "core/controllers/view/singInPanel.fxml")));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            primaryStage.initStyle(StageStyle.TRANSPARENT);
+                            //primaryStage.setOpacity(0.9);
+                            primaryStage.centerOnScreen();
+                            primaryStage.setScene(sceneSingIn);
+                            primaryStage.show();
+                            movingMainStage(sceneSingIn);
+                            break;
+            case "LoadSceneMain":
+                            try {
+                                sceneMain = new Scene(FXMLLoader.load(getClass().getResource(
+                                        "core/controllers/view/ScreenMain.fxml")));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            System.out.printf("switchScene");
+                            primaryStage.setScene(sceneMain);
+                            setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
+                            movingMainStage(sceneMain);
+                            break;
         }
 
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        //primaryStage.setOpacity(0.9);
-        primaryStage.centerOnScreen();
-        primaryStage.setScene(sceneSingIn);
-        primaryStage.show();
-        movingMainStage(sceneSingIn);
     }
-
 /********************************************************************************
 *                       Show Panel SelectionLibrary                             *
 * ******************************************************************************/
-    public String showPanelLibrary() {
+    public void showPanelLibrary() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("core/controllers/view/library/GetLibrary.fxml"));
@@ -94,13 +112,9 @@ abstract public class SceneManager {
             dialogPaneLibraryStage.showAndWait();
             /**       start when dialogStage will be close                */
             stdOut.println("dialogStage closed");
-            String libraryTitle = controllerLibrary.getLibraryTitle();
-            stdOut.println("libraryTitle: " + libraryTitle);
-            return libraryTitle;
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
     }
 
 /********************************************************************************
@@ -108,8 +122,7 @@ abstract public class SceneManager {
 * *********************************************************************************************
                  *                       Show panel for Rename library                          *
                  * *****************************************************************************/
-                public boolean showPanelRenameLibrary(String oldlibraryTitle) throws IOException {
-                    //String newLibraryTitle = null;
+                public void showPanelRenameLibrary(String oldlibraryTitle) throws IOException {
 
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(Main.class.getResource(
@@ -121,15 +134,11 @@ abstract public class SceneManager {
                     dialogRenameLibraryStage.initStyle(StageStyle.TRANSPARENT);
                     Scene scene = new Scene(page);
                     dialogRenameLibraryStage.setScene(scene);
-
                     ScreenRenameLibrary screenRenameLibrary = loader.getController();
-
                     screenRenameLibrary.setDialogeStageAndOldLibraryTitle(dialogRenameLibraryStage, oldlibraryTitle);
 
                     movingRenameLibraryStageModal(scene);
                     dialogRenameLibraryStage.showAndWait();
-
-                    return screenRenameLibrary.getNewLibraryTitle();
                 }
                 /*******************************************************************************
                 *                       Show panel for Create library                          *
@@ -291,4 +300,6 @@ abstract public class SceneManager {
         primaryStage.setMinWidth(width);
         primaryStage.setMaxWidth(maxWidth);
     }
+
+    public abstract void loadScene();
 }

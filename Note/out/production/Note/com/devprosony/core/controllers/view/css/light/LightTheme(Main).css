@@ -56,7 +56,7 @@
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 .button:hover {
-    -fx-background-color: rgba(197, 250, 197, 0.45);
+    -fx-background-color: #CAFFCA;
 }
 .button:focused {
     -fx-border-radius: 5px;
@@ -151,7 +151,7 @@
 }
 
 .menu:hover {
-    -fx-background-color: rgba(197, 250, 197, 0.45);
+    -fx-background-color: #C5FAC5;
 }
 
 .menu:pressed, .menu:default:hover:pressed {
@@ -188,12 +188,12 @@
                 -fx-border-color: #444444;
             }
             .context-menu:hover {
-                -fx-background-color: rgba(197, 250, 197, 0.15);
+                -fx-background-color: #CAFFCA;
             }
             .menu-item {
                 -fx-background-color: derive(whitesmoke,0%);
             }
 
             .menu-item:hover {
-                -fx-background-color: rgba(197, 250, 197, 0.45);
+                -fx-background-color: #CAFFCA;
             }

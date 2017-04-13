@@ -7,6 +7,8 @@ import com.devprosony.core.controllers.model.TableDataView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -47,9 +49,13 @@ public class ScreenMain extends DataBaseManager {
 *                      MenuBar -> MenuItem Methods                              *
 * ******************************************************************************/
     public void clickMenuItemGetLibrary(){
-        libraryTitle = sceneManager.showPanelLibrary();
-        stdOut.println("libraryTitle: " + libraryTitle);
+        sceneManager.showPanelLibrary();
+
         tableUpdate();
+    }
+    public void clickMenuItemLogOut(ActionEvent actionEvent) {
+        chestBooks.clear();
+        sceneManager.switchScene("SceneLogIn");
     }
 /********************************************************************************
  *                              ContextMenu ActionEvents                        *                                                *
@@ -104,8 +110,8 @@ public class ScreenMain extends DataBaseManager {
             while (dataAboutBook.next()) {
                 if(dataAboutBook.getInt("id_this_book") != 0){
                     idRelationships = dataAboutBook.getInt("id_book_author");
-                    oldIdBook = dataAboutBook.getInt("id_this_author");
-                    oldIdAuthor = dataAboutBook.getInt("id_this_book");
+                    oldIdAuthor = dataAboutBook.getInt("id_this_author");
+                    oldIdBook = dataAboutBook.getInt("id_this_book");
                     oldGenreBook = dataAboutBook.getString("genre");
                     oldFullNameAuthor = dataAboutBook.getString("full_name");
                     oldAboutBook = dataAboutBook.getString("about");
@@ -141,11 +147,13 @@ public class ScreenMain extends DataBaseManager {
      *******************************************************************************/
     public void tableUpdate(){
         ResultSet resultSet;
-        if (libraryTitle != null) {
-            chestBooks.clear();
-            connectionBD();
-            resultSet = getFullDataAboutFromDB(libraryTitle);
+        chestBooks.clear();
+        connectionBD();
+        resultSet = getFullDataAboutBookFromSelectionLibraryFromDB();
+
+        if (resultSet != null) {
             try {
+                stdOut.println("search book");
                 while (resultSet.next()) {
                     String nameBook = resultSet.getString("book_title");
                     stdOut.println("Name: " + nameBook);
@@ -157,7 +165,7 @@ public class ScreenMain extends DataBaseManager {
                 e.printStackTrace();
             }
         } else {
-            stdOut.println("null");
+            stdOut.println("tableupdate -> resultSet == null");
         }
     }
 /********************************************************************************
@@ -181,7 +189,15 @@ private void addTab(String titleBook, String bookFullNameAuthor, String about){
         ScreenPartTabMain screenPartTabMain = loader.getController();
         screenPartTabMain.setLabelText(titleBook, bookFullNameAuthor, about);
         tabBookPane.getTabs().add(tab);
+
 }
+    /********************************************************************************
+     *                                   ContextMenuTabPane                         *
+     * *****************************************************************************/
+        public void tabContextMenuCloseTab(ActionEvent actionEvent) {
+            tabBookPane.getTabs().remove( tabBookPane.getSelectionModel().getSelectedIndex() );
+        }
+
 /********************************************************************************
 *                              Other Metods                                     *
 * ******************************************************************************/
@@ -189,6 +205,8 @@ private void addTab(String titleBook, String bookFullNameAuthor, String about){
     public void buttonSystemExit(){
         System.exit(0);
     }
+
+
 }
 
 

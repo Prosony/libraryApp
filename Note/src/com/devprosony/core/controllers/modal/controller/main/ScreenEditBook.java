@@ -46,16 +46,26 @@ public class ScreenEditBook extends DataBaseManager{
         newBookTitle = textFieldNewBookTitle.getText();
         newBookGenre = textFieldNewBookGenre.getText();
         newFullNameAuthorBook = textFieldNewAuthorBook.getText();
-
+        newAboutBook = textAreaEditAboutBook.getText();
         if (!(newBookTitle.equals(oldBookTitle))){
-            updataDataBook("title",newBookTitle, oldBookTitle);
+            stdOut.println("update Title");
+            upDataBook("title", idBook, newBookTitle);
         }
         if(!(newBookGenre.equals(oldGenreBook))){
-            updataDataBook("genre",newBookGenre, oldGenreBook);
+            stdOut.println("update Genre");
+            upDataBook("genre", idBook, newBookGenre);
+        }
+        if (!(newAboutBook.equals(oldAboutBook))){
+            stdOut.println("update About");
+            stdOut.println("idBook: " + idBook);
+            stdOut.println("newAboutBook: " + newAboutBook);
+
+            upDataBook("about", idBook, newAboutBook);
         }
         if (!(newFullNameAuthorBook.equals(oldFullNameAuthor))){
             idNewAuthor = getDataAuthor(newFullNameAuthorBook);
             if(idNewAuthor != 0){
+                stdOut.println("update Author");
                 updateRelationships(idRelationships, idNewAuthor);
             }else{
                 /**
@@ -71,10 +81,11 @@ public class ScreenEditBook extends DataBaseManager{
         dialogEditBookStage.close();
     }
 
-    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, int  idRelationships, int idBook, int oldIdAuthor,
-                                              String oldBookTitle, String oldGenreBook, String oldFullNameAuthor, String oldAboutBook){
+    public void setDialogeStageAndOldBookData(Stage dialogEditBookStage, int  idRelationships, int oldIdBook, int oldIdAuthor,
+                                              String oldBookTitle, String oldGenreBook, String oldFullNameAuthor,
+                                              String oldAboutBook){
         this.idRelationships = idRelationships;
-        this.idBook = idBook;
+        this.idBook = oldIdBook;
         this.idOldAuthor = idOldAuthor;
         this.dialogEditBookStage = dialogEditBookStage;
         this.oldBookTitle = oldBookTitle;
@@ -93,5 +104,6 @@ public class ScreenEditBook extends DataBaseManager{
         textFieldNewBookTitle.setText(this.oldBookTitle);
         textFieldNewBookGenre.setText(this.oldGenreBook);
         textFieldNewAuthorBook.setText(this.oldFullNameAuthor);
+        textAreaEditAboutBook.setText(this.oldAboutBook);
     }
 }

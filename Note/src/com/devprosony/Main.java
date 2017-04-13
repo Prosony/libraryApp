@@ -20,10 +20,10 @@ public class Main extends Application{
             sceneManager = new SceneManager() {
                 @Override
                 public void loadScene() {
-                    super.loadScene();
+                    super.switchScene("LoadSceneLogIn");
                 }
             };
-        sceneManager.loadScene();
+        sceneManager.switchScene("LoadSceneLogIn");
         }
 
     /**

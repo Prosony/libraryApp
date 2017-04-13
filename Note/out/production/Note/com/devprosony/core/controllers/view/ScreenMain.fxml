@@ -17,12 +17,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="Main">
             <items>
-                <MenuItem fx:id="MenuItemExit" mnemonicParsing="false" onAction="#clickMenuItemExit" text="Exit" />
+                <MenuItem fx:id="menuItemLogOut" mnemonicParsing="false" onAction="#clickMenuItemLogOut" text="Log Out" />
+                <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#clickMenuItemExit" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Library">
             <items>
-                <MenuItem fx:id="MenuItemGetLibrary" mnemonicParsing="false" onAction="#clickMenuItemGetLibrary" text="Open library" />
+                <MenuItem fx:id="menuItemGetLibrary" mnemonicParsing="false" onAction="#clickMenuItemGetLibrary" text="Open library" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -52,7 +53,14 @@
       <Button fx:id="buttonSystemExit" layoutX="722.0" layoutY="1.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="1.0" />
       <Button fx:id="b" layoutX="748.0" layoutY="1.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="1.0" />
       <Button fx:id="buttonFullScreen" layoutX="774.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonSystemExit" prefHeight="20.0" prefWidth="25.0" textAlignment="CENTER" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
-      <TabPane fx:id="tabBookPane" layoutX="222.0" layoutY="34.0" prefHeight="300.0" prefWidth="580.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0" />
+      <TabPane fx:id="tabBookPane" layoutX="222.0" layoutY="34.0" prefHeight="300.0" prefWidth="580.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#tabContextMenuCloseTab" text="close" />
+              </items>
+            </ContextMenu>
+         </contextMenu></TabPane>
 
    </children>
 </AnchorPane>

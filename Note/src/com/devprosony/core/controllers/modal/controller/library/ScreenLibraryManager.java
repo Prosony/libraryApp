@@ -35,9 +35,8 @@ public class ScreenLibraryManager extends DataBaseManager {
         @FXML
         private void initialize() {
             nameLibrary.setCellValueFactory(new PropertyValueFactory<ViewListLibrary, String>("nameLibrary"));
+
             stdOut.println("Thread library open ");
-//            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-//            threadSetTableListLibrary.start();
             tableUpdate();
         }
 
@@ -52,8 +51,7 @@ public class ScreenLibraryManager extends DataBaseManager {
         stdOut.println("Open");
         /** selection title into libraryTitle*/
         libraryTitle = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-        /**This method input libraryTitle into DataBaseManager.libraryTitle and get id_this_library from DB*/
-        getDataLibraryFromDB(libraryTitle);
+        getDataLibraryFromDB(libraryTitle); // get idThisPersonalLibrary in DataBaseManager.idThisPersonalLibrary
         stdOut.println("\ntext: " + libraryTitle);
         dialogStage.close();
     }
@@ -71,8 +69,6 @@ public class ScreenLibraryManager extends DataBaseManager {
             /**
              * Create Thread for Update table Library
              * */
-//            Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-//            threadSetTableListLibrary.start();
             tableUpdate();
         } catch (IOException e) {
             e.printStackTrace();
@@ -85,20 +81,11 @@ public class ScreenLibraryManager extends DataBaseManager {
 
         stdOut.println("libraryTitle: " + libraryTitleFromTableListSelected);
         try {
+            //must find id_this_account
 
-            boolean libraryWasChange = sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
-            /**********************************************************************
-             * If library title was change, that libraryWasChange = true,
-             * and new thread will be created and he update TableListTitle in panel
-             *********************************************************************/
-            if(libraryWasChange){
-                /******************************************
-                 * Update dataset in table with new Thread*
-                 *****************************************/
-//                Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-//                threadSetTableListLibrary.start();
+           sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
                 tableUpdate();
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -108,15 +95,14 @@ public class ScreenLibraryManager extends DataBaseManager {
         String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
         stdOut.println("Delete library: " + libraryTitleFromTableListSelected);
         deleteLibrary(libraryTitleFromTableListSelected);
-//        Thread threadSetTableListLibrary = new ThreadSetTableListLibrary();
-//        threadSetTableListLibrary.start();
-            tableUpdate();
+        tableUpdate();
     }
 
     /********************************************************************************
      *      The thread takes libraryTitle from the DB and fills the Table           *
      *******************************************************************************/
     private void tableUpdate(){
+        int idLibrary = 0;
         try {
             libraryList.clear();
             connectionBD();
@@ -125,6 +111,7 @@ public class ScreenLibraryManager extends DataBaseManager {
             while(rs.next()) {
                 String nameLibrary = rs.getString("library_title");
                 stdOut.println("Name: " + nameLibrary);
+                idLibrary = rs.getInt("id_this_personal_library");
                 libraryList.add(new ViewListLibrary(nameLibrary));
                 stdOut.println("tableList: " + libraryList);
             }

@@ -29,6 +29,7 @@ public class ScreenRenameLibrary extends DataBaseManager {
      *                              Button ActionEvents                             *
      * *****************************************************************************/
     public void clickRenameLibrary(ActionEvent actionEvent) {
+
         newLibraryTitle = textFieldForNewLibraryTitle.getText();
 
         if (newLibraryTitle.equals(oldLibraryTitle)){
@@ -53,16 +54,5 @@ public class ScreenRenameLibrary extends DataBaseManager {
         stdOut.println("oldLibraryTitle: " + oldLibraryTitle);
         textFieldForNewLibraryTitle.setPromptText(oldLibraryTitle);
     }
-    public boolean getNewLibraryTitle(){
-        if (newLibraryTitle == "null"){
-            /*** libraryTitle was do not change and method will return false*/
-            stdOut.println("false. oldLibraryTitle: " + oldLibraryTitle
-                    +"\n"+"newLibraryTitle: " + newLibraryTitle);
-            return false;
-        }
-        /*** libraryTitle was change and method will return true*/
-        stdOut.println("true. oldLibraryTitle: " + oldLibraryTitle
-                            +"\n"+"newLibraryTitle: " + newLibraryTitle);
-            return true;
-    }
+
 }
