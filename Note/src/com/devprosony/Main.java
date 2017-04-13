@@ -18,7 +18,6 @@ public class Main extends Application{
         public void start(Stage primaryStage) throws IOException {
             Main.primaryStage = primaryStage;
             sceneManager = new SceneManager() {
-                @Override
                 public void loadScene() {
                     super.switchScene("LoadSceneLogIn");
                 }

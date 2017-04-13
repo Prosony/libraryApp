@@ -8,7 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static com.devprosony.Main.sceneManager;
+import static com.devprosony.Main.stdOut;
 
 public class ScreenCreateLibrary extends DataBaseManager {
 
@@ -20,8 +25,30 @@ public class ScreenCreateLibrary extends DataBaseManager {
 
 
     public void clickCreateLibrary(ActionEvent actionEvent) {
+        boolean creatLibrary = true;
         String newLibraryTitle = textFieldCreateLibraryTitle.getText();
-        createLibrary(newLibraryTitle);
+        connectionBD();
+        sceneManager.showNotifications("error", "can't add this book");
+        ResultSet rs = getDataLibraryFromDB();
+        try {
+            while(rs.next()){
+                String libraryTitleFromDB = rs.getString("library_title");
+
+                if(newLibraryTitle.equals(libraryTitleFromDB)){
+                    creatLibrary = false;
+
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if(creatLibrary){
+            sceneManager.showNotifications("error", "can't add this book");
+            createLibrary(newLibraryTitle);
+        }
+        connectionClose();
         dialogCreateLibraryStage.close();
     }
 

@@ -50,11 +50,11 @@ public class ScreenMain extends DataBaseManager {
 * ******************************************************************************/
     public void clickMenuItemGetLibrary(){
         sceneManager.showPanelLibrary();
-
         tableUpdate();
     }
     public void clickMenuItemLogOut(ActionEvent actionEvent) {
         chestBooks.clear();
+
         sceneManager.switchScene("SceneLogIn");
     }
 /********************************************************************************

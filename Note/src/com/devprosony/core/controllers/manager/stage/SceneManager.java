@@ -7,11 +7,14 @@ import com.devprosony.core.controllers.modal.controller.library.ScreenRenameLibr
 import com.devprosony.core.controllers.modal.controller.main.ScreenAddBook;
 import com.devprosony.core.controllers.modal.controller.main.ScreenEditBook;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 
@@ -199,14 +202,6 @@ abstract public class SceneManager {
         dialogEditBookStage.setScene(sceneEditBook);
 
         ScreenEditBook screenEditBook = loader.getController();
-//        stdOut.println("____________From SceneManager____________________");
-//        stdOut.println("oldIdBook: " + oldIdBook);
-//        stdOut.println("IdAuthor: " + oldIdAuthor);
-//        stdOut.println("title: " + oldTitleBook);
-//        stdOut.println("genre: " + oldGenreBook);
-//        stdOut.println("Name author: " + oldFullNameAuthor);
-//        stdOut.println("________________________________");
-
         screenEditBook.setDialogeStageAndOldBookData(dialogEditBookStage, idRelationships, oldIdBook, oldIdAuthor,
                                                         oldTitleBook, oldGenreBook, oldFullNameAuthor, oldAboutBook);
         movingEditBookStageModal(sceneEditBook);
@@ -301,5 +296,14 @@ abstract public class SceneManager {
         primaryStage.setMaxWidth(maxWidth);
     }
 
-    public abstract void loadScene();
+    public void showNotifications(String result, String str){
+        Notifications.create()
+                .title(result)
+                .text(str)
+                .action()
+                .position(Pos.TOP_RIGHT)
+                .hideAfter(Duration.seconds(5))
+                .show();
+    }
+
 }

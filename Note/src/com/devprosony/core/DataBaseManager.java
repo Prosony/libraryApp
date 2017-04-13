@@ -4,6 +4,7 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.*;
 
+import static com.devprosony.Main.sceneManager;
 import static com.devprosony.Main.stdOut;
 
 
@@ -83,8 +84,6 @@ abstract public class DataBaseManager {
                                     +libraryTitleFromTableListLibrary+"';");
                     while(rsQueryIdThisPersonalLibrary.next()){
                         idThisPersonalLibrary = rsQueryIdThisPersonalLibrary.getInt("id_this_personal_library");
-                        stdOut.println("libraryTitle from DataBaseManager: "+ libraryTitle
-                                +" idThisPersonalLibrary: "+idThisPersonalLibrary);
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -150,6 +149,7 @@ abstract public class DataBaseManager {
                                 "select * from author where Full_Name = '"+fullNameAuthorBook+"';");
                         while(resultSetIdAuthorBook.next()){
                             idAuthor = resultSetIdAuthorBook.getInt("id_this_author");
+                            connectionClose();
                             return idAuthor;
                         }
 
@@ -279,11 +279,12 @@ abstract public class DataBaseManager {
             stmt.execute("insert into personal_library(id_account,library_title) values("
                             +idAccount+",'"+newLibraryTitle+"');");
             stdOut.println("Create new library: " + newLibraryTitle);
-            connectionClose();
+
+            sceneManager.showNotifications("success","Library: "+newLibraryTitle+" is creat");
         } catch (SQLException e) {
-            connectionClose();
             e.printStackTrace();
             }
+        connectionClose();
     }
     public void addBookIntoPersonalLibrary(String bookTitle, String genreBook, int idAuthor, String bookAbout){
         /*
@@ -302,8 +303,6 @@ abstract public class DataBaseManager {
             stdOut.println(bookAbout);
             stdOut.println("________________________");
 
-//            stmt.execute("insert into book(id_personal_library, book_title, genre, about) " +
-//                        "values(" + idThisPersonalLibrary + ",'" + bookTitle +"', '" + genreBook + "', '"+bookAbout+"');");
             PreparedStatement addBookStmt = connection.prepareStatement(
                     "insert into book(id_personal_library, book_title, genre, about) " +
                             "values( ?, ?, ?, ?);");
@@ -321,7 +320,7 @@ abstract public class DataBaseManager {
             stdOut.println("idAuthor: " + idAuthor);
             stmt.execute("INSERT INTO book_author(id_book, id_author) VALUES ("
                     +idThisBook+","+idAuthor+");");
-            stdOut.println("Book Added");
+            sceneManager.showNotifications("success","Book Added");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -338,7 +337,7 @@ abstract public class DataBaseManager {
                                 try {
                                     stmt.execute("delete from personal_library where library_title = '"
                                                         +libraryTitleFromTableListSelected+"';");
-                                    stdOut.println("Library was deleted");
+                                    sceneManager.showNotifications("success","Library was deleted");
                                 } catch (SQLException e) {
                                     e.printStackTrace();
                                 }
@@ -361,13 +360,8 @@ abstract public class DataBaseManager {
                                 stdOut.println("idBook for delete: " + idBook);
                                 try {
                                     stmt.execute("delete from book_author where id_book = '"+idBook+"'");
-                                    stdOut.println("Relationships was delete");
-                                    /**
-                                     * Create relationships |book <-> author|
-                                     */
-                                    stmt.execute("DELETE FROM book WHERE id_this_book = "
-                                            +idBook+";");
-                                    stdOut.println("Book was deleted from Personal Library");
+                                    stmt.execute("DELETE FROM book WHERE id_this_book = "+idBook+";");
+                                    sceneManager.showNotifications("success","Book was deleted from Personal Library(");
                                 } catch (SQLException e) {
                                     e.printStackTrace();
                                 }

@@ -7,8 +7,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static com.devprosony.Main.sceneManager;
 import static com.devprosony.Main.stdOut;
 
 /**
@@ -30,27 +32,40 @@ public class ScreenAddBook extends DataBaseManager{
      *                              Button ActionEvents                             *
      * *****************************************************************************/
     public void clickAddBook(ActionEvent actionEvent) {
-        /*
-         * insert into books(id_personal_library, book_title, id_author, genre)
-         * values(4,'Effective Java 2nd Edition', 5, 'Computers & Technology');
-         *  addBookIntoPersonalLibrary() <- String  bookTitle, String genreBook, int idAuthor
-         */
+
+        boolean addBook = true;
         String bookTitle = textFieldBookTitle.getText();
         String bookGenre = textFieldBookGenre.getText();
         String bookAuthor = textFieldAuthorBook.getText();
         String bookAbout = areaFieldAboutBook.getText();
         int idAuthorBook = 0;
+
         if (bookAuthor != "null"){
             idAuthorBook = getDataAuthor(bookAuthor);
         }
-        stdOut.println("idAuthorBook: " + idAuthorBook);
         if ((bookTitle != "null")&&(bookGenre != "null")&&(idAuthorBook != 0)){
-            //stdOut.println("go add book");
-            addBookIntoPersonalLibrary(bookTitle, bookGenre,idAuthorBook, bookAbout);
             dialogStage.close();
         }else{
             stdOut.println("do not");
         }
+        connectionBD();
+        ResultSet rs = getFullDataAboutBookFromSelectionLibraryFromDB();
+        try {
+            while(rs.next()){
+                String bookTitleFromBD = rs.getString("book_title");
+                if(bookTitleFromBD.equals(bookTitle)){
+                    addBook = false;
+                    sceneManager.showNotifications("error", "can't add this book");
+                }
+            }
+            connectionClose();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if(addBook){
+            addBookIntoPersonalLibrary(bookTitle, bookGenre, idAuthorBook, bookAbout);
+        }
+
     }
 
     public void clickCancelAddBook(ActionEvent actionEvent) {
