@@ -6,6 +6,7 @@ import com.devprosony.core.controllers.modal.controller.library.ScreenLibraryMan
 import com.devprosony.core.controllers.modal.controller.library.ScreenRenameLibrary;
 import com.devprosony.core.controllers.modal.controller.main.ScreenAddBook;
 import com.devprosony.core.controllers.modal.controller.main.ScreenEditBook;
+import com.devprosony.core.controllers.modal.controller.main.ScreenSearchPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -119,7 +120,32 @@ abstract public class SceneManager {
             e.printStackTrace();
         }
     }
+/********************************************************************************
+*                       Show SearchPanel                                        *
+* ******************************************************************************/
+    public void showPanelSearch(){
+        try {
 
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("core/controllers/view/main/PanelSearch.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage stageSceneSearch = new Stage();
+            stageSceneSearch.initModality(Modality.WINDOW_MODAL);
+            stageSceneSearch.initOwner(primaryStage);
+            stageSceneSearch.initStyle(StageStyle.TRANSPARENT);
+            Scene scenePanelSearch = new Scene(page);
+            stageSceneSearch.setScene(scenePanelSearch);
+
+            ScreenSearchPanel screenSearchPanel = loader.getController();
+            screenSearchPanel.setStageAndOther(stageSceneSearch);
+            movingSearchScene(stageSceneSearch, scenePanelSearch);
+            stageSceneSearch.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 /********************************************************************************
 *                       Create a pane for the context menu                      *
 * *********************************************************************************************
@@ -280,6 +306,18 @@ abstract public class SceneManager {
                     sceneEditBook.setOnMouseDragged(event -> {
                         dialogEditBookStage.setX(event.getScreenX() + dragOffsetX);
                         dialogEditBookStage.setY(event.getScreenY() + dragOffsetY);
+                    });
+                }
+                //____________________moving_Edit_Book_Stage_Modal_______________________________
+                private void movingSearchScene(Stage stage,Scene sceneSearhPane){
+                    sceneSearhPane.setOnMousePressed(event -> {
+                        dragOffsetX = stage.getX() - event.getScreenX();
+                        dragOffsetY = stage.getY() - event.getScreenY();
+                    });
+                    //Lambda mouse event handler
+                    sceneSearhPane.setOnMouseDragged(event -> {
+                        stage.setX(event.getScreenX() + dragOffsetX);
+                        stage.setY(event.getScreenY() + dragOffsetY);
                     });
                 }
 /********************************************************************************

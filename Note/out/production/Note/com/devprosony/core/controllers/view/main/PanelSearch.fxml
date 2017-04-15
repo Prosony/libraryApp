@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/light/LightTheme(Main).css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.modal.controller.main.ScreenSearchPanel">
+
+   <children>
+      <TextField fx:id="textFieldTitleSearch" layoutX="437.0" layoutY="38.0" promptText="Title" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+      <TextField fx:id="textFieldGenreSearch" layoutX="437.0" layoutY="74.0" promptText="Genre" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0" />
+      <TextField fx:id="textFieldAuthorSearch" layoutX="437.0" layoutY="99.0" promptText="Author" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0" />
+      <TableView fx:id="tableViewSearch" layoutX="14.0" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="40.0">
+         <columns>
+            <TableColumn fx:id="tableColomnTitle" prefWidth="114.0" text="title" />
+            <TableColumn fx:id="tableColomnGenre" prefWidth="141.0" text="genre" />
+            <TableColumn fx:id="tableColomnAuthor" prefWidth="130.0" text="author" />
+         </columns></TableView>
+      <Button layoutX="511.0" layoutY="561.0" mnemonicParsing="false" onAction="#clickButtonSearch" prefHeight="20.0" prefWidth="75.0" text="Search" AnchorPane.rightAnchor="10.0" />
+      <Button layoutX="410.0" layoutY="561.0" mnemonicParsing="false" onAction="#clickButtonCansel" prefHeight="20.0" prefWidth="75.0" text="Cansel" />
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="149.0" text="Search" />
+   </children>
+</AnchorPane>

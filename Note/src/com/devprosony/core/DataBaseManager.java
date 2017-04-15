@@ -13,8 +13,8 @@ import static com.devprosony.Main.stdOut;
  */
 abstract public class DataBaseManager {
 
-    private static int idAccount;
-    private static int idThisPersonalLibrary;
+    protected static int idAccount;
+    protected static int idThisPersonalLibrary;
 
     protected Statement stmt;
     private Connection connection;
@@ -136,6 +136,50 @@ abstract public class DataBaseManager {
                     e.printStackTrace();
                 }
                 return null;
+            }
+            protected  ResultSet getFullDataBookForSearchTable(boolean titleTriger, boolean genreTriger,
+                                                               boolean authorTriger, String title,
+                                                                String genre, String author){
+                ResultSet resultSet = null;
+                boolean first = true;
+                stdOut.println("___________________________________________");
+                String query = "SELECT * FROM author " +
+                        "JOIN book_author ON author.id_this_author = book_author.id_author " +
+                        "JOIN book ON book.id_this_book = book_author.id_book ";
+                if(titleTriger){
+                    if (first){
+                        stdOut.println("title: "+titleTriger);
+                        first = false;
+                        query = query + "where book.book_title = '"+title+"' ";
+                    }
+                }
+                if(genreTriger){
+                    if (first){
+                        first = false;
+                        query = query + "where book.genre = '"+genre+"' ";
+                    }else{
+                        query = query + "and book.genre = '"+genre+"' ";
+                    }
+                    stdOut.println("genre: "+genreTriger);
+                }
+                if (authorTriger){
+                    if (first){
+                        first = false;
+                        query = query + "where full_name = '"+author+"'";
+                    }else{
+                        query = query + "and full_name = '"+author+"'";
+                    }
+                    stdOut.println("author: "+authorTriger);
+                }
+                query = query + ";";
+                try {
+                    resultSet = stmt.executeQuery(query);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                stdOut.println("___________________________________________");
+                return resultSet;
             }
          /*********************************************************************************
           *                                       Author                                  *

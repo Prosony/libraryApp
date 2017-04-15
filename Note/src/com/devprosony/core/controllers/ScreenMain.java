@@ -32,6 +32,7 @@ public class ScreenMain extends DataBaseManager {
     private ObservableList<TableDataView> chestBooks = FXCollections.observableArrayList();
     private Main mainApp;
     private String libraryTitle;
+
     @FXML private TableView<TableDataView> tableBooks;
     @FXML private TableColumn<TableDataView, String> booksTitle;
     @FXML
@@ -53,9 +54,13 @@ public class ScreenMain extends DataBaseManager {
         tableUpdate();
     }
     public void clickMenuItemLogOut(ActionEvent actionEvent) {
+        idAccount = 0;
+        idThisPersonalLibrary = 0;
         chestBooks.clear();
-
         sceneManager.switchScene("SceneLogIn");
+    }
+    public void clickMenuItemSearchPane(ActionEvent actionEvent) {
+        sceneManager.showPanelSearch();
     }
 /********************************************************************************
  *                              ContextMenu ActionEvents                        *                                                *
@@ -205,6 +210,7 @@ private void addTab(String titleBook, String bookFullNameAuthor, String about){
     public void buttonSystemExit(){
         System.exit(0);
     }
+
 
 
 }
