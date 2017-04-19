@@ -29,18 +29,12 @@ import static com.devprosony.Main.stdOut;
  */
 public class ScreenSingIn extends DataBaseManager {
 
-        @FXML
-        PasswordField textFieldPassword;
-        @FXML
-        TextField textFieldLogin;
-        @FXML
-        Label progressLabel;
-        @FXML
-        Button buttonSign;
-        @FXML
-        Button buttonExit;
-        @FXML
-        AnchorPane anchorMain;
+        @FXML PasswordField textFieldPassword;
+        @FXML TextField textFieldLogin;
+        @FXML Label progressLabel;
+        @FXML Button buttonSign;
+        @FXML Button buttonExit;
+        @FXML AnchorPane anchorMain;
 
         private static boolean initilaizeMainScene = false;
         private Stage primaryStage;
@@ -53,13 +47,11 @@ public class ScreenSingIn extends DataBaseManager {
         public void connectToAccount(ActionEvent actionEvent){
 
             connectionBD();
-            String query = "select * from Account;";
             String passwordFromPasswordField = textFieldPassword.getText();
             String loginFromTextField = textFieldLogin.getText();
-            progressLabel.setText("");
+            ResultSet rs = getDataAccount();
 
             try {
-                ResultSet rs = stmt.executeQuery(query);
                 while(rs.next()){
                     String passwordFromBD = rs.getString(3);
                     String loginFromBD = rs.getString(2);
@@ -81,7 +73,6 @@ public class ScreenSingIn extends DataBaseManager {
                                 initilaizeMainScene = true;
                                 sceneManager.switchScene("LoadSceneMain");
                             }
-                        progressLabel.setText("");
                         break;
                         }else{
                             sceneManager.showNotifications("Error","Invalid login or password");
@@ -100,8 +91,9 @@ public class ScreenSingIn extends DataBaseManager {
             connectionClose();
         }
 
-        public void exit(){
-            System.exit(0);
+        public void clickButtonCansel(){
+            //System.exit(0);
+            sceneManager.switchScene("SceneChoose");
         }
 
 }

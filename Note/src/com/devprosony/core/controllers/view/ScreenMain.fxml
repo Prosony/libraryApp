@@ -29,9 +29,10 @@
                 <MenuItem fx:id="menuItemGetLibrary" mnemonicParsing="false" onAction="#clickMenuItemGetLibrary" text="Open library" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="Other">
             <items>
-              <MenuItem onAction="#clickMenuItemSearchPane" mnemonicParsing="false" text="Search" />
+                <MenuItem onAction="#clickMenuItemSearchPane" mnemonicParsing="false" text="Search" />
+                <MenuItem onAction="#clickMenuItemOption" mnemonicParsing="false" text="Option" />
             </items>
           </Menu>
         </menus>

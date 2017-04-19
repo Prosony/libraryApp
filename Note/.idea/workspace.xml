@@ -2,21 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/model/TableSearchResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenChoose.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenRegistration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/ScreenOptions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/modal/SceneChooseDeleteAccount.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main$1.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/DataBaseManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/DataBaseManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenSingIn.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/ScreenSingIn.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/manager/stage/SceneManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/manager/stage/SceneManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.class" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/ScreenMain.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/ScreenMain.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelEditBooks.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelEditBooks.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelSearch.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/main/PanelSearch.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/singInPanel.fxml" afterPath="$PROJECT_DIR$/out/production/Note/com/devprosony/core/controllers/view/singInPanel.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/Main.java" afterPath="$PROJECT_DIR$/src/com/devprosony/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelEditBooks.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelEditBooks.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" afterPath="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,82 +144,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ScreenSearchPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBaseManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="175" column="51" lean-forward="false" selection-start-line="175" selection-start-column="51" selection-end-line="175" selection-end-column="51" />
-              <folding>
-                <marker date="1492242914881" expanded="true" signature="2361:2506" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="2361:2507" ph="select perso... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="2361:2525" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="2361:2583" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="3148:3292" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="3148:3359" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="3148:3360" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="3148:3412" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="3148:3486" ph="select * fro... personal_library" />
-                <marker date="1492242914881" expanded="true" signature="4347:4583" ph="select * fro... book" />
-                <marker date="1492242914881" expanded="true" signature="5143:5151" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="5143:5245" ph="SELECT * FRO... books" />
-                <marker date="1492242914881" expanded="true" signature="5143:5271" ph="SELECT * FRO... book" />
-                <marker date="1492242914881" expanded="true" signature="5143:5272" ph="SELECT * FRO... book" />
-                <marker date="1492242914881" expanded="true" signature="5663:5670" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="5663:5964" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="5663:6025" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="5663:6040" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="5663:6067" ph="SELECT *\nFR... author" />
-                <marker date="1492242914881" expanded="true" signature="6764:6961" ph="SELECT * FRO... author" />
-                <marker date="1492242914881" expanded="true" signature="8943:9006" ph="select * fro... author" />
-                <marker date="1492242914881" expanded="true" signature="9719:9777" ph="select * fro... author" />
-                <marker date="1492242914881" expanded="true" signature="10649:10691" ph="SELECT * FRO... book_author" />
-                <marker date="1492242914881" expanded="true" signature="10928:10972" ph="SELECT * FRO... book_author" />
-                <marker date="1492242914881" expanded="true" signature="11939:12017" ph="update perso... " />
-                <marker date="1492242914881" expanded="true" signature="11939:12112" ph="update perso... " />
-                <marker date="1492242914881" expanded="true" signature="11939:12114" ph="update perso... " />
-                <marker date="1492242914881" expanded="true" signature="11939:12118" ph="update perso... " />
-                <marker date="1492242914881" expanded="true" signature="11939:12132" ph="update perso... " />
-                <marker date="1492242914881" expanded="true" signature="12859:13034" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="12859:13044" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="13170:13337" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="13170:13339" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="13170:13340" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="13615:13673" ph="update book " />
-                <marker date="1492242914881" expanded="true" signature="13615:13674" ph="UPDATE table... " />
-                <marker date="1492242914881" expanded="true" signature="14763:14938" ph="update book_... " />
-                <marker date="1492242914881" expanded="true" signature="15670:15776" ph="insert into personal_library... " />
-                <marker date="1492242914881" expanded="true" signature="15670:15797" ph="insert into personal_library... " />
-                <marker date="1492242914881" expanded="true" signature="16981:17092" ph="insert into book... " />
-                <marker date="1492242914881" expanded="true" signature="16981:17095" ph="insert into book... " />
-                <marker date="1492242914881" expanded="true" signature="16981:17096" ph="insert into book... " />
-                <marker date="1492242914881" expanded="true" signature="16981:17097" ph="insert into book... " />
-                <marker date="1492242914881" expanded="true" signature="17720:17821" ph="INSERT INTO books_author... " />
-                <marker date="1492242914881" expanded="true" signature="18728:18875" ph="delete from " />
-                <marker date="1492242914881" expanded="true" signature="20362:20385" ph="delete from " />
-                <marker date="1492242914881" expanded="true" signature="20362:20414" ph="delete from " />
-                <marker date="1492242914881" expanded="true" signature="20468:20506" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ScreenMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+            <state relative-caret-position="520">
+              <caret line="164" column="9" lean-forward="false" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+              <folding>
+                <element signature="e#2206#2207#0" expanded="true" />
+                <element signature="e#2252#2253#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PanelSearch.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScreenSearchPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-255">
+              <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScreenLibraryManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScreenPartTabMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -238,24 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/screenMain/ScreenMain.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/model/ViewListLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/menuItemControllers/GetLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/singInPanelController.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/GetLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/ThreadManager.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/model/User.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/generalCSS/BlackTheme(General).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(Main).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenLibraryManager.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/SceneManager.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/MovingStage.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/BlackTheme(LogIn).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/lightTheme(LogIn).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/light/LightTheme(LogIn).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/generalCSS/LightTheme(General).css" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/light/generalCSS/LightTheme(General).css" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelRenameLibrary.fxml" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/PanelCreatLibrary.fxml" />
@@ -270,25 +245,43 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5f8d0e56-b84e-4440-b2fa-ed5dd8d7c67c/console.sql" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/model/ListDataAboutBook.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/tab/PanelBookTab.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenRenameLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenEditBook.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/light/LightTheme(Main).css" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenCreateLibrary.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelEditBooks.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearch.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/model/TableSearchResult.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
-        <option value="$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/GetChoosePanel.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/SceneRegistration.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/SceneGetChoose.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenChoose.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelOptions.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/options/ScreenOptions.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/ScreenSearchPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenOptions.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/ScreenOptions.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/modal/SceneChooseDeleteAccount.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenRegistration.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/modal/ModalScreenDeleteAccount.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelSea.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelOptions.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelOptionsSearch.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/ScreenSearchPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelSearch.fxml" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java" />
         <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java" />
+        <option value="$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml" />
       </list>
     </option>
   </component>
@@ -463,36 +456,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devprosony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -524,44 +487,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devprosony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -597,6 +522,202 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Note">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/devprosony">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="menuItem">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -607,20 +728,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Note" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Note" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -725,13 +832,144 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="modal.controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.devprosony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal.controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menuItem.options" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.devprosony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal.controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menuItem.options" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.devprosony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal.controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Note" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.devprosony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="manager.stage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -747,7 +985,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/VocabHunter-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -758,16 +996,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\main\menuItem" />
+      <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\modal\controller\main\menuItem\options" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\css\generalCSS" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\main" />
+      <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\main\menuItem" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\library" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\css\black\generalCSS" />
       <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\css\light" />
-      <recent name="C:\Users\proso\Documents\GitHub\libraryApp\Note\src\com\devprosony\core\controllers\view\css\black" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1351,11 +1591,15 @@
       <workItem from="1492075175033" duration="18801000" />
       <workItem from="1492151269733" duration="5302000" />
       <workItem from="1492161889859" duration="9516000" />
+      <workItem from="1492409688815" duration="1243000" />
+      <workItem from="1492413433310" duration="7704000" />
+      <workItem from="1492500740718" duration="7720000" />
+      <workItem from="1492582002687" duration="7131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388492000" />
+    <option name="totallyTimeSpent" value="412290000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1368,7 +1612,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1380,14 +1623,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33963692" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.108169444" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375189" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.055975795" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4551282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.301059" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1405,46 +1649,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5321101" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45565748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07639939" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27217126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21153846" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="584" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74281394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5321101" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20726173" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45565748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1489,42 +1694,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/9cc1101c/5f8d0e56-b84e-4440-b2fa-ed5dd8d7c67c/library.library_personal" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/com/sun/javafx/scene/control/skin/BehaviorSkinBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/Screen2Controller.java" />
-    <entry file="dbDummy://dbtable:/404c4530/5f8d0e56-b84e-4440-b2fa-ed5dd8d7c67c/library.library_personal" />
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/screenMain/ClickMenuManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/GetLibrary.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/singInPanelController.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/ThreadManager.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/model/User.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/com/sun/javafx/tk/quantum/QuantumToolkit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="456" column="0" lean-forward="false" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/concurrent/atomic/AtomicBoolean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/black/BlackTheme(Main).css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/css/black/generalCSS/BlackTheme(General).css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -1617,13 +1786,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenRenameLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1643,7 +1805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2788">
           <caret line="164" column="27" lean-forward="false" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1651,45 +1812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenEditBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="85" column="30" lean-forward="false" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
-          <folding>
-            <marker date="1492096408647" expanded="true" signature="1503:1524" ph="select * fro... Account" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="e#689#690#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1697,20 +1819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="69" column="53" lean-forward="false" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1428#1429#0" expanded="false" />
-            <element signature="e#1474#1475#0" expanded="false" />
-            <element signature="e#6401#6402#0" expanded="false" />
-            <element signature="e#6436#6437#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1726,7 +1834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1740,76 +1847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/model/ViewListLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="26" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#502#503#0" expanded="false" />
-            <element signature="e#537#538#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="41" column="45" lean-forward="false" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="76" lean-forward="false" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/model/TableSearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1821,79 +1862,312 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenAddBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="51" column="69" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/SceneRegistration.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="78" lean-forward="true" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/SceneGetChoose.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="95" lean-forward="false" selection-start-line="11" selection-start-column="95" selection-end-line="11" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/singInPanel.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="62" lean-forward="false" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenChoose.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="e#539#691#0" expanded="false" />
+            <element signature="e#690#691#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenSingIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="95" column="37" lean-forward="false" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/ScreenMain.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelAddBooks.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="72" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/modal/ModalScreenDeleteAccount.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelSea.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="18" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/LightTheme(Main).css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelOptionsSearch.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/menuItem/PanelOptions.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="77" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/model/TableSearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/manager/stage/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="166" column="87" lean-forward="false" selection-start-line="166" selection-start-column="87" selection-end-line="166" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/modal/SceneChooseDeleteAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/menuItem/options/ScreenOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="114" column="42" lean-forward="true" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/DataBaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="175" column="51" lean-forward="false" selection-start-line="175" selection-start-column="51" selection-end-line="175" selection-end-column="51" />
+        <state relative-caret-position="17">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <marker date="1492242914881" expanded="true" signature="2361:2506" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="2361:2507" ph="select perso... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="2361:2525" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="2361:2583" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="3148:3292" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="3148:3359" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="3148:3360" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="3148:3412" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="3148:3486" ph="select * fro... personal_library" />
-            <marker date="1492242914881" expanded="true" signature="4347:4583" ph="select * fro... book" />
-            <marker date="1492242914881" expanded="true" signature="5143:5151" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="5143:5245" ph="SELECT * FRO... books" />
-            <marker date="1492242914881" expanded="true" signature="5143:5271" ph="SELECT * FRO... book" />
-            <marker date="1492242914881" expanded="true" signature="5143:5272" ph="SELECT * FRO... book" />
-            <marker date="1492242914881" expanded="true" signature="5663:5670" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="5663:5964" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="5663:6025" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="5663:6040" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="5663:6067" ph="SELECT *\nFR... author" />
-            <marker date="1492242914881" expanded="true" signature="6764:6961" ph="SELECT * FRO... author" />
-            <marker date="1492242914881" expanded="true" signature="8943:9006" ph="select * fro... author" />
-            <marker date="1492242914881" expanded="true" signature="9719:9777" ph="select * fro... author" />
-            <marker date="1492242914881" expanded="true" signature="10649:10691" ph="SELECT * FRO... book_author" />
-            <marker date="1492242914881" expanded="true" signature="10928:10972" ph="SELECT * FRO... book_author" />
-            <marker date="1492242914881" expanded="true" signature="11939:12017" ph="update perso... " />
-            <marker date="1492242914881" expanded="true" signature="11939:12112" ph="update perso... " />
-            <marker date="1492242914881" expanded="true" signature="11939:12114" ph="update perso... " />
-            <marker date="1492242914881" expanded="true" signature="11939:12118" ph="update perso... " />
-            <marker date="1492242914881" expanded="true" signature="11939:12132" ph="update perso... " />
-            <marker date="1492242914881" expanded="true" signature="12859:13034" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="12859:13044" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="13170:13337" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="13170:13339" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="13170:13340" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="13615:13673" ph="update book " />
-            <marker date="1492242914881" expanded="true" signature="13615:13674" ph="UPDATE table... " />
-            <marker date="1492242914881" expanded="true" signature="14763:14938" ph="update book_... " />
-            <marker date="1492242914881" expanded="true" signature="15670:15776" ph="insert into personal_library... " />
-            <marker date="1492242914881" expanded="true" signature="15670:15797" ph="insert into personal_library... " />
-            <marker date="1492242914881" expanded="true" signature="16981:17092" ph="insert into book... " />
-            <marker date="1492242914881" expanded="true" signature="16981:17095" ph="insert into book... " />
-            <marker date="1492242914881" expanded="true" signature="16981:17096" ph="insert into book... " />
-            <marker date="1492242914881" expanded="true" signature="16981:17097" ph="insert into book... " />
-            <marker date="1492242914881" expanded="true" signature="17720:17821" ph="INSERT INTO books_author... " />
-            <marker date="1492242914881" expanded="true" signature="18728:18875" ph="delete from " />
-            <marker date="1492242914881" expanded="true" signature="20362:20385" ph="delete from " />
-            <marker date="1492242914881" expanded="true" signature="20362:20414" ph="delete from " />
-            <marker date="1492242914881" expanded="true" signature="20468:20506" ph="DELETE FROM " />
+            <marker date="1492603792103" expanded="true" signature="2348:2369" ph="select * fro... Account" />
+            <marker date="1492603792103" expanded="true" signature="2921:3066" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="2921:3067" ph="select perso... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="2921:3085" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="2921:3143" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="3708:3852" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="3708:3919" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="3708:3920" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="3708:3972" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="3708:4046" ph="select * fro... personal_library" />
+            <marker date="1492603792103" expanded="true" signature="4907:5143" ph="select * fro... book" />
+            <marker date="1492603792103" expanded="true" signature="5644:5652" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="5644:5746" ph="SELECT * FRO... books" />
+            <marker date="1492603792103" expanded="true" signature="5644:5772" ph="SELECT * FRO... book" />
+            <marker date="1492603792103" expanded="true" signature="5644:5773" ph="SELECT * FRO... book" />
+            <marker date="1492603792103" expanded="true" signature="6164:6171" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="6164:6465" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="6164:6526" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="6164:6541" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="6164:6568" ph="SELECT *\nFR... author" />
+            <marker date="1492603792103" expanded="true" signature="7187:7384" ph="SELECT * FRO... author" />
+            <marker date="1492603792103" expanded="true" signature="9283:9346" ph="select * fro... author" />
+            <marker date="1492603792103" expanded="true" signature="10059:10117" ph="select * fro... author" />
+            <marker date="1492603792103" expanded="true" signature="10989:11031" ph="SELECT * FRO... book_author" />
+            <marker date="1492603792103" expanded="true" signature="11268:11312" ph="SELECT * FRO... book_author" />
+            <marker date="1492603792103" expanded="true" signature="12282:12360" ph="update perso... " />
+            <marker date="1492603792103" expanded="true" signature="12282:12455" ph="update perso... " />
+            <marker date="1492603792103" expanded="true" signature="12282:12457" ph="update perso... " />
+            <marker date="1492603792103" expanded="true" signature="12282:12461" ph="update perso... " />
+            <marker date="1492603792103" expanded="true" signature="12282:12475" ph="update perso... " />
+            <marker date="1492603792103" expanded="true" signature="13205:13380" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13205:13390" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13516:13683" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13516:13685" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13516:13686" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13961:14019" ph="update book " />
+            <marker date="1492603792103" expanded="true" signature="13961:14020" ph="UPDATE table... " />
+            <marker date="1492603792103" expanded="true" signature="15035:15210" ph="update book_... " />
+            <marker date="1492603792103" expanded="true" signature="15815:15851" ph="insert into account... " />
+            <marker date="1492603792103" expanded="true" signature="15815:15858" ph="insert into account... " />
+            <marker date="1492603792103" expanded="true" signature="15815:15884" ph="insert into account... " />
+            <marker date="1492603792103" expanded="true" signature="15815:15887" ph="insert into account... " />
+            <marker date="1492603792103" expanded="true" signature="15815:15890" ph="insert into account... " />
+            <marker date="1492603792103" expanded="true" signature="16283:16389" ph="insert into personal_library... " />
+            <marker date="1492603792103" expanded="true" signature="16283:16410" ph="insert into personal_library... " />
+            <marker date="1492603792103" expanded="true" signature="17588:17699" ph="insert into book... " />
+            <marker date="1492603792103" expanded="true" signature="17588:17702" ph="insert into book... " />
+            <marker date="1492603792103" expanded="true" signature="17588:17703" ph="insert into book... " />
+            <marker date="1492603792103" expanded="true" signature="17588:17704" ph="insert into book... " />
+            <marker date="1492603792103" expanded="true" signature="18327:18428" ph="INSERT INTO books_author... " />
+            <marker date="1492603792103" expanded="true" signature="19335:19482" ph="delete from " />
+            <marker date="1492603792103" expanded="true" signature="20323:20374" ph="DELETE FROM " />
+            <marker date="1492603792103" expanded="true" signature="20323:20375" ph="DELETE FROM " />
+            <marker date="1492603792103" expanded="true" signature="21857:21880" ph="delete from " />
+            <marker date="1492603792103" expanded="true" signature="21857:21909" ph="delete from " />
+            <marker date="1492603792103" expanded="true" signature="21963:22001" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenEditBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/library/ScreenLibraryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenPartTabMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/ScreenMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="164" column="9" lean-forward="false" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+          <folding>
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2252#2253#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/modal/controller/main/ScreenSearchPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-255">
+          <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devprosony/core/controllers/view/main/PanelSearch.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

@@ -19,10 +19,10 @@ public class Main extends Application{
             Main.primaryStage = primaryStage;
             sceneManager = new SceneManager() {
                 public void loadScene() {
-                    super.switchScene("LoadSceneLogIn");
+                    super.switchScene("LoadSceneChoose");
                 }
             };
-        sceneManager.switchScene("LoadSceneLogIn");
+        sceneManager.switchScene("LoadSceneChoose");
         }
 
     /**

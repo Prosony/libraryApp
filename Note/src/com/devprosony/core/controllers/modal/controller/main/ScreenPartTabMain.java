@@ -11,10 +11,9 @@ public class ScreenPartTabMain {
     @FXML Label labelBookTitle;
     @FXML Label labelAuthor;
     @FXML Label labelAboutBook;
-    @FXML
-    private void initialize() {
 
-    }
+    @FXML private void initialize() {}
+
     public void setLabelText(String titleBook, String bookFullNameAuthor, String about){
         labelBookTitle.setText(titleBook);
         labelAuthor.setText(bookFullNameAuthor);

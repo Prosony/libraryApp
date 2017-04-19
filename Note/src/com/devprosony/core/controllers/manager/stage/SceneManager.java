@@ -7,6 +7,8 @@ import com.devprosony.core.controllers.modal.controller.library.ScreenRenameLibr
 import com.devprosony.core.controllers.modal.controller.main.ScreenAddBook;
 import com.devprosony.core.controllers.modal.controller.main.ScreenEditBook;
 import com.devprosony.core.controllers.modal.controller.main.ScreenSearchPanel;
+import com.devprosony.core.controllers.modal.controller.main.menuItem.options.ScreenOptions;
+import com.devprosony.core.controllers.modal.controller.main.menuItem.options.modal.SceneChooseDeleteAccount;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -28,6 +30,8 @@ abstract public class SceneManager {
 
     private static Scene sceneSingIn;
     private static Scene sceneMain;
+    private static Scene sceneRegistration;
+    private static Scene sceneChoose;
     private static double dragOffsetX;
     private static double dragOffsetY;
     private Stage primaryStage;
@@ -47,47 +51,81 @@ abstract public class SceneManager {
     }
 
     public void switchScene(String triger) {
+
         switch(triger){
-
+            case "SceneChoose":
+                            primaryStage.setScene(sceneChoose);
+                            setHeightAndWidth(200.0,250.0, 200.0,250.0);
+                            primaryStage.centerOnScreen();
+                            movingMainStage(sceneChoose);
+                            break;
+            case "SceneRegistration":
+                            primaryStage.setScene(sceneRegistration);
+                            setHeightAndWidth(150.0,250.0, 150.0,250.0);
+                            primaryStage.centerOnScreen();
+                            movingMainStage(sceneRegistration);
+                            break;
             case "SceneLogIn":
-                        primaryStage.setScene(sceneSingIn);
-                        setHeightAndWidth(150.0,250.0, 150.0,250.0);
-                        primaryStage.centerOnScreen();
-                        movingMainStage(sceneSingIn);
-                        break;
+                            primaryStage.setScene(sceneSingIn);
+                            setHeightAndWidth(150.0,250.0, 150.0,250.0);
+                            primaryStage.centerOnScreen();
+                            movingMainStage(sceneSingIn);
+                            break;
             case "SceneMain":
-
                             primaryStage.setScene(sceneMain);
                             setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
                             primaryStage.centerOnScreen();
                             movingMainStage(sceneMain);
+                            break;
+            case "LoadSceneChoose":
+                            try {
+                                sceneChoose = new Scene(FXMLLoader.load(getClass().getResource(
+                                        "core/controllers/view/SceneGetChoose.fxml")));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            primaryStage.initStyle(StageStyle.TRANSPARENT);
+                            primaryStage.centerOnScreen();
+                            primaryStage.setScene(sceneChoose);
+                            primaryStage.show();
+                            movingMainStage(sceneChoose);
+                            break;
+            case "LoadSceneRegistration":
+                            try {
+                                sceneRegistration = new Scene(FXMLLoader.load(getClass().getResource(
+                                        "core/controllers/view/SceneRegistration.fxml")));
+                                primaryStage.setScene(sceneRegistration);
+                                setHeightAndWidth(150.0,250.0, 150.0,250.0);
+                                primaryStage.show();
+                                movingMainStage(sceneRegistration);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             break;
             case "LoadSceneLogIn":
                             try {
                                 sceneSingIn = new Scene(FXMLLoader.load(getClass().getResource(
                                         "core/controllers/view/singInPanel.fxml")));
+                                primaryStage.centerOnScreen();
+                                primaryStage.setScene(sceneSingIn);
+                                setHeightAndWidth(150.0,250.0, 150.0,250.0);
+                                primaryStage.show();
+                                movingMainStage(sceneSingIn);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-
-                            primaryStage.initStyle(StageStyle.TRANSPARENT);
-                            //primaryStage.setOpacity(0.9);
-                            primaryStage.centerOnScreen();
-                            primaryStage.setScene(sceneSingIn);
-                            primaryStage.show();
-                            movingMainStage(sceneSingIn);
                             break;
             case "LoadSceneMain":
                             try {
                                 sceneMain = new Scene(FXMLLoader.load(getClass().getResource(
                                         "core/controllers/view/ScreenMain.fxml")));
+                                System.out.printf("switchScene");
+                                primaryStage.setScene(sceneMain);
+                                setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
+                                movingMainStage(sceneMain);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            System.out.printf("switchScene");
-                            primaryStage.setScene(sceneMain);
-                            setHeightAndWidth(600.0,800.0, 1920.0,1080.0);
-                            movingMainStage(sceneMain);
                             break;
         }
 
@@ -125,27 +163,79 @@ abstract public class SceneManager {
 * ******************************************************************************/
     public void showPanelSearch(){
         try {
-
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("core/controllers/view/main/PanelSearch.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
+
             Stage stageSceneSearch = new Stage();
             stageSceneSearch.initModality(Modality.WINDOW_MODAL);
             stageSceneSearch.initOwner(primaryStage);
             stageSceneSearch.initStyle(StageStyle.TRANSPARENT);
             Scene scenePanelSearch = new Scene(page);
             stageSceneSearch.setScene(scenePanelSearch);
-
             ScreenSearchPanel screenSearchPanel = loader.getController();
             screenSearchPanel.setStageAndOther(stageSceneSearch);
             movingSearchScene(stageSceneSearch, scenePanelSearch);
+
             stageSceneSearch.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+/********************************************************************************
+*                       Show OptionsPanel                                        *
+* ******************************************************************************/
+    public void showPanelOptions(){
+
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("core/controllers/view/main/menuItem/PanelOptions.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            Stage stageSceneOptions = new Stage();
+            stageSceneOptions.initModality(Modality.WINDOW_MODAL);
+            stageSceneOptions.initOwner(primaryStage);
+            stageSceneOptions.initStyle(StageStyle.TRANSPARENT);
+            Scene sceneOptionPane = new Scene(page);
+            stageSceneOptions.setScene(sceneOptionPane);
+
+            ScreenOptions screenOptions = loader.getController();
+            screenOptions.setStageAndOther(stageSceneOptions);
+            movingSearchScene(stageSceneOptions, sceneOptionPane);
+            stageSceneOptions.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+             /********************************************************************************
+             *                                  ModalChooseDeleteAccount                     *
+             * ******************************************************************************/
+             public boolean showPaneModalDeleteAccount(Stage stageSceneOptions){
+
+                 try {
+
+                     FXMLLoader loader = new FXMLLoader();
+                     loader.setLocation(Main.class.getResource("core/controllers/view/main/menuItem/modal/ModalScreenDeleteAccount.fxml"));
+                     AnchorPane page = (AnchorPane) loader.load();
+
+                     Stage stageChooseDeleteAccount = new Stage();
+                     stageChooseDeleteAccount.initModality(Modality.WINDOW_MODAL);
+                     stageChooseDeleteAccount.initOwner(stageSceneOptions);
+                     stageChooseDeleteAccount.initStyle(StageStyle.TRANSPARENT);
+
+                     Scene sceneModalDeleteAccountPane = new Scene(page);
+                     stageChooseDeleteAccount.setScene(sceneModalDeleteAccountPane);
+
+                     SceneChooseDeleteAccount sceneChooseDeleteAccount = loader.getController();
+                     sceneChooseDeleteAccount.setStageModal(stageChooseDeleteAccount);
+
+                     stageChooseDeleteAccount.showAndWait();
+                     return sceneChooseDeleteAccount.getDeleteAccount();
+                 } catch (IOException e) {
+                     e.printStackTrace();
+                 }
+                 return false;
+             }
 /********************************************************************************
 *                       Create a pane for the context menu                      *
 * *********************************************************************************************
@@ -343,5 +433,4 @@ abstract public class SceneManager {
                 .hideAfter(Duration.seconds(5))
                 .show();
     }
-
 }

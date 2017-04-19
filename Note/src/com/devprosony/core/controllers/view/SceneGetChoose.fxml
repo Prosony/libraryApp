@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="200.0" maxWidth="240.0" minHeight="200.0" minWidth="240.0" prefHeight="200.0" prefWidth="240.0" styleClass="background" stylesheets="@css/light/LightTheme(Main).css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devprosony.core.controllers.ScreenChoose">
+   <children>
+      <Button layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#clickButtonGetStartedLoad" prefHeight="25.0" prefWidth="222.0" text="Get Started" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0" />
+      <Button layoutX="12.0" layoutY="115.0" mnemonicParsing="false" onAction="#clickButtonLogInLoad" prefHeight="25.0" prefWidth="222.0" text="Log In" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0" />
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="48.0" prefWidth="220.0" text="Spring Library" />
+      <Button layoutX="13.0" layoutY="156.0" mnemonicParsing="false" onAction="#clickButtonExit" prefHeight="25.0" prefWidth="222.0" text="Exit" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+   </children>
+</AnchorPane>

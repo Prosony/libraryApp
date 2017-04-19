@@ -53,16 +53,21 @@ public class ScreenMain extends DataBaseManager {
         sceneManager.showPanelLibrary();
         tableUpdate();
     }
-    public void clickMenuItemLogOut(ActionEvent actionEvent) {
+    public void clickMenuItemLogOut() {
         idAccount = 0;
         idThisPersonalLibrary = 0;
         chestBooks.clear();
-        sceneManager.switchScene("SceneLogIn");
+        sceneManager.switchScene("SceneChoose");
     }
-    public void clickMenuItemSearchPane(ActionEvent actionEvent) {
+    public void clickMenuItemSearchPane() {
         sceneManager.showPanelSearch();
     }
-/********************************************************************************
+
+    public void clickMenuItemOption() {
+        sceneManager.showPanelOptions();
+    }
+
+    /********************************************************************************
  *                              ContextMenu ActionEvents                        *                                                *
  * *****************************************************************************/
     public void contextMenuAddBook(ActionEvent actionEvent) {
@@ -70,7 +75,6 @@ public class ScreenMain extends DataBaseManager {
             if (getIdThisPersonalLibrary() != 0) {
                 sceneManager.showPanelAddBook();
                 //**     New Thread for input books in table from library, when PanelAddBook will be close*/
-                stdOut.println("Thread book open");
                 tableUpdate();
             }else{
                 stdOut.println("Before select library, then add books (:");
@@ -79,26 +83,36 @@ public class ScreenMain extends DataBaseManager {
             e.printStackTrace();
         }
     }
-    public void contextMenuOpenBook(ActionEvent actionEvent) {
+    public void contextMenuOpenBook() {
+
         String titleBook = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
         String bookFullNameAuthor = null;
         String about = null;
-        connectionBD();
-        ResultSet resultSet = getFullDataAboutBookWithRelationships(titleBook);
 
-        try {
-            while(resultSet.next()){
-                bookFullNameAuthor = resultSet.getString("full_name");
-                about = resultSet.getString("about");
+        if(idThisPersonalLibrary != 0) {
+            if (titleBook != "null" && titleBook != null && !titleBook.isEmpty()) {
+                connectionBD();
+                ResultSet resultSet = getFullDataAboutBookWithRelationships(titleBook);
+                try {
+                    while (resultSet.next()) {
+                        bookFullNameAuthor = resultSet.getString("full_name");
+                        about = resultSet.getString("about");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                connectionClose();
+
+                addTab(titleBook, bookFullNameAuthor, about);
+            } else {
+                sceneManager.showNotifications("Error", "Before select book!");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }else{
+            sceneManager.showNotifications("Error", "Before open Library!");
         }
-        connectionClose();
-        addTab(titleBook, bookFullNameAuthor, about);
     }
 
-    public void contextMenuEditBook(ActionEvent actionEvent) {
+    public void contextMenuEditBook() {
 
         int idRelationships = 0;
         int oldIdBook = 0;
@@ -135,17 +149,20 @@ public class ScreenMain extends DataBaseManager {
         }
     }
 
-    public void contextMenuDeleteBook(ActionEvent actionEvent) {
+    public void contextMenuDeleteBook() {
+        String bookTitle = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
         if (getIdThisPersonalLibrary() != 0) {
-                String bookTitle = String.valueOf(tableBooks.getSelectionModel().getSelectedItem());
+            if (bookTitle != "null" && bookTitle != null && !bookTitle.isEmpty()) {
                 stdOut.println("bookTitle: " + bookTitle);
                 deleteBookFromPersonalLibrary(bookTitle);
                 stdOut.println("Thread book open");
                 tableUpdate();
+            }else{
+                sceneManager.showNotifications("Error","Before select Book!");
+            }
         }else{
-                stdOut.println("Before select library, then add books (:");
+                sceneManager.showNotifications("Error","Before select Library!");
         }
-
     }
     /********************************************************************************
      *      The thread takes bookTitle from the DB and fills the Table              *
@@ -177,8 +194,8 @@ public class ScreenMain extends DataBaseManager {
 *                                   TabPane                                     *
 * ******************************************************************************/
 
-@FXML
-private void addTab(String titleBook, String bookFullNameAuthor, String about){
+    @FXML
+    private void addTab(String titleBook, String bookFullNameAuthor, String about){
 //        int numTabs = tabBookPane.getTabs().size();
         Tab tab = new Tab(titleBook);
         FXMLLoader loader = new FXMLLoader();
@@ -210,9 +227,6 @@ private void addTab(String titleBook, String bookFullNameAuthor, String about){
     public void buttonSystemExit(){
         System.exit(0);
     }
-
-
-
 }
 
 

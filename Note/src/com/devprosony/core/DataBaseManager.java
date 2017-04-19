@@ -6,17 +6,15 @@ import java.sql.*;
 
 import static com.devprosony.Main.sceneManager;
 import static com.devprosony.Main.stdOut;
-
-
 /**
- * Created by Prosony on 23/03/17.
+ * Created by ${Prosony} on ${23/03/17}.
  */
 abstract public class DataBaseManager {
 
     protected static int idAccount;
     protected static int idThisPersonalLibrary;
 
-    protected Statement stmt;
+    private Statement stmt;
     private Connection connection;
     private Driver driver = new FabricMySQLDriver();
 
@@ -24,7 +22,6 @@ abstract public class DataBaseManager {
 /********************************************************************************
 *                   Methods for connect/disconnect DataBase                     *
 * ******************************************************************************/
-
     protected void connectionBD() {
         final String URL = "jdbc:mysql://localhost:3306/llibrary?autoReconnect=true&useSSL=false";
         final String USERNAME = "root";
@@ -40,7 +37,6 @@ abstract public class DataBaseManager {
             e.printStackTrace();
         }
     }
-
     protected void connectionClose(){
         try {
             connection.close();
@@ -50,11 +46,24 @@ abstract public class DataBaseManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
  /********************************************************************************
  *                      Methods for execute query SELECT                         *
  * ******************************************************************************/
+         /********************************************************************************
+         *                                  Account                                      *
+         * ******************************************************************************/
+        protected ResultSet getDataAccount(){
+            ResultSet rs = null;
+
+            try {
+                rs = stmt.executeQuery("select * from Account;");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return rs;
+        }
          /********************************************************************************
          *                                  Library                                      *
          * ******************************************************************************/
@@ -107,7 +116,7 @@ abstract public class DataBaseManager {
                         e.printStackTrace();
                     }
                 }else{
-                    stdOut.println("getFullDataAboutBookFromSelectionLibraryFromDB()->idThisPersonalLibrary: " + idThisPersonalLibrary);
+                    sceneManager.showNotifications("","before open Library");
                 }
                 return null;
             }
@@ -142,7 +151,7 @@ abstract public class DataBaseManager {
                                                                 String genre, String author){
                 ResultSet resultSet = null;
                 boolean first = true;
-                stdOut.println("___________________________________________");
+
                 String query = "SELECT * FROM author " +
                         "JOIN book_author ON author.id_this_author = book_author.id_author " +
                         "JOIN book ON book.id_this_book = book_author.id_book ";
@@ -177,14 +186,12 @@ abstract public class DataBaseManager {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-
-                stdOut.println("___________________________________________");
-                return resultSet;
+             return resultSet;
             }
          /*********************************************************************************
           *                                       Author                                  *
           * ******************************************************************************/
-            public int getDataAuthor(String fullNameAuthorBook){
+         protected int getDataAuthor(String fullNameAuthorBook){
                 ResultSet resultSetIdAuthorBook;
                     int idAuthor;
                     connectionBD();
@@ -248,7 +255,7 @@ abstract public class DataBaseManager {
             /*********************************************************************************
              *                                  Library                                      *
              * ******************************************************************************/
-            public void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
+            protected void renameLibraryTitle(String oldLibraryTitle, String newLibraryTitle){
                 connectionBD();
                 try {
                     stmt.executeUpdate("update personal_library " +
@@ -262,7 +269,7 @@ abstract public class DataBaseManager {
             /********************************************************************************
              *                                  Books                                       *
              * *****************************************************************************/
-            public void upDataBook(String triger, int idBook, String newTitleOrGenreBookOrAbout){
+            protected void upDataBook(String triger, int idBook, String newTitleOrGenreBookOrAbout){
                 connectionBD();
                 try {
                     switch (triger){
@@ -295,18 +302,15 @@ abstract public class DataBaseManager {
              *                               Relationships                                   *
              * ******************************************************************************/
 
-            public void updateRelationships(int idRelationships, int idNewAuthor){
+            protected void updateRelationships(int idRelationships, int idNewAuthor){
                 connectionBD();
 
                 try {
-                    stdOut.println("_________updateRelationships_________");
                     stdOut.println("idNewAuthor: "+idNewAuthor);
                     stdOut.println("idRelationships: "+idRelationships);
                     stmt.executeUpdate("update book_author " +
                             "set id_author = '"+idNewAuthor+"' " +
                             "where book_author.id_book_author = '"+idRelationships+"';");
-                    stdOut.println("relationships update");
-                    stdOut.println("_____________________________________");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -315,8 +319,19 @@ abstract public class DataBaseManager {
 /********************************************************************************
 *                      Methods for execute query INSERT INTO                    *
 * ******************************************************************************/
+    protected  void creteAccount(String login, String password){
+        connectionBD();
+        try {
+            stdOut.println("Login : " +login+ " Password : " + password);
+            stmt.execute("insert into account(login, password) VALUES('"+login+"', '"+password+"');");
+            sceneManager.showNotifications("success","Account: "+login+" create!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connectionClose();
+    }
 
-    public void createLibrary(String newLibraryTitle){
+    protected void createLibrary(String newLibraryTitle){
         connectionBD();
         try {
             stdOut.println("id: "+idAccount+" title: "+newLibraryTitle);
@@ -330,11 +345,10 @@ abstract public class DataBaseManager {
             }
         connectionClose();
     }
-    public void addBookIntoPersonalLibrary(String bookTitle, String genreBook, int idAuthor, String bookAbout){
-        /*
-         * insert into books(id_personal_library, book_title, id_author, genre)
+    protected void addBookIntoPersonalLibrary(String bookTitle, String genreBook, int idAuthor, String bookAbout){
+        /* insert into books(id_personal_library, book_title, id_author, genre)
          * values(4,'Effective Java 2nd Edition', 5, 'Computers & Technology');
-         */
+         * */
         ResultSet resultSetForFindIdThisBook;
         int idThisBook = 0;
         connectionBD();
@@ -387,6 +401,19 @@ abstract public class DataBaseManager {
                                 }
                                 connectionClose();
                             }
+                        /********************************************************************************
+                         *                      SceneMain Methods (ContextMenu)                          *
+                         * ******************************************************************************/
+                         protected void deleteAccount(){
+                             connectionBD();
+                             try {
+                                 stmt.execute("DELETE FROM account where account.id_this_account = "+idAccount+";");
+                                 sceneManager.showNotifications("success","Account was deleted");
+                             } catch (SQLException e) {
+                                 e.printStackTrace();
+                             }
+                             connectionClose();
+                         }
                          /********************************************************************************
                          *                      SceneMain Methods (ContextMenu)                          *
                          * ******************************************************************************/

@@ -14,14 +14,14 @@ import static com.devprosony.Main.sceneManager;
 import static com.devprosony.Main.stdOut;
 
 /**
- * Created by Prosony on 4/4/2017.
+ * Created by ${Prosony} on 4/4/2017.
  */
 public class ScreenAddBook extends DataBaseManager{
 
-    @FXML TextField textFieldBookTitle;
-    @FXML TextField textFieldBookGenre;
-    @FXML TextField textFieldAuthorBook;
-    @FXML TextArea areaFieldAboutBook;
+    @FXML private TextField textFieldBookTitle;
+    @FXML private TextField textFieldBookGenre;
+    @FXML private TextField textFieldAuthorBook;
+    @FXML private TextArea areaFieldAboutBook;
 
     private Stage dialogStage;
 
@@ -31,7 +31,7 @@ public class ScreenAddBook extends DataBaseManager{
     /********************************************************************************
      *                              Button ActionEvents                             *
      * *****************************************************************************/
-    public void clickAddBook(ActionEvent actionEvent) {
+    public void clickAddBook() {
 
         boolean addBook = true;
         String bookTitle = textFieldBookTitle.getText();
@@ -68,7 +68,7 @@ public class ScreenAddBook extends DataBaseManager{
 
     }
 
-    public void clickCancelAddBook(ActionEvent actionEvent) {
+    public void clickCancelAddBook() {
         stdOut.println("Press Cancel");
         dialogStage.close();
     }

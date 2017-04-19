@@ -78,24 +78,31 @@ public class ScreenLibraryManager extends DataBaseManager {
 
     public void contextMenuRenameLibrary(ActionEvent actionEvent) {
         String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
+        if (libraryTitleFromTableListSelected != "null" && libraryTitleFromTableListSelected != null && !libraryTitleFromTableListSelected.isEmpty()) {
+            try {
+                //must find id_this_account
 
-        stdOut.println("libraryTitle: " + libraryTitleFromTableListSelected);
-        try {
-            //must find id_this_account
-
-           sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
+                sceneManager.showPanelRenameLibrary(libraryTitleFromTableListSelected);
                 tableUpdate();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            sceneManager.showNotifications("Error", "Before select Library!");
         }
     }
 
     public void contextMenuDeleteLibrary(ActionEvent actionEvent) {
         String libraryTitleFromTableListSelected = String.valueOf(tableListLibrary.getSelectionModel().getSelectedItem());
-        stdOut.println("Delete library: " + libraryTitleFromTableListSelected);
-        deleteLibrary(libraryTitleFromTableListSelected);
-        tableUpdate();
+        if (libraryTitleFromTableListSelected != "null" && libraryTitleFromTableListSelected != null && !libraryTitleFromTableListSelected.isEmpty()) {
+
+            stdOut.println("Delete library: " + libraryTitleFromTableListSelected);
+            deleteLibrary(libraryTitleFromTableListSelected);
+            tableUpdate();
+        }else{
+            sceneManager.showNotifications("Error", "Before select Library!");
+        }
     }
 
     /********************************************************************************
@@ -152,10 +159,4 @@ public class ScreenLibraryManager extends DataBaseManager {
 //                }
 //            }
 //        }
-    /********************************************************************************
-     *                              Other Methods                                   *
-     * *****************************************************************************/
-    public String getLibraryTitle(){
-        return libraryTitle;
-    }
 }
